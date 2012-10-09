@@ -334,6 +334,9 @@ ul.projects div.root a.project { font-family: 'Helvetica Neue', Helvetica, Arial
 .splitcontentleft {
 	margin-left: 4px;
 }
+.splitcontentright {
+	margin-top: 12px;
+}
 #sidebar p {
 	color: #444;
 }
