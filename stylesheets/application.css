@@ -15,7 +15,6 @@ Author:		www.modula.fi, www.doublerebel.com
 
 */
 
-@import url(../../../stylesheets/application.css);
 @font-face{font-family:Korolev;src:url("korolev-medium-compressed.otf")}
 
 body, #wrapper { background-color:#3c3c3c; font-family: helvetica, "microsoft sans serif", arial, sans-serif; }
