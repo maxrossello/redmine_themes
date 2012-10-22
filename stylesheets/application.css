@@ -357,6 +357,11 @@ input[type="text"], textarea, select {
 	border-top: 1px solid #ccc;
 	padding-top: 10px;
 }
+
+form .attributes select {
+    width: auto;
+}
+
 #attachments_fields input[type="text"] {
 	width: 39%;
 }
