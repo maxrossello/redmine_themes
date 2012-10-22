@@ -359,7 +359,7 @@ input[type="text"], textarea, select {
 }
 
 form .attributes select {
-    width: auto;
+    width: auto !important;
 }
 
 #attachments_fields input[type="text"] {
