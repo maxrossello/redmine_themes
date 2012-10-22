@@ -21,10 +21,10 @@ Author:		nysenate.gov
 body, #wrapper { background-color:#3c3c3c; font-family: helvetica, "microsoft sans serif", arial, sans-serif; }
 body, #wrapper { background-color: white; color: #333; }
 
-a, a:link, a:visited { color: #003b6f; outline:none;}
+a, a:link { color: #0066c0; outline:none;}
 a:hover { text-decoration: underline; color: #1464ab;}
  
-#sidebar label, #sidebar a{ color: #003b6f  !important;}
+#sidebar label, #sidebar a{ color: #0066c0  !important;}
 
 #sidebar a:hover, #sidebar a:active{ color: #1464ab !important; background:none !important; }
 #sidebar h3 { color: #003b6f !important;}
