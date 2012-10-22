@@ -395,3 +395,7 @@ div#activity dd, #search-results dd { font-size:1em; }
 span.description { margin: .5em 0;}
 
 hr { background:#eee none repeat scroll 0% 0%; }
+
+table.cal td.today {
+    background: #c6ebff !important;
+}
