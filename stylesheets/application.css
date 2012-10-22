@@ -22,9 +22,12 @@ body, #wrapper { background-color:#3c3c3c; font-family: helvetica, "microsoft sa
 body, #wrapper { background-color: white; color: #333; }
 
 a, a:link, a:visited { color: #003b6f; outline:none;}
-a:hover { text-decoration: none; color: #455138;}
-#sidebar label, #sidebar a:link, #sidebar a:hover, #sidebar a:active, #sidebar a:visited { color: #f0f0f0; color: #222 }
+a:hover { text-decoration: underline; color: #1464ab;}
+ 
+#sidebar label, #sidebar a{ color: #003b6f  !important;}
 
+#sidebar a:hover, #sidebar a:active{ color: #1464ab !important; background:none !important; }
+#sidebar h3 { color: #003b6f !important;}
 #header {
 	width: 100%;
 	padding: 0;
@@ -155,7 +158,7 @@ h2, .wiki h1 {
 .wiki h1 { font-family: helvetica, "microsoft sans serif", arial, sans-serif; }
 .wiki h2 { background-color: #fff; }
 
-h3, h4 { font-weight: normal; color: #7aa054;}
+h3, h4 { font-weight: normal; color: #3c3c3c;}
 h1, h2, h3 { color: #333; }
 
 #sidebar h3 { color: #7AA054; border-bottom:1px solid #989898; padding:6px 0; }
