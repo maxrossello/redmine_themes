@@ -233,7 +233,7 @@ table.list tr.issue a { color: #3c3c3c; }
 tr.odd.priority-7, table.list tbody tr.odd.priority-7:hover { color: #fff; font-weight: bold; }
 tr.odd.priority-7 { background: #9b4842; }
 tr.even.priority-7, table.list tbody tr.even.priority-7:hover { color: #fff; font-weight: bold; }
-tr.even.priority-7 { background: #ac4037; }
+tr.even.priority-7 { background: #a4443c; }
 tr.priority-7 a, tr.priority-7:hover a { color: #fff !important; }
 tr.odd.priority-7 td, tr.even.priority-7 td { border-color: #970d00; }
 
@@ -257,7 +257,7 @@ tr.odd.priority-5 td, tr.even.priority-5 td { border-color: #e16638; }
 tr.odd.priority-4, table.list tbody tr.odd.priority-4:hover { color: #805504; }
 tr.odd.priority-4 { background: #fdf9d4; }
 tr.even.priority-4, table.list tbody tr.even.priority-4:hover { color: #805504; }
-tr.even.priority-4 { background: #fef9cb; }
+tr.even.priority-4 { background: #fbf5c0; }
 tr.priority-4 a { color: #805504; }
 tr.odd.priority-4 td, tr.even.priority-4 td { border-color: #c58100; }
 
@@ -265,17 +265,20 @@ tr.odd.priority-4 td, tr.even.priority-4 td { border-color: #c58100; }
 tr.odd.priority-3, table.list tbody tr.odd.priority-3:hover { color: #000; }
 tr.odd.priority-3 { background: #fffef2; }
 tr.even.priority-3, table.list tbody tr.even.priority-3:hover { color: #000; }
-tr.even.priority-3 { background: #fffef0; }
+tr.even.priority-3 { background: #f9f7e4; }
 tr.priority-3 a { color: #000; }
 tr.odd.priority-3 td, tr.even.priority-3 td { border-color: #ffa700; }
 
 /* resolved status */
-tr.status-3{ background: #bbf4ab !important; color: #1b520e; }
+tr.status-3{ color: #1b520e !important; font-weight: normal !important; }
+tr.even.status-3{ background: #bbf4ab !important;}
+tr.odd.status-3{ background: #afea9f !important;}
+tr.status-3 a{ color: #1b520e !important; font-weight: normal !important;}
 tr.odd.status-3 td, tr.even.status-3 td { border-color: #7faf73; }
 
 /* hover fix for resolved */
-table.list tbody tr:hover { background-color:#f9fdff !important; }
-
+table.list tbody tr:hover { background-color:#f9fdff !important; color: #000 !important; }
+table.list tbody tr:hover a { color: #000 !important;}
 
 .context-menu-selection {
     background-color: #b1dcf3 !important;
