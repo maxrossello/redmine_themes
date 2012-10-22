@@ -21,7 +21,7 @@ Author:		nysenate.gov
 body, #wrapper { background-color:#3c3c3c; font-family: helvetica, "microsoft sans serif", arial, sans-serif; }
 body, #wrapper { background-color: white; color: #333; }
 
-a, a:link, a:visited { color: #7aa054; outline:none;}
+a, a:link, a:visited { color: #003b6f; outline:none;}
 a:hover { text-decoration: none; color: #455138;}
 #sidebar label, #sidebar a:link, #sidebar a:hover, #sidebar a:active, #sidebar a:visited { color: #f0f0f0; color: #222 }
 
@@ -360,6 +360,12 @@ input[type="text"], textarea, select {
 	border-top: 1px solid #ccc;
 	padding-top: 10px;
 }
+.journal .details > li {
+    list-style: none outside none;
+}
+.journal .wiki p {
+    padding: 0 0 0 40px;
+}
 
 form .attributes select {
     width: auto !important;
@@ -368,6 +374,7 @@ form .attributes select {
 #attachments_fields input[type="text"] {
 	width: 39%;
 }
+
 
 .jstElements { margin-right: 3.5em;}
 .tabular label { font-weight: normal;}
