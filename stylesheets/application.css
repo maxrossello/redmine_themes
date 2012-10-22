@@ -88,13 +88,46 @@ h1 {
 	color: #474D57;
 	text-shadow: 0 1px 1px white;
 	font-family: 'Korolev', sans-serif;
-	margin: 15px 24px;
 	margin: 15px 24px 40px;
 	padding: 0;
 	width: 400px;
 	float: left;
 }
 h2, h3, h4, .wiki h1, .wiki h2, .wiki h3 { border-bottom: 0px;}
+
+/* reset wiki h1 to revert any inheritied funkyness */
+.wiki h1{
+	background:none;
+	border:none;
+	bottom:auto;
+	clear:none;
+	cursor:default;
+	float:none;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:medium;
+	font-style:normal;
+	font-weight:normal;
+	height:auto;
+	left:auto;
+	letter-spacing:normal;
+	line-height:normal;
+	max-height:none;
+	max-width:none;
+	min-height:0;
+	min-width:0;
+	overflow:visible;
+	position:static;
+	right:auto;
+	text-align:left;
+	text-decoration:none;
+	text-indent:0;
+	text-transform:none;
+	top:auto;
+	visibility:visible;
+	white-space:normal;
+	width:auto;
+	z-index:auto;
+}
 
 h2, .wiki h1 { 
 	background-color: #cde9a7; 
@@ -136,6 +169,7 @@ h1, h2, h3 { color: #333; }
 	float: left;
 	width: 850px;
 }
+
 #main-menu li a { font-weight: normal; padding: 6px 8px 8px; color: #888; }
 #main-menu li a:hover { 
 	color: #333;
@@ -193,7 +227,6 @@ table.list thead th a:hover { color: #2e2e2e; }
 /* Issues grid styles by priorities by Stefan Crain */
 table.list tr.issue a { color: #3c3c3c; }
 
-/* immediate  */
 /* immediate */
 tr.odd.priority-7, table.list tbody tr.odd.priority-7:hover { color: #fff; font-weight: bold; }
 tr.odd.priority-7 { background: #9b4842; }
