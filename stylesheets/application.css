@@ -223,9 +223,10 @@ table.list thead th {
 
 table.list thead th a { color: #2e2e2e; }
 table.list thead th a:hover { color: #2e2e2e; }
+table.list tr.issue a { color: #3c3c3c; }
 
 /* Issues grid styles by priorities by Stefan Crain */
-table.list tr.issue a { color: #3c3c3c; }
+/* These issues priority-N's have changed in http://www.redmine.org/issues/2071 */
 
 /* immediate */
 tr.odd.priority-7, table.list tbody tr.odd.priority-7:hover { color: #fff; font-weight: bold; }
