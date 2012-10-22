@@ -89,6 +89,7 @@ h1 {
 	text-shadow: 0 1px 1px white;
 	font-family: 'Korolev', sans-serif;
 	margin: 15px 24px;
+	margin: 15px 24px 40px;
 	padding: 0;
 	width: 400px;
 	float: left;
@@ -134,7 +135,6 @@ h1, h2, h3 { color: #333; }
 	margin: -8px 1.5em -2px;
 	float: left;
 	width: 850px;
-	position: relative;
 }
 #main-menu li a { font-weight: normal; padding: 6px 8px 8px; color: #888; }
 #main-menu li a:hover { 
@@ -194,6 +194,7 @@ table.list thead th a:hover { color: #2e2e2e; }
 table.list tr.issue a { color: #3c3c3c; }
 
 /* immediate  */
+/* immediate */
 tr.odd.priority-7, table.list tbody tr.odd.priority-7:hover { color: #fff; font-weight: bold; }
 tr.odd.priority-7 { background: #9b4842; }
 tr.even.priority-7, table.list tbody tr.even.priority-7:hover { color: #fff; font-weight: bold; }
