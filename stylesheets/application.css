@@ -352,7 +352,10 @@ input[type="text"], textarea, select {
 	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
 	padding: 15px;
 }
-
+.journal {
+	border-top: 1px solid #ccc;
+	padding-top: 10px;
+}
 #attachments_fields input[type="text"] {
 	width: 39%;
 }
