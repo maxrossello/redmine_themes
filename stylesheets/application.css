@@ -1,0 +1,8 @@
+@import url(../../../stylesheets/application.css);
+
+/* Issues grid priority column color by priorities */
+tr.priority-highest td.priority { color: #F00; }
+tr.priority-high3   td.priority { color: #B00000; }
+tr.priority-high2   td.priority { color: orange; }
+tr.priority-lowest  td.priority { color: black; }
+tr.priority-lowest  td.priority { color: gray; }
