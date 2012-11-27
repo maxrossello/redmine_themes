@@ -171,7 +171,7 @@ h1, h2, h3 { color: #333; }
 #main-menu {
 	margin: -8px 1.5em -2px;
 	float: left;
-	width: 850px;
+	width: 870px;
 }
 
 #main-menu li a { font-weight: normal; padding: 6px 8px 8px; color: #888; }
@@ -395,7 +395,3 @@ div#activity dd, #search-results dd { font-size:1em; }
 span.description { margin: .5em 0;}
 
 hr { background:#eee none repeat scroll 0% 0%; }
-
-table.cal td.today {
-    background: #e3f5ff !important;
-}
