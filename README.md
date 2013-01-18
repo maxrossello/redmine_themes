@@ -1,7 +1,7 @@
 PM4PRO Redmine Theme
 ====================
 
-Theme extends default[Redmine](http://redmine.org) theme with some features.
+Theme extends default [Redmine](http://redmine.org) theme with some features.
 
 Features
 --------
