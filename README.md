@@ -1,10 +1,10 @@
 PM4PRO Redmine Theme
 ====================
 
-Theme for Redmine (http://redmine.org).
-Based on default Redmine.
+Theme extends default[Redmine](http://redmine.org) theme with some features.
 
 Features
 --------
 
 * Colorful priorities
+* Bold subproject names on project listing

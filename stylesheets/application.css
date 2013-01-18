@@ -6,3 +6,5 @@ tr.priority-high2   td.priority, tr.priority-6 td.priority { color: #B00000; }
 tr.priority-high3   td.priority, tr.priority-5 td.priority { color: orange; }
 /* tr.priority-default td.priority, tr.priority-4 td.priority { color: black; } */
 tr.priority-lowest  td.priority, tr.priority-3 td.priority { color: gray; }
+
+div.child a.project { font-weight: bold; }
