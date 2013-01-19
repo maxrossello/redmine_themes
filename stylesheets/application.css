@@ -292,10 +292,10 @@ table.list tbody tr:hover a { color: #000 !important;}
 }
 
 p.breadcrumb {
-	background-color:#EEEEEE;
+	background-color:#EEEEBB;
 	border-bottom:1px solid white;
 	font-size:0.9em;
-	margin:-6px -10px 6px;
+	margin:7px -10px 6px;
 	padding:6px;
 	text-indent:15px;
 }
