@@ -167,7 +167,7 @@ div.progress
   margin-bottom: 5px;
   }
 
-div.journal h4
+div.journal h4, #sidebar h4
   {
   padding-top: 5px;
   }
@@ -233,10 +233,12 @@ background-color: #EEEEEE;
 #content {
   padding: 6px 10px 10px 5px;
   min-height: 1000px;
+  width: auto;
+  margin-right: 350px;
   }
 
 html, body {
-  font-size: 13px;
+  font-size: 10pt;
   background-color: #D0DCE0;
   background-repeat: no-repeat;
   background-position: 0px 0px;
@@ -261,6 +263,7 @@ border-top: 1px solid #ddd;
 
 #sidebar
   {
+  width: 310px;
   }
 
 h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
