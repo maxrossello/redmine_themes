@@ -153,6 +153,7 @@ td.progress, th.progress
   background-image: none;
   background-color: transparent;
   margin-bottom: auto;
+  box-shadow: none;
   }
 
 .box
@@ -235,6 +236,7 @@ background-color: #EEEEEE;
   }
 
 html, body {
+  font-size: 13px;
   background-color: #D0DCE0;
   background-repeat: no-repeat;
   background-position: 0px 0px;
