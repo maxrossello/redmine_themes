@@ -98,6 +98,11 @@ a.icon span,
   border-bottom-width: 1px;
   border-bottom-color: #93B96C;
   }
+a.no_line.selected span
+  {
+  border-bottom-color: #fff;
+  }
+
 a.in_link span
   {
   border-bottom-style: dotted;
