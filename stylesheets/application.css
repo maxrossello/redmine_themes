@@ -170,9 +170,14 @@ div.progress
   margin-bottom: 5px;
   }
 
-div.journal h4, #sidebar h4
+div.journal h4
   {
   padding-top: 5px;
+  }
+
+#sidebar h4
+  {
+  border-bottom: none;
   }
 
 /*-----------------------------------------------------*/
