@@ -139,6 +139,15 @@ table.list td
 /*-----------------------------------------------------*/
 
 /*-----------------------------------------------------*/
+td.progress, th.progress
+  {
+  height: auto;
+  -webkit-box-shadow: none;
+  background-image: none;
+  background-color: transparent;
+  margin-bottom: auto;
+  }
+
 .box
   {
   background-color: #FCFCFC;
@@ -147,6 +156,12 @@ table.list td
 div.progress
   {
   margin-right: 10px;
+  margin-bottom: 5px;
+  }
+
+div.journal h4
+  {
+  padding-top: 5px;
   }
 
 /*-----------------------------------------------------*/
