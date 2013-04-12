@@ -28,8 +28,10 @@ a:visited,
 #top-menu a,
 #content .tabs ul li a
 {
-  border-bottom: 1px solid #93B96C;
-  color: #336600;
+  border-bottom-color: #93B96C;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  color: #295200;
   text-decoration: none;
 }
 
@@ -94,6 +96,7 @@ a.icon span,
   text-decoration: none;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  border-bottom-color: #93B96C;
   }
 a.in_link span
   {
@@ -247,6 +250,7 @@ html, body {
 html {
   padding: 10px;  
   }
+
 body
   {
   background-image: url(../images/logo.png);
