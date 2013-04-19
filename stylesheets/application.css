@@ -71,7 +71,8 @@ tr.issue td.subject a:hover,
 tr.issue td.id a:hover,
 a.issue:hover,
 #main-menu li a:hover span,
-#top-menu a:hover
+#top-menu a:hover,
+a:hover.no_line span
   {
   border-bottom-color: #147dc0;
   color: #147dc0;
@@ -183,6 +184,11 @@ div.journal h4
 #sidebar h4
   {
   border-bottom: none;
+  }
+
+label
+  {
+  cursor: pointer;
   }
 
 /*-----------------------------------------------------*/
