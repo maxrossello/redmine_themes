@@ -25,7 +25,6 @@ a,
 a:link,
 a:visited,
 #main-menu li a,
-#top-menu a,
 #content .tabs ul li a
 {
   border-bottom-color: #93B96C;
@@ -42,10 +41,12 @@ a:visited,
   background-color: #E6E6E6;
   }
 
-#top-menu a
+#top-menu a, #top-menu a:hover
   {
   font-weight: normal;
   font-size: 1.1em;
+  border-bottom-color: #fff;
+  color: #fff;
   }
 
 #main-menu li a.selected
@@ -71,7 +72,6 @@ tr.issue td.subject a:hover,
 tr.issue td.id a:hover,
 a.issue:hover,
 #main-menu li a:hover span,
-#top-menu a:hover,
 a:hover.no_line span
   {
   border-bottom-color: #147dc0;
@@ -217,20 +217,31 @@ tr.priority-lowest td.subject
   padding: 0px;
   min-height: 80px;
   background-color: transparent;
-  padding: 0px 120px 0px 0px;
+  padding: 0px 0px 0px 0px;
   }
 
 #header h1
   {
-  color: #4B4835;
+  color: #fff;
   font-weight: normal;
   }
 
 
+#header h1 span
+  {
+  display: block;
+  background-color: rgba(85, 128, 156, 0.44);
+  padding: 2px 5px 6px 5px;
+  position: relative;
+  left: 0px;
+  line-height: 1em;
+  float: left;
+  }
+
 #top-menu
   {
   background-color: transparent;
-  padding: 0px 120px 0px 0px;
+  padding: 0px 0px 0px 0px;
   }
 
 #main-menu {
@@ -258,19 +269,24 @@ background-color: #EEEEEE;
 
 html, body {
   font-size: 10pt;
-  background-color: #D0DCE0;
-  background-repeat: no-repeat;
-  background-position: 0px 0px;
+  /*background-color: #D0DCE0;*/
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 html {
   padding: 10px;  
   }
 
+html
+  {
+  background-image: url(../images/bg_1.png);
+  }
+
+
 body
   {
-  background-image: url(../images/logo.png);
+  /*background-image: url(../images/logo.png);*/
   background-position: 100% 0%;
+  background-repeat: no-repeat;
   }
 
 #main
