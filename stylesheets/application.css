@@ -235,7 +235,7 @@ tr.priority-lowest td.subject
   background-color: rgba(85, 128, 156, 0.44);
   padding: 2px 5px 6px 5px;
   position: relative;
-  left: 0px;
+  left: -6px;
   line-height: 1em;
   float: left;
   }
@@ -280,7 +280,7 @@ html {
 
 html
   {
-  background-image: url(../images/bg_1.png);
+  background-image: url(../images/bg_0.png);
   }
 
 
