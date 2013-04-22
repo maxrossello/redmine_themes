@@ -43,6 +43,8 @@ a:visited,
 
 #top-menu a, #top-menu a:hover
   {
+  display: block;
+  overflow: hidden;
   font-weight: normal;
   font-size: 1.1em;
   border-bottom-color: #fff;
