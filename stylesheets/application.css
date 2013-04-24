@@ -25,6 +25,7 @@ a,
 a:link,
 a:visited,
 #main-menu li a,
+#main-menu li a.selected span,
 #content .tabs ul li a
 {
   border-bottom-color: #93B96C;
@@ -33,6 +34,12 @@ a:visited,
   color: #295200;
   text-decoration: none;
 }
+
+#content .tabs ul li a.selected span
+  {
+  color: #295200;
+   border-bottom-color: #93B96C; 
+  }
 
 #content .tabs ul li a
   {
@@ -128,7 +135,7 @@ a.selected, #sidebar a.selected, .selected
   color: #fff;
   }
 
-.selected a
+.selected a, a.selected span
   {
   color: #fff;
   border-bottom-color: #fff;
@@ -197,17 +204,24 @@ label
 
 /* Issues */
 /*-----------------------------------------------------*/
+tr td.subject
+  {
+  background-repeat: no-repeat;
+  background-position: 100% -10px;
+  }
+
+
 tr.priority-highest td.subject
   {
-  background: url(../images/priorities.png) no-repeat 100% -10px;
+  background-image: url(../images/priority-high-3.png);
   }
 tr.priority-high2 td.subject
   {
-  background: url(../images/priorities.png) no-repeat 100% -160px;
+  background-image: url(../images/priority-high-3.png);
   }
 tr.priority-lowest td.subject
   {
-  background: url(../images/priorities.png) no-repeat 100% -303px;
+  background-image: url(../images/priority-low-3.png);
   }
 
 /*-----------------------------------------------------*/
