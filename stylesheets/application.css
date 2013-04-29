@@ -17,6 +17,9 @@
 .R {
     float: right;
     }
+input[type="text"], input[type="password"], textarea, select {
+  padding: 2px;
+}
 /*-----------------------------------------------------*/
 
 /* Links */
@@ -228,6 +231,7 @@ tr.priority-lowest td.subject
 
 
 /*-----------------------------------------------------*/
+
 #header
   {
   padding: 0px;
