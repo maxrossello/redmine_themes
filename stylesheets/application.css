@@ -135,7 +135,7 @@ a.selected, #sidebar a.selected, .selected
   color: #fff;
   }
 
-.selected a, a.selected span
+.selected a, a.selected span, a:hover.selected span
   {
   color: #fff;
   border-bottom-color: #fff;
