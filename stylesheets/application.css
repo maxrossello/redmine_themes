@@ -17,9 +17,6 @@
 .R {
     float: right;
     }
-input[type="text"], input[type="password"], textarea, select {
-  padding: 2px;
-}
 /*-----------------------------------------------------*/
 
 /* Links */
@@ -207,22 +204,22 @@ label
 
 /* Issues */
 /*-----------------------------------------------------*/
-tr td.subject
+tr td.subject, div.issue
   {
   background-repeat: no-repeat;
   background-position: 100% -10px;
   }
 
 
-tr.priority-highest td.subject
+tr.priority-highest td.subject, div.issue.priority-highest
   {
   background-image: url(../images/priority-high-3.png);
   }
-tr.priority-high2 td.subject
+tr.priority-high2 td.subject, div.issue.priority-high2
   {
   background-image: url(../images/priority-high-3.png);
   }
-tr.priority-lowest td.subject
+tr.priority-lowest td.subject, div.issue.priority-lowest
   {
   background-image: url(../images/priority-low-3.png);
   }
@@ -231,7 +228,6 @@ tr.priority-lowest td.subject
 
 
 /*-----------------------------------------------------*/
-
 #header
   {
   padding: 0px;
