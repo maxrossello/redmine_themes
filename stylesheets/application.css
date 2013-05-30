@@ -239,6 +239,7 @@ tr.priority-lowest td.subject, div.issue.priority-lowest
 #header h1
   {
   color: #fff;
+  float: left;
   font-weight: normal;
   }
 
