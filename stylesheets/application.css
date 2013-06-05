@@ -382,6 +382,10 @@ border-top: 1px solid #ddd;
   width: 310px;
   }
 
+#main.nosidebar #content {
+  margin: 0;
+}  
+
 h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
   {
   border-bottom: 1px solid #ddd;
