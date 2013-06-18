@@ -27,6 +27,18 @@ select
   }
 /*-----------------------------------------------------*/
 
+/* UI */
+/*-----------------------------------------------------*/
+
+a.ui-dialog-titlebar-close
+  {
+  border-bottom-width: 0px !important;
+  }
+.ui-widget.modal {
+  position: absolute;
+  }
+/*-----------------------------------------------------*/
+
 
 
 /* Links */
@@ -45,11 +57,6 @@ a:visited,
   text-decoration: none;
 }
 
-
-a.ui-dialog-titlebar-close
-  {
-  border-bottom-width: 0px;
-  }
 #content .tabs ul li a.selected span
   {
   color: #295200;
@@ -400,6 +407,10 @@ border-top: 1px solid #ddd;
   {
   width: 310px;
   }
+
+#main.nosidebar #content {
+  margin: 0;
+}  
 
 h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
   {
