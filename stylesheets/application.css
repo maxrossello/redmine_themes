@@ -282,6 +282,11 @@ tr.priority-lowest td.subject, div.issue.priority-lowest
   margin-right: 15px;
   }
 
+#loggedas
+  {
+  display: none;
+  }
+
 #header
   {
   padding: 0px;
