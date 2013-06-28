@@ -78,7 +78,7 @@ a:visited,
   font-size: 1.1em;
   border-bottom-color: #fff;
   color: #fff;
-  padding: 6px 4px 6px 4px;
+  padding: 8px 4px 8px 4px;
   margin-right: 6px;
   }
 
@@ -153,7 +153,7 @@ a.icon span,
 #top-menu li a:hover
   {
   background-image: url(../images/toolbar_x.png);
-  background-position: 0px 142px;
+  background-position: 0px -112px;
   }
 
 
@@ -292,7 +292,7 @@ tr.priority-lowest td.subject, div.issue.priority-lowest
   padding: 0px;
   min-height: 65px;
   background-color: transparent;
-  padding: 26px 0px 0px 0px;
+  padding: 20px 100px 0px 0px;
 
   }
 
@@ -331,14 +331,15 @@ border-radius: 8px 8px 8px 8px;
   -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
   -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
   box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
-  background-position: 0px 177px;
+  background-position: 0px 370px;
   }
 
 
 
 #top-menu a span.count
   {
-  background-color: #3F7FB1;
+  /*background-color: #3F7FB1;*/
+  background-color: #077C10;
   padding: 0px 4px 0px 4px;
   position: relative;
   top: -2px;
@@ -389,14 +390,14 @@ html {
 
 html
   {
-  background-image: url(../images/bg_0.png);
+  background-image: url(../images/bg_5.jpg);
   }
 
 
 body
   {
-  /*background-image: url(../images/logo.png);*/
-  background-position: 100% 0%;
+  background-image: url(../images/logo.png);
+  background-position: 100% 31px;
   background-repeat: no-repeat;
   }
 
