@@ -277,6 +277,13 @@ tr.priority-lowest td.subject, div.issue.priority-lowest
 
 
 /*-----------------------------------------------------*/
+#q
+  {
+  margin: 5px 20px 0px 0px;
+  width: 80px;
+  }
+
+
 #account
   {
   margin-right: 15px;
@@ -289,19 +296,19 @@ tr.priority-lowest td.subject, div.issue.priority-lowest
 
 #header
   {
+  overflow: hidden;
   padding: 0px;
-  min-height: 65px;
+  min-height: inherit;
   background-color: transparent;
-  padding: 20px 100px 0px 0px;
-
+  padding: 15px 0px 0px 0px;
   }
 
 #header h1
   {
-  color: #fff;
-  float: left;
+  overflow: hidden;
+  color: #000;
   font-weight: normal;
-  padding: 0px;
+  padding: 0px 0px 10px 0px;
   margin: 0px;
   }
 
@@ -334,9 +341,15 @@ border-radius: 8px 8px 8px 8px;
   background-position: 0px 370px;
   }
 
+#account
+  {
+  padding-right: 25px;
+  background-image: url(../images/logo.png);
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  }
 
-
-#top-menu a span.count
+#top-menu a span.count, span.count
   {
   /*background-color: #3F7FB1;*/
   background-color: #077C10;
@@ -349,6 +362,7 @@ border-radius: 8px 8px 8px 8px;
   font-size: 7.5pt;
   font-weight: bold;
   margin-right: 5px;
+  color: #fff;
   }
 
 #top-menu span.count
@@ -357,7 +371,7 @@ border-radius: 8px 8px 8px 8px;
   }
 
 #main-menu {
-left: 0px;
+position: static;
 }
 
 #main-menu li {
@@ -390,16 +404,16 @@ html {
 
 html
   {
-  background-image: url(../images/bg_5.jpg);
+  background-image: url(../images/bg_6.jpg);
   }
 
 
-body
+/*body
   {
   background-image: url(../images/logo.png);
   background-position: 100% 31px;
   background-repeat: no-repeat;
-  }
+  }*/
 
 #main
   {
@@ -435,7 +449,7 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
             box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 15px 5px 10px -10px rgba(0, 0, 0, 0.5), 1px 0 4px rgba(0, 0, 0, 0.3);
        -moz-box-shadow: 15px 5px 10px -10px rgba(0, 0, 0, 0.5), 1px 0 4px rgba(0, 0, 0, 0.3);
-            box-shadow: 15px 5px 10px -10px rgba(0, 0, 0, 0.5), 1px 0 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 15px 5px 10px -10px rgba(0, 0, 0, 0.5);
 }
  
 
