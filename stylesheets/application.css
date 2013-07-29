@@ -273,11 +273,15 @@ tr.priority-3 a { color: #000; }
 tr.odd.priority-3 td, tr.even.priority-3 td { border-color: #ffa700; }
 
 /* resolved status */
-tr.status-3{ color: #1b520e !important; font-weight: normal !important; }
-tr.even.status-3{ background: #bbf4ab !important;}
-tr.odd.status-3{ background: #afea9f !important;}
-tr.status-3 a{ color: #1b520e !important; font-weight: normal !important;}
+tr.status-3 { color: #1b520e !important; font-weight: normal !important; }
+tr.status-9 { color: #1b520e !important; font-weight: normal !important; }
+tr.odd.status-3 { background: #afea9f !important;}
+tr.even.status-3 { background: #bbf4ab !important;}
+tr.odd.status-9 { background: #afca9f !important;}
+tr.even.status-9 { background: #bbd4ab !important;}
+tr.status-3 a { color: #1b520e !important; font-weight: normal !important;}
 tr.odd.status-3 td, tr.even.status-3 td { border-color: #7faf73; }
+tr.odd.status-9 td, tr.even.status-9 td { border-color: #7faf73; }
 
 /* hover fix for resolved */
 table.list tbody tr:hover { background-color:#f9fdff !important; color: #000 !important; }
