@@ -1,4 +1,4 @@
-PM4PRO Redmine Theme
+Progressive Redmine Theme
 ====================
 
 Theme extends default [Redmine](http://redmine.org) theme with some features.
