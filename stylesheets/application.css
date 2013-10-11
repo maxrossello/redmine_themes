@@ -1,10 +1,24 @@
 @import url(../../../stylesheets/application.css);
 
 /* Issues grid priority column color by priorities */
-tr.priority-highest td.priority, tr.priority-7 td.priority { color: #F00; }
-tr.priority-high2   td.priority, tr.priority-6 td.priority { color: #B00000; }
-tr.priority-high3   td.priority, tr.priority-5 td.priority { color: orange; }
-/* tr.priority-default td.priority, tr.priority-4 td.priority { color: black; } */
-tr.priority-lowest  td.priority, tr.priority-3 td.priority { color: gray; }
+tr.priority-highest td.priority { color: #F00; }
+tr.priority-high2   td.priority { color: #B00000; }
+tr.priority-high3   td.priority { color: orange; }
+/* tr.priority-default td.priority { color: black; } */
+tr.priority-lowest  td.priority { color: gray; }
 
+/* Make subprojects bold on project list */
 div.child a.project { font-weight: bold; }
+
+/* Hide my-project legend */
+span.my-project { display: none; }
+
+/* Project links */
+a.project { color: grey; }
+
+/* My project links */
+a.my-project {
+	background: none;
+	padding: 0;
+	color: #116699;
+}
