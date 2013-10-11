@@ -8,3 +8,4 @@ Features
 
 * Colorful priorities
 * Bold subproject names on project listing
+* Make "not my" prjects grey on project list
