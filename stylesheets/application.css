@@ -140,7 +140,7 @@ a.icon span,
   border-bottom-width: 1px;
   border-bottom-color: #fff;
   }
-#top-menu li a span.count, #top-menu li a #my_page_issues_count
+#top-menu li a span.count, #top-menu li a #my_page_issues_count, div.thumbnails a
   {
      border-bottom-width: 0px;
   }
