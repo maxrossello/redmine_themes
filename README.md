@@ -6,6 +6,14 @@ Skin for Redmine with user-friendly interface and usefull with plugins of our te
 
 ![Interface](https://github.com/tdvsdv/redmine_alex_skin/raw/master/screenshots/interface.png "Interface")
 
+======
+
+[usability]: https://github.com/tdvsdv/usability
+Redmine Alex skin is recommended to use with plugin [Usability][usability].
+It made interface of Redmine user-friendly.
+
+![Interface2](https://github.com/tdvsdv/redmine_alex_skin/raw/master/screenshots/interface2.png "Interface2")
+
 #### Installation
 To install skin, go to the folder "../public/themes" in root directory of Redmine.
 Clone skin in that folder.
