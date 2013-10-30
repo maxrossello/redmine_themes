@@ -16,7 +16,7 @@ Restart your web-server.
 
 Go to Redmine settings, tab "Display" and change theme to "Redmine alex skin".
 
-#### Supported Redmine, Ruby and Rails versions.
+#### Supported Redmine versions.
 
 Skin aims to support and is tested under the following Redmine implementations:
 * Redmine 2.3.1
