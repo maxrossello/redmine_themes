@@ -1,4 +1,4 @@
-﻿@import url(../../../stylesheets/application.css);
+@import url(../../../stylesheets/application.css);
 
 /* Global styles */
 /*-----------------------------------------------------*/
@@ -266,7 +266,7 @@ tr.priority-highest td.subject, div.issue.priority-highest
   }
 tr.priority-high2 td.subject, div.issue.priority-high2
   {
-  background-image: url(../images/priority-high-1.png);
+  background-image: url(../images/priority-high-3.png);
   }
 tr.priority-lowest td.subject, div.issue.priority-lowest
   {
@@ -303,7 +303,7 @@ tr.priority-lowest td.subject, div.issue.priority-lowest
   padding: 30px 0px 0px 0px;
   background-image: url(../images/horse.png);
   background-repeat: no-repeat;
-  background-position: 97% 10px;
+  background-position: 97% 100%
   }
 
 #header h1
