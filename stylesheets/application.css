@@ -25,6 +25,11 @@ select
   {
   padding: 2px;
   }
+textarea, input[type=text]
+  {
+  border: 1px solid #ccc;
+  padding: 3px;
+  }
 /*-----------------------------------------------------*/
 
 /* UI */
@@ -199,6 +204,7 @@ table.list th, table.list td {
   border-style: solid;
   border-color: #C3C3C4;
   text-align: left;
+  padding: 2px;
   }
 table.list th
   {
@@ -262,7 +268,9 @@ tr td.subject, div.issue
 
 tr.priority-highest td.subject, div.issue.priority-highest
   {
-  background-image: url(../images/priority-high-3.png);
+  background-image: url(../images/priority-highest.png);
+  background-position: 100% 0px;
+  background-color: #FFF5EA;
   }
 tr.priority-high2 td.subject, div.issue.priority-high2
   {
@@ -301,9 +309,6 @@ tr.priority-lowest td.subject, div.issue.priority-lowest
   min-height: inherit;
   background-color: transparent;
   padding: 30px 0px 0px 0px;
-  background-image: url(../images/horse.png);
-  background-repeat: no-repeat;
-  background-position: 97% 100%
   }
 
 #header h1
@@ -318,7 +323,7 @@ tr.priority-lowest td.subject, div.issue.priority-lowest
 
 #header h1 span {
 display: block;
-background-color: rgba(255, 255, 255, 0.56);
+/*background-color: rgba(255, 255, 255, 0.56);*/
 padding: 2px 5px 6px 5px;
 position: relative;
 left: -6px;
@@ -407,7 +412,7 @@ html {
 
 html
   {
-  background-image: url(../images/snowflake.jpg);
+  background-image: url(../images/bg_6.jpg);
   }
 
 

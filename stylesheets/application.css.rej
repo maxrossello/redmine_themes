@@ -1,0 +1,9 @@
+diff a/stylesheets/application.css b/stylesheets/application.css	(rejected hunks)
+@@ -266,6 +266,7 @@
+   }
+ tr.priority-high2 td.subject, div.issue.priority-high2
+   {
++  background-image: url(../images/priority-high-1.png);
+   }
+ tr.priority-lowest td.subject, div.issue.priority-lowest
+   {
