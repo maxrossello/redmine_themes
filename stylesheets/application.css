@@ -259,6 +259,11 @@ label
 
 /* Issues */
 /*-----------------------------------------------------*/
+tr td.subject
+  {
+  padding-right: 10px;
+  }
+
 tr td.subject, div.issue
   {
   background-repeat: no-repeat;
