@@ -30,6 +30,11 @@ textarea, input[type=text]
   border: 1px solid #ccc;
   padding: 3px;
   }
+
+input.autocomplete 
+  {
+  padding-left: 20px !important; 
+  }
 /*-----------------------------------------------------*/
 
 /* UI */
@@ -270,13 +275,36 @@ tr td.subject, div.issue
   background-position: 100% -10px;
   }
 
+tr.priority-highest 
+  {
+  background-color: #FFF9F2
+  }
 
-tr.priority-highest td.subject, div.issue.priority-highest
+
+tr.priority-highest td.subject
   {
   background-image: url(../images/priority-highest.png);
-  background-position: 100% 0px;
-  background-color: #FFF5EA;
+  background-position: 100% 50%;
   }
+div.issue.priority-highest td.priority
+  {
+  background-image: url(../images/priority-highest-issue-page.png);
+  padding-left: 28px;
+  background-repeat: no-repeat;
+  background-position-x: 2px;
+  }
+div.issue.priority-highest td.priority span
+  {
+  color: #C92626;
+  font-weight: bold;
+  }
+
+div.issue.priority-highest
+  {
+  background-color: #FFF9F2; 
+  }
+
+
 tr.priority-high2 td.subject, div.issue.priority-high2
   {
   background-image: url(../images/priority-high-1.png);
