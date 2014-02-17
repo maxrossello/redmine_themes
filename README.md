@@ -1,5 +1,7 @@
 # Redmine Issue Readability Theme
 
+This theme supports high readability of the result list. A list of available Redmine themes can be found at the Redmine [theme list](http://www.redmine.org/projects/redmine/wiki/Theme_List). And you can find this theme on this [page](http://www.redmine.org/projects/redmine/wiki/Theme_List#Issue-Readability).
+
 ## Installing a theme
 
 1. First, copy the theme-directory into ../public/themes/. This would result in a directory-path to application.css like:
