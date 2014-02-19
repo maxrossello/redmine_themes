@@ -20,4 +20,6 @@ Here are more Information: http://www.redmine.org/projects/redmine/wiki/Themes
 
 ![Screenshot](https://raw.github.com/jongha/redmine_issue_readability_theme/master/screenshot.png)
 
+## License
 
+Redmine Issue Readability Theme is available under the terms of the MIT License.
