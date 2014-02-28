@@ -31,9 +31,9 @@ textarea, input[type=text]
   padding: 3px;
   }
 
-input.autocomplete 
+input.autocomplete
   {
-  padding-left: 20px !important; 
+  padding-left: 20px !important;
   }
 /*-----------------------------------------------------*/
 
@@ -70,7 +70,7 @@ a:visited,
 #content .tabs ul li a.selected span
   {
   color: #295200;
-   border-bottom-color: #93B96C; 
+   border-bottom-color: #93B96C;
   }
 
 #content .tabs ul li a
@@ -111,7 +111,7 @@ a:visited,
   }
 
 a:hover,
-tr.issue td.subject a:hover, 
+tr.issue td.subject a:hover,
 tr.issue td.id a:hover,
 a.issue:hover,
 #main-menu li a:hover span,
@@ -124,81 +124,85 @@ a:hover.no_line span
 a.in_link
   {
   border-bottom-style: dotted;
-  }  
-
-a.no_line, 
-a.icon,
-#main-menu li a,
-#top-menu li a
-  {
-  border-bottom: none;
   }
 
-a.no_line span, 
-a.icon span,
-#main-menu li a span
-  {
+a.no_line, a.icon, #main-menu li a, #top-menu li a, #dropdown_top_menu li a {
+  border-bottom: none;
+}
+
+#top-menu>ul {
+  overflow: hidden;
+}
+
+#dropdown_top_menu a span.count.updated {
+  background-color: #76a8d7;
+}
+
+#dropdown_top_menu a span.count.unread {
+  background-color: #c3e26b;
+}
+
+a.no_line span, a.icon span, #main-menu li a span {
   text-decoration: none;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #93B96C;
-  }
-#top-menu li a span
-  {
+}
+
+#top-menu li a span, #dropdown_top_menu li a span {
   text-decoration: none;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+}
+
+#top-menu li a span {
   border-bottom-color: #fff;
-  }
-#top-menu li a span.count, #top-menu li a #my_page_issues_count, div.thumbnails a
-  {
-     border-bottom-width: 0px;
-  }
+}
 
-#top-menu li a.in_link span
-  {
+#top-menu li a span.count, #top-menu li a #my_page_issues_count,
+#dropdown_top_menu li a span.count, #dropdown_top_menu li a #my_page_issues_count,
+div.thumbnails a {
+  border-bottom-width: 0px;
+}
+
+#top-menu li a.in_link span,
+#dropdown_top_menu li a.in_link span {
   border-bottom-style: dotted;
-  }
+}
 
-#top-menu li a:hover
-  {
+#top-menu li a:hover {
   background-image: url(../images/toolbar_x.png);
   background-position: 0px -112px;
-  }
+}
 
-
-a.no_line.selected span
-  {
+a.no_line.selected span {
   border-bottom-color: #fff;
-  }
+}
 
-a.in_link span
-  {
+a.in_link span {
   border-bottom-style: dotted;
-  } 
+  border-bottom-width: 1px;
+}
 
-tr.issue td.subject a, 
+tr.issue td.subject a,
 tr.issue td.id a,
-a.issue
-  {
+a.issue {
   color: #875015;
   border-bottom-color: #CDA376;
   padding-bottom: 1px;
-  } 
+}
 
-a.selected, #sidebar a.selected, .selected
-  {
+a.selected, #sidebar a.selected, .selected {
   padding: 3px;
   background-color: #ef7f1a;
   border-radius: 0px;
   color: #fff;
-  }
+}
 
-.selected a, a.selected span, a:hover.selected span
-  {
+.selected a, a.selected span, a:hover.selected span {
   color: #fff;
   border-bottom-color: #fff;
-  }
+}
 
 /*-----------------------------------------------------*/
 
@@ -213,7 +217,7 @@ table.list th, table.list td {
   }
 table.list th
   {
-  font-weight: normal; 
+  font-weight: normal;
   }
 
 table.list td
@@ -275,7 +279,7 @@ tr td.subject, div.issue
   background-position: 100% -10px;
   }
 
-tr.priority-highest 
+tr.priority-highest
   {
   background-color: #FFF9F2
   }
@@ -301,7 +305,7 @@ div.issue.priority-highest td.priority span
 
 div.issue.priority-highest
   {
-  background-color: #FFF9F2; 
+  background-color: #FFF9F2;
   }
 
 
@@ -390,7 +394,7 @@ border-radius: 8px 8px 8px 8px;
   background-repeat: no-repeat;
   }
 
-#top-menu a span.count, span.count
+#dropdown_top_menu a span.count, #top-menu a span.count, span.count
   {
   /*background-color: #3F7FB1;*/
   background-color: #077C10;
@@ -408,7 +412,7 @@ border-radius: 8px 8px 8px 8px;
 
 #top-menu span.count
   {
-  background-color: 
+  background-color:
   }
 
 #main-menu {
@@ -440,7 +444,7 @@ html, body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 html {
-  padding: 10px;  
+  padding: 10px;
   }
 
 html
@@ -471,7 +475,7 @@ border-top: 1px solid #ddd;
 
 #main.nosidebar #content {
   margin: 0;
-}  
+}
 
 h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
   {
@@ -492,7 +496,7 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
        -moz-box-shadow: 15px 5px 10px -10px rgba(0, 0, 0, 0.5), 1px 0 4px rgba(0, 0, 0, 0.3);
             box-shadow: 15px 5px 10px -10px rgba(0, 0, 0, 0.5);
 }
- 
+
 
 
 }
