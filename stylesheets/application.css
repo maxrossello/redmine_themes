@@ -229,72 +229,60 @@ table.list thead th a { color: #2e2e2e; }
 table.list thead th a:hover { color: #2e2e2e; }
 table.list tr.issue a { color: #3c3c3c; }
 
-/* Issues grid styles by priorities by Stefan Crain */
-/* These issues priority-N's have changed in http://www.redmine.org/issues/2071 */
+
+/* Issue Priorities */
 
 /* immediate */
-tr.odd.priority-7, table.list tbody tr.odd.priority-7:hover { color: #fff; font-weight: bold; }
+tr.priority-7, table.list tr.priority-7 a { color: #fff; font-weight: bold; }
+tr.priority-7.issue td { border-bottom: solid 1px #970d00; }
 tr.odd.priority-7 { background: #9b4842; }
-tr.even.priority-7, table.list tbody tr.even.priority-7:hover { color: #fff; font-weight: bold; }
 tr.even.priority-7 { background: #a4443c; }
-tr.priority-7 a, tr.priority-7:hover a { color: #fff !important; }
-tr.odd.priority-7 td, tr.even.priority-7 td { border-color: #970d00; }
 
 /* urgent */
-tr.odd.priority-6, table.list tbody tr.odd.priority-6:hover { color: #000; font-weight: bold; }
+tr.priority-6 { font-weight: bold; } 
+tr.priority-6.issue td { border-bottom: solid 1px #d1413c; }
 tr.odd.priority-6 { background: #f9776d; }
-tr.even.priority-6, table.list tbody tr.even.priority-6:hover { color: #000; font-weight: bold; }
 tr.even.priority-6 { background: #ff6d5c; }
-tr.priority-6 a, tr.priority-6:hover a { color: #000; }
-tr.odd.priority-6 td, tr.even.priority-6 td { border-color: #d1413c; }
 
 /* high */
-tr.odd.priority-5, table.list tbody tr.odd.priority-5:hover { color: #000; font-weight: bold; }
+tr.priority-5 { font-weight: bold; }
+tr.priority-5.issue td { border-bottom: solid 1px #e16638; }
 tr.odd.priority-5 { background: #ffad89; }
-tr.even.priority-5, table.list tbody tr.even.priority-5:hover { color: #000; font-weight: bold; }
 tr.even.priority-5 { background: #ffac75; }
-tr.priority-5 a, tr.priority-5:hover a { color: #000; }
-tr.odd.priority-5 td, tr.even.priority-5 td { border-color: #e16638; }
 
 /* normal */
-tr.odd.priority-4, table.list tbody tr.odd.priority-4:hover { color: #805504; }
+tr.priority-4.issue td { border-bottom: solid 1px #c58100; }
 tr.odd.priority-4 { background: #fdf9d4; }
-tr.even.priority-4, table.list tbody tr.even.priority-4:hover { color: #805504; }
 tr.even.priority-4 { background: #fbf5c0; }
-tr.priority-4 a { color: #805504; }
-tr.odd.priority-4 td, tr.even.priority-4 td { border-color: #c58100; }
 
 /* low */
-tr.odd.priority-3, table.list tbody tr.odd.priority-3:hover { color: #000; }
+tr.priority-3.issue td { border-bottom: solid 1px #ffa700; }
 tr.odd.priority-3 { background: #fffef2; }
-tr.even.priority-3, table.list tbody tr.even.priority-3:hover { color: #000; }
 tr.even.priority-3 { background: #f9f7e4; }
-tr.priority-3 a { color: #000; }
-tr.odd.priority-3 td, tr.even.priority-3 td { border-color: #ffa700; }
 
-/* resolved status */
-tr.status-3, tr.status-9, tr.status-10 { color: #1b520e !important; font-weight: normal !important; }
-tr.odd.status-3 { background: #afea9f !important;}
-tr.even.status-3 { background: #bbf4ab !important;}
-tr.odd.status-9 { background: #afca9f !important;}
-tr.even.status-9 { background: #bbd4ab !important;}
-tr.odd.status-10 { background: #cffa7f !important;}
-tr.even.status-10 { background: #dfff8f !important;}
-tr.status-3 a { color: #1b520e !important; font-weight: normal !important;}
-tr.odd.status-3 td, tr.even.status-3 td { border-color: #7faf73; }
-tr.odd.status-9 td, tr.even.status-9 td { border-color: #7faf73; }
+
+/* Issue Statuses: Resolved, Resolved Pending Upgrade, Resolved Verified */
+
+tr.status-3, tr.status-9, tr.status-10 { color: #1b520e; }
+table.list tr.status-3 a, table.list tr.status-9 a, table.list tr.status-10 a { color: #1b520e; }
+tr.issue.status-3 td, tr.issue.status-9 td, tr.issue.status-10 td { border-bottom: solid 1px #7faf73; }
+
+/* resolved */
+tr.odd.status-3 { background: #afea9f; }
+tr.even.status-3 { background: #bbf4ab }
+
+/* resolved verified */
+tr.odd.status-9 { background: #afca9f }
+tr.even.status-9 { background: #bbd4ab }
+
+/* resolved pending upgrade */
+tr.odd.status-10 { background: #cffa7f }
+tr.even.status-10 { background: #dfff8f }
+
 
 /* hover fix for resolved */
 table.list tbody tr:hover { background-color:#f9fdff !important; color: #000 !important; }
 table.list tbody tr:hover a { color: #000 !important;}
-
-.context-menu-selection {
-    background-color: #b1dcf3 !important;
-    color: #000 !important;
-}
-.context-menu-selection a{
-	color: #000 !important;
-}
 
 p.breadcrumb {
 	background-color:#EEEEBB;
