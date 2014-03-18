@@ -18,7 +18,7 @@ Here are more Information: http://www.redmine.org/projects/redmine/wiki/Themes
 
 ## Screenshot
 
-![Screenshot](https://raw.github.com/jongha/redmine_issue_readability_theme/master/screenshot.png)
+![Screenshot](https://raw.github.com/jongha/redmine_issue_readability_theme/master/screenshot/screenshot.png)
 
 ## License
 
