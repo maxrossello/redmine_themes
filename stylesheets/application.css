@@ -257,6 +257,8 @@ div.journal h4
 #sidebar h4
   {
   border-bottom: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
   }
 
 label
