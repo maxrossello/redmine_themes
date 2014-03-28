@@ -472,6 +472,8 @@ border-top: 1px solid #ddd;
   {
   width: 310px;
   }
+#sidebar ul { margin: 0;  padding-left: 30px; }
+#sidebar ul li { list-style-type: inherit; }
 
 #main.nosidebar #content {
   margin: 0;
