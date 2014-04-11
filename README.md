@@ -10,7 +10,7 @@ Features
 * Bold subproject names on project listing
 * Make "not my" prjects grey on project list
 
-Other Proressive plugins for Redmine
+Other Progressive plugins for Redmine
 ------------------------------------
 
 * [Progressive Projects List](http://stgeneral.github.io/redmine-progressive-projects-list/) - overall projects status on one page.
