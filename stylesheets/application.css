@@ -25,7 +25,7 @@ select
   {
   padding: 2px;
   }
-textarea, input[type=text]
+textarea, input[type=text], input[type=password]
   {
   border: 1px solid #ccc;
   padding: 3px;
