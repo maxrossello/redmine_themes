@@ -56,6 +56,9 @@ a.ui-dialog-titlebar-close
 a,
 a:link,
 a:visited,
+a.green_link,
+a.green_link:link,
+a.green_link:visited,
 #main-menu li a,
 #main-menu li a.selected span,
 #content .tabs ul li a
@@ -111,6 +114,7 @@ a:visited,
   }
 
 a:hover,
+a.green_link:hover,
 tr.issue td.subject a:hover,
 tr.issue td.id a:hover,
 a.issue:hover,
