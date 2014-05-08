@@ -133,7 +133,7 @@ a.in_link
   border-bottom-style: dotted;
   }
 
-a.no_line, a.icon, #main-menu li a, #top-menu li a, #dropdown_top_menu li a {
+a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.icon, #main-menu li a, #top-menu li a, #dropdown_top_menu li a {
   border-bottom: none;
 }
 
