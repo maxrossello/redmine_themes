@@ -528,7 +528,7 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
 }
 
 .ui-menu .ui-menu-item {
-  padding: 3px 5px;
+  padding: 2px 5px;
 }
 
 .ui-menu-item a.ui-state-focus {
@@ -545,6 +545,7 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  border-radius: 0;
 }
 
 /*.ui-autocomplete {
