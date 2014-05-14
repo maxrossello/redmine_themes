@@ -556,7 +556,33 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
 
 p.change_in_read_issues
   {
+  background-image: url(../images/label_newblue.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  }
+
+p.change_in_new_issues
+  {
   background-image: url(../images/label_newgreen.png);
   background-repeat: no-repeat;
   padding: 0px 0px 0px 50px;
+  background-position: 10px;
   }
+
+p.request_for_information
+  {
+  background-image: url(../images/microphoneyellow.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  }
+
+p.apply_salary
+  {
+  background-image: url(../images/unlockyellow.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  }
+  
