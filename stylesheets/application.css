@@ -565,3 +565,123 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
 }*/
 
 /* jQuery UI styles ends*/
+
+p.change_in_read_issues
+  {
+  background-image: url(../images/label_newblue.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  }
+
+p.change_in_new_issues
+  {
+  background-image: url(../images/label_newgreen.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  }
+
+p.request_for_information
+  {
+  background-image: url(../images/question.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  }
+
+p.apply_salary
+  {
+  background-image: url(../images/unlockyellow.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  }
+
+p.approve_requests
+  {
+  background-image: url(../images/confirm.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  } 
+
+p.execute_requests
+  {
+  background-image: url(../images/gearyellow.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  } 
+
+p.approve_prepayment
+  {
+  background-image: url(../images/bookmarkgreen.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  } 
+
+p.confirm_prepayment
+  {
+  background-image: url(../images/bookmarkyellow.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  } 
+
+p.payout_prepayment
+  {
+  background-image: url(../images/bookmarkblue.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  } 
+
+p.approve_salary
+  {
+  background-image: url(../images/credit_cardgreen.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  } 
+
+p.calculate_salary
+  {
+  background-image: url(../images/credit_cardblue.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  } 
+
+p.fill_through_indicators
+  {
+  background-image: url(../images/hyperlinkyellow.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  } 
+
+p.approve_surcharges
+  {
+  background-image: url(../images/currency_dollargreen.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  } 
+
+p.put_marks
+  {
+  background-image: url(../images/marked_price.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  } 
+
+p.plan_issues
+  {
+  background-image: url(../images/clockred.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  } 
