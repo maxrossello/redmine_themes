@@ -604,7 +604,7 @@ p.approve_requests
   background-repeat: no-repeat;
   padding: 0px 0px 0px 50px;
   background-position: 10px;
-  } 
+  }
 
 p.execute_requests
   {
@@ -612,7 +612,7 @@ p.execute_requests
   background-repeat: no-repeat;
   padding: 0px 0px 0px 50px;
   background-position: 10px;
-  } 
+  }
 
 p.approve_prepayment
   {
@@ -620,7 +620,7 @@ p.approve_prepayment
   background-repeat: no-repeat;
   padding: 0px 0px 0px 50px;
   background-position: 10px;
-  } 
+  }
 
 p.confirm_prepayment
   {
@@ -628,7 +628,7 @@ p.confirm_prepayment
   background-repeat: no-repeat;
   padding: 0px 0px 0px 50px;
   background-position: 10px;
-  } 
+  }
 
 p.payout_prepayment
   {
@@ -636,7 +636,7 @@ p.payout_prepayment
   background-repeat: no-repeat;
   padding: 0px 0px 0px 50px;
   background-position: 10px;
-  } 
+  }
 
 p.approve_salary
   {
@@ -644,7 +644,7 @@ p.approve_salary
   background-repeat: no-repeat;
   padding: 0px 0px 0px 50px;
   background-position: 10px;
-  } 
+  }
 
 p.calculate_salary
   {
@@ -652,7 +652,7 @@ p.calculate_salary
   background-repeat: no-repeat;
   padding: 0px 0px 0px 50px;
   background-position: 10px;
-  } 
+  }
 
 p.fill_through_indicators
   {
@@ -660,7 +660,7 @@ p.fill_through_indicators
   background-repeat: no-repeat;
   padding: 0px 0px 0px 50px;
   background-position: 10px;
-  } 
+  }
 
 p.approve_surcharges
   {
@@ -668,7 +668,7 @@ p.approve_surcharges
   background-repeat: no-repeat;
   padding: 0px 0px 0px 50px;
   background-position: 10px;
-  } 
+  }
 
 p.put_marks
   {
@@ -676,7 +676,7 @@ p.put_marks
   background-repeat: no-repeat;
   padding: 0px 0px 0px 50px;
   background-position: 10px;
-  } 
+  }
 
 p.plan_issues
   {
@@ -684,4 +684,6 @@ p.plan_issues
   background-repeat: no-repeat;
   padding: 0px 0px 0px 50px;
   background-position: 10px;
-  } 
+  }
+
+html>body .tabular p {overflow:visible;}
