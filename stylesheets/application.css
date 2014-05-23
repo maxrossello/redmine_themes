@@ -686,4 +686,6 @@ p.plan_issues
   background-position: 10px;
   }
 
-html>body .tabular p {overflow:visible;}
+  html > body .tabular p {
+    overflow: hidden;
+  }
