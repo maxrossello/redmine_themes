@@ -687,5 +687,5 @@ p.plan_issues
   }
 
   html > body .tabular p {
-    overflow: hidden;
+    overflow: visible !important;
   }
