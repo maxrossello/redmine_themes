@@ -686,6 +686,6 @@ p.plan_issues
   background-position: 10px;
   }
 
-  html > body .tabular p {
+  html > body .box.tabular.settings p {
     overflow: visible !important;
   }
