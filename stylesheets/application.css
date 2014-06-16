@@ -566,6 +566,7 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
 
 /* jQuery UI styles ends*/
 
-  html > body .box.tabular.settings p {
-    overflow: visible !important;
-  }
+
+html > body .box.tabular.settings p {
+  overflow: visible !important;
+}
