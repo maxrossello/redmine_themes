@@ -566,6 +566,15 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
 
 /* jQuery UI styles ends*/
 
+.tabs ul li a.selected {
+  background-color: #fff;
+  border: 1px solid #bbbbbb;
+  border-bottom: 1px solid #fff;
+  color: #444;
+}
+
+.tabs ul li a.selected:hover {background-color: #fff;}
+
 
 html > body .box.tabular.settings p {
   overflow: visible !important;
