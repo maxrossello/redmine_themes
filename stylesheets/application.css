@@ -4,8 +4,17 @@
 .done_button_annotation {
   background-image: url(../images/cat_foodlove-64.png);
   background-repeat: no-repeat;
-  padding: 0px 0px 0px 66px;
+  padding: 0px 0px 0px 88px;
   background-position: 10px;
+  min-height: 64px;
+}
+
+.done_button_anno_48 {
+  background-image: url(../images/cat_foodlove-48.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 50px;
+  background-position: 10px;
+  min-height: 48px;
 }
 
 /* Global styles */
