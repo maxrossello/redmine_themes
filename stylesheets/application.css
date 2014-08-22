@@ -1,5 +1,13 @@
 @import url(../../../stylesheets/application.css);
 
+
+.done_button_annotation {
+  background-image: url(../images/cat_foodlove-64.png);
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 66px;
+  background-position: 10px;
+}
+
 /* Global styles */
 /*-----------------------------------------------------*/
 .h, .H
