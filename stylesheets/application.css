@@ -280,6 +280,9 @@ div.thumbnails a {
   border-bottom-style: dotted;
 }
 
+#account #quick-search {
+  margin: 2px 10px;
+}
 a.no_line span, a.icon span, #main-menu li a span {
   text-decoration: none;
   border-bottom-style: solid;
