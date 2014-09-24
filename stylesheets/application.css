@@ -217,13 +217,23 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
 }
 
 #top-menu li a:hover,
-#top-menu .dropdown-menu > li > div.menu-item:hover, .dropdown-menu > li > div.menu-item:hover > a {
+#top-menu .dropdown-menu > li > div.menu-item:hover,
+.dropdown-menu > li > div.menu-item:hover > a {
   background-image: url(../images/toolbar_x.png);
   background-position: 0px -112px;
-  /*background-color: #0081C2;*/
   color: #FFF;
   text-decoration: none;
 }
+
+#top-menu .dropdown-menu > li > div.title a:hover {
+  background-image: none;
+  color: #147DC0;
+}
+#top-menu .dropdown-menu > li > div.title a:hover > span {
+  border-bottom-color: #147DC0;
+  color: #147DC0;
+}
+
 
 /*#top-menu > ul > li, #top-menu > ul > li.dropdwon, #account > ul > li > a {
   padding: 0px;
