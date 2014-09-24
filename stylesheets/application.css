@@ -179,17 +179,20 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   border-bottom-width: 1px;
 }
 
-#top-menu > ul > li > a span {
+#top-menu > ul > li > a span,
+#account > ul > li > a span {
   border-bottom-color: #fff;
 }
 
-#top-menu > ul > li .dropdown-menu a {
+#top-menu > ul > li .dropdown-menu a,
+#account > ul > li .dropdown-menu a {
   color: #295200;
   /*font-size: 12px;*/
   /*font-weight: normal;*/
 }
 
-#top-menu > ul > li .dropdown-menu a:hover > span {
+#top-menu > ul > li .dropdown-menu a:hover > span,
+#account > ul > li .dropdown-menu a:hover > span {
   color: #FFF;
   border-bottom-color: #fff;
 }
@@ -204,8 +207,11 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   padding: 0 3px;
   margin-right: 3px;
 }
-#top-menu > ul > li > a:hover, #account > ul > li > a:hover,
-#top-menu > ul > li > a:hover > span, #account > ul > li > a:hover > span {
+
+#top-menu > ul > li > a:hover,
+#account > ul > li > a:hover,
+#top-menu > ul > li > a:hover > span,
+#account > ul > li > a:hover > span {
   color: #fff;
 }
 
@@ -213,7 +219,6 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   text-decoration: none;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: #93B96C;
 }
 
 #top-menu li a:hover,
