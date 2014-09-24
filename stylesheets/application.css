@@ -103,18 +103,6 @@ a.issue.green_link,
   background-color: #E6E6E6;
   }
 
-#top-menu a
-  {
-  display: block;
-  float: left;
-  font-weight: normal;
-  font-size: 1.1em;
-  border-bottom-color: #fff;
-  color: #fff;
-  padding: 8px 4px 8px 4px;
-  margin-right: 6px;
-  }
-
 #main-menu li a.selected
   {
   color: #336600;
@@ -154,8 +142,106 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   border-bottom: none;
 }
 
-#top-menu>ul {
-  overflow: hidden;
+#q {
+  /*margin: 5px 20px 0px 0px;*/
+  width: 80px;
+}
+
+#account {
+  margin-right: 15px;
+}
+
+#account {
+  padding-right: 25px;
+  background-image: url(../images/logo.png);
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+}
+
+#top-menu {
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  height: 29px;
+  z-index: 999;
+  background-color: #EF7F1A;
+  background-image: url(../images/toolbar_x.png);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+  box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+  background-position: 0px 370px;
+}
+
+#top-menu > ul > li > a span, #dropdown_top_menu li a span {
+  text-decoration: none;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+#top-menu > ul > li > a span {
+  border-bottom-color: #fff;
+}
+
+#top-menu > ul > li .dropdown-menu a {
+  color: #295200;
+  /*font-size: 12px;*/
+  /*font-weight: normal;*/
+}
+
+#top-menu > ul > li .dropdown-menu a:hover > span {
+  color: #FFF;
+  border-bottom-color: #fff;
+}
+
+#top-menu > ul > li > a, #account > ul > li > a {
+  display: block;
+  float: left;
+  font-weight: normal;
+  font-size: 1.1em;
+  border-bottom-color: #fff;
+  color: #fff;
+  padding: 0 3px;
+  margin-right: 3px;
+}
+#top-menu > ul > li > a:hover, #account > ul > li > a:hover,
+#top-menu > ul > li > a:hover > span, #account > ul > li > a:hover > span {
+  color: #fff;
+}
+
+#top-menu li a > span {
+  text-decoration: none;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #93B96C;
+}
+
+#top-menu li a:hover,
+#top-menu .dropdown-menu > li > div.menu-item:hover, .dropdown-menu > li > div.menu-item:hover > a {
+  background-image: url(../images/toolbar_x.png);
+  background-position: 0px -112px;
+  /*background-color: #0081C2;*/
+  color: #FFF;
+  text-decoration: none;
+}
+
+/*#top-menu > ul > li, #top-menu > ul > li.dropdwon, #account > ul > li > a {
+  padding: 0px;
+}*/
+
+#dropdown_top_menu a span.count, #top-menu a span.count, span.count {
+  /*background-color: #3F7FB1;*/
+  background-color: #077C10;
+  padding: 0px 4px 0px 4px;
+  position: relative;
+  top: -2px;
+  border-radius: 8px 8px;
+  left: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 7.5pt;
+  font-weight: bold;
+  margin-right: 5px;
+  color: #fff;
 }
 
 #dropdown_top_menu a span.count.updated {
@@ -166,22 +252,7 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   background-color: #c3e26b;
 }
 
-a.no_line span, a.icon span, #main-menu li a span {
-  text-decoration: none;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #93B96C;
-}
 
-#top-menu li a span, #dropdown_top_menu li a span {
-  text-decoration: none;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-}
-
-#top-menu li a span {
-  border-bottom-color: #fff;
-}
 
 #top-menu li a span.count, #top-menu li a #my_page_issues_count,
 #dropdown_top_menu li a span.count, #dropdown_top_menu li a #my_page_issues_count,
@@ -194,9 +265,11 @@ div.thumbnails a {
   border-bottom-style: dotted;
 }
 
-#top-menu li a:hover {
-  background-image: url(../images/toolbar_x.png);
-  background-position: 0px -112px;
+a.no_line span, a.icon span, #main-menu li a span {
+  text-decoration: none;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #93B96C;
 }
 
 a.no_line.selected span {
@@ -348,101 +421,43 @@ tr.priority-lowest td.subject, div.issue.priority-lowest
 
 
 /*-----------------------------------------------------*/
-#q
-  {
-  margin: 5px 20px 0px 0px;
-  width: 80px;
-  }
 
 
-#account
-  {
-  margin-right: 15px;
-  }
-
-#loggedas
-  {
+#loggedas {
   display: none;
-  }
+}
 
-#header
-  {
+#header {
   overflow: hidden;
   padding: 0px;
   min-height: inherit;
   background-color: transparent;
-  padding: 30px 0px 0px 0px;
-  }
+  padding: 29px 0px 0px 0px;
+}
 
-#header h1
-  {
+#header h1 {
   overflow: hidden;
   color: #000;
   font-weight: normal;
   padding: 0px 0px 10px 0px;
   margin: 0px;
-  }
+}
 
 
 #header h1 span {
-display: block;
-/*background-color: rgba(255, 255, 255, 0.56);*/
-padding: 2px 5px 6px 5px;
-position: relative;
-left: -6px;
-line-height: 1em;
-float: left;
-border-radius: 8px 8px 8px 8px;
-  }
-
-#top-menu
-  {
-  padding: 0px 0px 0px 10px;
-  position: fixed;
-  width: 100%;
-  left: 0px;
-  top: 0px;
-  height: auto;
-  z-index: 999;
-  background-color: #EF7F1A;
-  background-image: url(../images/toolbar_x.png);
-  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
-  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
-  box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
-  background-position: 0px 370px;
-  }
-
-#account
-  {
-  padding-right: 25px;
-  background-image: url(../images/logo.png);
-  background-position: 100% 50%;
-  background-repeat: no-repeat;
-  }
-
-#dropdown_top_menu a span.count, #top-menu a span.count, span.count
-  {
-  /*background-color: #3F7FB1;*/
-  background-color: #077C10;
-  padding: 0px 4px 0px 4px;
+  display: block;
+  /*background-color: rgba(255, 255, 255, 0.56);*/
+  padding: 2px 5px 6px 5px;
   position: relative;
-  top: -2px;
-  border-radius: 8px 8px;
-  left: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  font-size: 7.5pt;
-  font-weight: bold;
-  margin-right: 5px;
-  color: #fff;
-  }
+  left: -6px;
+  line-height: 1em;
+  float: left;
+  border-radius: 8px 8px 8px 8px;
+}
 
-#top-menu span.count
-  {
-  background-color:
-  }
 
 #main-menu {
-position: static;
+  position: static;
 }
 
 #main-menu li {
@@ -462,7 +477,7 @@ background-color: #EEEEEE;
   min-height: 1000px;
   width: auto;
   margin-right: 350px;
-  }
+}
 
 html, body {
   font-size: 10pt;
