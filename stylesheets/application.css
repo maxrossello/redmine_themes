@@ -121,17 +121,7 @@ a.issue.green_link,
   font-weight: normal;
   }
 
-a:hover,
-a.green_link:hover,
-tr.issue td.subject a:hover,
-tr.issue td.id a:hover,
-a.issue:hover,
-#main-menu li a:hover span,
-a:hover.no_line span
-  {
-  border-bottom-color: #147dc0;
-  color: #147dc0;
-  }
+
 
 a.in_link
   {
@@ -254,7 +244,6 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
 
 #dropdown_top_menu a span.count,
 #top-menu a span.count, span.count {
-  /*background-color: #3F7FB1;*/
   background-color: #077C10;
   padding: 0px 4px 0px 4px;
   position: relative;
@@ -268,17 +257,15 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   color: #fff;
 }
 
-#top_menu li a>span.count.updated,
+#top_menu a span.count.updated,
 #dropdown_top_menu a span.count.updated {
   background-color: #76a8d7;
 }
 
-#top_menu li a>span.count.unread,
+#top_menu a span.count.unread,
 #dropdown_top_menu a span.count.unread {
   background-color: #c3e26b;
 }
-
-
 
 
 #top-menu li a span.count, #top-menu li a #my_page_issues_count,
@@ -647,4 +634,16 @@ a.selected, .selected {
 .selected a, a.selected span, a:hover.selected span {
   color: #fff;
   border-bottom-color: #fff;
+}
+
+
+a:hover,
+a.green_link:hover,
+tr.issue td.subject a:hover,
+tr.issue td.id a:hover,
+a.issue:hover,
+#main-menu li a:hover span,
+a:hover.no_line span {
+  border-bottom-color: #147dc0;
+  color: #147dc0;
 }
