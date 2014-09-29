@@ -252,7 +252,8 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   padding: 0px;
 }*/
 
-#dropdown_top_menu a span.count, #top-menu a span.count, span.count {
+#dropdown_top_menu a span.count,
+#top-menu a span.count, span.count {
   /*background-color: #3F7FB1;*/
   background-color: #077C10;
   padding: 0px 4px 0px 4px;
@@ -267,13 +268,16 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   color: #fff;
 }
 
+#top_menu li a>span.count.updated,
 #dropdown_top_menu a span.count.updated {
   background-color: #76a8d7;
 }
 
+#top_menu li a>span.count.unread,
 #dropdown_top_menu a span.count.unread {
   background-color: #c3e26b;
 }
+
 
 
 
