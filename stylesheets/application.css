@@ -205,10 +205,18 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   color: #fff;
 }
 
-#top-menu li a > span {
+#top-menu li a,
+#top-menu li a > span,
+#top-menu li div.title {
   text-decoration: none;
+  font-size: 12px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#top-menu li a > span {
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  font-weight: normal;
 }
 
 #top-menu li a:hover,
