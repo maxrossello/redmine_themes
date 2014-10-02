@@ -655,3 +655,13 @@ a:hover.no_line span {
   border-bottom-color: #147dc0;
   color: #147dc0;
 }
+
+a.no_line.selected:hover span {
+  color: #FFF;
+  border-bottom-color: #FFF;
+}
+
+.icon-from-node, .icon-from-node:hover {
+  border-bottom: none;
+  text-decoration: none;
+}
