@@ -196,6 +196,7 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   color: #fff;
   padding: 0 3px;
   margin-right: 3px;
+  height: 29px;
 }
 
 #top-menu > ul > li > a:hover,
