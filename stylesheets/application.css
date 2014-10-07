@@ -458,7 +458,7 @@ tr.priority-lowest td.subject, div.issue.priority-lowest
   padding: 0px;
   min-height: inherit;
   background-color: transparent;
-  padding: 29px 0px 0px 0px;
+  padding: 0px;
 }
 
 #header h1 {
