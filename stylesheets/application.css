@@ -328,121 +328,167 @@ a.selected, #sidebar a.selected, .selected {
 }
 
 /*-----------------------------------------------------*/
-
 /* Tables */
 /*-----------------------------------------------------*/
+table.list {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 1px solid #C3C3C4;
+  border-top: 1px solid #C3C3C4;
+}
+
 table.list th, table.list td {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #C3C3C4;
   text-align: left;
   padding: 2px;
-  }
-table.list th
-  {
+  border-right: 1px solid #C3C3C4;
+  border-bottom: 1px solid #C3C3C4;
+  border-left: 0;
+  border-top: 0;
+}
+
+table.list th {
   font-weight: normal;
-  }
+}
 
-table.list td
-  {
+table.list td {
   line-height: 1.5;
-  }
+}
 
 /*-----------------------------------------------------*/
 
 /*-----------------------------------------------------*/
-td.progress, th.progress
-  {
+td.progress, th.progress {
   height: auto;
   -webkit-box-shadow: none;
   background-image: none;
   background-color: transparent;
   margin-bottom: auto;
   box-shadow: none;
-  }
+}
 
-.box
-  {
+.box {
   background-color: #FCFCFC;
-  }
+}
 
-div.progress
-  {
+div.progress {
   margin-right: 10px;
   margin-bottom: 5px;
-  }
+}
 
-div.journal h4
-  {
+div.journal h4 {
   padding-top: 5px;
-  }
+}
 
-#sidebar h4
-  {
+#sidebar h4 {
   border-bottom: none;
   margin-top: 10px;
   margin-bottom: 10px;
-  }
+}
 
-label
-  {
+label {
   cursor: pointer;
-  }
+}
 
 /*-----------------------------------------------------*/
-
 /* Issues */
 /*-----------------------------------------------------*/
-tr td.subject
-  {
-  padding-right: 10px;
-  }
 
-tr td.subject, div.issue
-  {
+div.issue {
   background-repeat: no-repeat;
   background-position: 100% -10px;
-  }
+}
 
-tr.priority-highest
-  {
-  background-color: #FFF9F2
-  }
-
-
-tr.priority-highest td.subject
-  {
+/*tr.priority-highest td.subject {
   background-image: url(../images/priority-highest.png);
   background-position: 100% 50%;
-  }
-div.issue.priority-highest td.priority
-  {
+}*/
+
+div.issue.priority-highest td.priority {
   background-image: url(../images/priority-highest-issue-page.png);
   padding-left: 28px;
   background-repeat: no-repeat;
   background-position-x: 2px;
-  }
-div.issue.priority-highest td.priority span
-  {
+}
+
+div.issue.priority-highest td.priority span {
   color: #C92626;
   font-weight: bold;
-  }
+}
 
-div.issue.priority-highest
-  {
+div.issue.priority-highest {
   background-color: #FFF9F2;
-  }
+}
 
-
-tr.priority-high2 td.subject, div.issue.priority-high2
-  {
+div.issue.priority-high2 {
   background-image: url(../images/priority-high-1.png);
-  }
-tr.priority-lowest td.subject, div.issue.priority-lowest
-  {
-  background-image: url(../images/priority-low-3.png);
-  }
+}
 
+div.issue.priority-lowest {
+  background-image: url(../images/priority-low-3.png);
+}
+
+tr.priority-highest {
+  background-color: #FFF9F2;
+}
+
+tr.issue td:first-child {
+  padding-left: 6px;
+}
+
+tr.priority-highest td:first-child {
+  box-shadow: inset 4px 0 0 #CE1E1E;
+}
+
+tr.priority-high2 td:first-child {
+  box-shadow: inset 4px 0 0 #ECA7A7;
+}
+
+tr.priority-lowest td:first-child {
+  box-shadow: inset 4px 0 0 #9BB9E7;
+}
+
+
+/*
+tr.issue td:first-child {
+  padding-left: 8px;
+}
+
+tr.priority-highest td:first-child:before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 19px;
+  background-color: #CE1E1E;
+  margin-right: 3px;
+  margin-bottom: -5px;
+  margin-left: -8px;
+}
+
+tr.priority-high2 td:first-child:before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 19px;
+  background-color: #ECA7A7;
+  margin-right: 3px;
+  margin-bottom: -5px;
+  margin-left: -8px;
+}
+
+tr.priority-lowest td:first-child:before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 19px;
+  background-color: #9BB9E7;
+  margin-right: 3px;
+  margin-bottom: -5px;
+  margin-left: -8px;
+}*/
+
+/*  /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 /*-----------------------------------------------------*/
 
 
@@ -509,16 +555,12 @@ html, body {
   font-size: 10pt;
   /*background-color: #D0DCE0;*/
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
+}
+
 html {
   padding: 10px;
-  }
-
-html
-  {
   background-image: url(../images/bg_6.jpg);
-  }
-
+}
 
 /*body
   {
@@ -527,18 +569,18 @@ html
   background-repeat: no-repeat;
   }*/
 
-#main
-  {
+#main {
   background-color: #fff;
-  }
-#footer {
-border-top: 1px solid #ddd;
 }
 
-#sidebar
-  {
+#footer {
+  border-top: 1px solid #ddd;
+}
+
+#sidebar  {
   width: 310px;
-  }
+}
+
 #sidebar ul { margin: 0;  padding-left: 30px; }
 #sidebar ul li { list-style-type: inherit; }
 #sidebar #admin-menu ul li { list-style-type: none; }
@@ -547,11 +589,10 @@ border-top: 1px solid #ddd;
   margin: 0;
 }
 
-h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
-  {
+h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5 {
   border-bottom: 1px solid #ddd;
   margin: 0 0 5px 0;
-  }
+}
 
 /*-----------------------------------------------------*/
 
@@ -624,10 +665,7 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
 
 /* jQuery UI styles ends*/
 
-
-
 .tabs ul li a.selected:hover {background-color: #fff;}
-
 
 html > body .box.tabular.settings p {
   overflow: visible !important;
@@ -644,7 +682,6 @@ a.selected, .selected {
   color: #fff;
   border-bottom-color: #fff;
 }
-
 
 a:hover,
 a.green_link:hover,
