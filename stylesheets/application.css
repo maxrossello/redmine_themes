@@ -442,19 +442,23 @@ tr.priority-highest {
   background-color: #FFF9F2;
 }
 
-tr.issue td:first-child {
+tr.issue td:first-child,
+tr.request td:first-child {
   padding-left: 6px;
 }
 
-tr.issue.priority-highest> td:first-child {
+tr.issue.priority-highest> td:first-child,
+tr.request.priority-highest> td:first-child {
   box-shadow: inset 4px 0 0 #CE1E1E;
 }
 
-tr.issue.priority-high2> td:first-child {
+tr.issue.priority-high2> td:first-child,
+tr.request.priority-high2> td:first-child {
   box-shadow: inset 4px 0 0 #ECA7A7;
 }
 
-tr.issue.priority-lowest> td:first-child {
+tr.issue.priority-lowest> td:first-child,
+tr.request.priority-lowest> td:first-child {
   box-shadow: inset 4px 0 0 #9BB9E7;
 }
 
