@@ -19,51 +19,53 @@
 
 /* Global styles */
 /*-----------------------------------------------------*/
-.h, .H
-  {
+.h, .H {
   overflow: hidden;
-  }
-.I
-  {
+}
+
+.I {
   display: none;
-  }
+}
 
 .L {
-    float: left;
-    }
+  float: left;
+}
+
 .R {
-    float: right;
-    }
+  float: right;
+}
+
+.right-links {
+  float: right;
+}
 /*-----------------------------------------------------*/
 
 /* Forms */
 /*-----------------------------------------------------*/
-select
-  {
+select {
   padding: 2px;
-  }
-textarea, input[type=text], input[type=password]
-  {
+}
+
+textarea, input[type=text], input[type=password] {
   border: 1px solid #ccc;
   padding: 3px;
-  }
+}
 
-input.autocomplete
-  {
+input.autocomplete {
   padding-left: 20px !important;
-  }
+}
 /*-----------------------------------------------------*/
 
 /* UI */
 /*-----------------------------------------------------*/
 
-a.ui-dialog-titlebar-close
-  {
+a.ui-dialog-titlebar-close {
   border-bottom-width: 0px !important;
-  }
+}
+
 .ui-widget.modal {
   position: absolute;
-  }
+}
 /*-----------------------------------------------------*/
 
 
@@ -81,8 +83,7 @@ tr.issue td.id a.green_link,
 a.issue.green_link,
 #main-menu li a,
 #main-menu li a.selected span,
-#content .tabs ul li a
-{
+#content .tabs ul li a {
   border-bottom-color: #93B96C;
   border-bottom-width: 1px;
   border-bottom-style: solid;
@@ -90,11 +91,10 @@ a.issue.green_link,
   text-decoration: none;
 }
 
-#content .tabs ul li a.selected span
-  {
+#content .tabs ul li a.selected span {
   color: #295200;
-   border-bottom-color: #93B96C;
-  }
+  border-bottom-color: #93B96C;
+}
 
 #content .tabs ul li a
   {
@@ -123,10 +123,9 @@ a.issue.green_link,
 
 
 
-a.in_link
-  {
+a.in_link {
   border-bottom-style: dotted;
-  }
+}
 
 a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.icon, #main-menu li a, #top-menu li a, #dropdown_top_menu li a {
   border-bottom: none;
@@ -241,15 +240,11 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   background-image: none;
   color: #147DC0;
 }
+
 #top-menu .dropdown-menu > li > div.title a:hover > span {
   border-bottom-color: #147DC0;
   color: #147DC0;
 }
-
-
-/*#top-menu > ul > li, #top-menu > ul > li.dropdwon, #account > ul > li > a {
-  padding: 0px;
-}*/
 
 #dropdown_top_menu a span.count,
 #top-menu a span.count, span.count {
@@ -291,6 +286,7 @@ div.thumbnails a {
 #account #quick-search {
   margin: 2px 10px;
 }
+
 a.no_line span, a.icon span, #main-menu li a span {
   text-decoration: none;
   border-bottom-style: solid;
@@ -327,122 +323,185 @@ a.selected, #sidebar a.selected, .selected {
   border-bottom-color: #fff;
 }
 
-/*-----------------------------------------------------*/
+a.remove-upload, a.remove-upload:link, a.remove-upload:hover {
+  border-bottom: 0;
+  text-decoration: none;
+}
 
+#modal-fast-comment-link input.description {
+  max-width: 160px;
+}
+/*-----------------------------------------------------*/
 /* Tables */
 /*-----------------------------------------------------*/
-table.list th, table.list td {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #C3C3C4;
+
+table.list, #relations table.list {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 1px solid #C3C3C4;
+  border-top: 1px solid #C3C3C4;
+}
+
+table.list th, table.list td, #relations table.list td {
   text-align: left;
-  padding: 2px;
-  }
-table.list th
-  {
+  padding: 3px;
+  border-right: 1px solid #C3C3C4;
+  border-bottom: 1px solid #C3C3C4;
+  border-left: 0;
+  border-top: 0;
+}
+
+#relations table.list td {
+  padding: 1px 2px;
+}
+
+table.list th {
   font-weight: normal;
-  }
+}
 
-table.list td
-  {
+table.list td {
   line-height: 1.5;
-  }
+}
 
 /*-----------------------------------------------------*/
 
 /*-----------------------------------------------------*/
-td.progress, th.progress
-  {
+td.progress, th.progress {
   height: auto;
   -webkit-box-shadow: none;
   background-image: none;
   background-color: transparent;
   margin-bottom: auto;
   box-shadow: none;
-  }
+}
 
-.box
-  {
+.box {
   background-color: #FCFCFC;
-  }
+}
 
-div.progress
-  {
+div.progress {
   margin-right: 10px;
   margin-bottom: 5px;
-  }
+}
 
-div.journal h4
-  {
+div.journal h4 {
   padding-top: 5px;
-  }
+}
 
-#sidebar h4
-  {
+#sidebar h4 {
   border-bottom: none;
   margin-top: 10px;
   margin-bottom: 10px;
-  }
+}
 
-label
-  {
+label {
   cursor: pointer;
-  }
+}
 
 /*-----------------------------------------------------*/
-
 /* Issues */
 /*-----------------------------------------------------*/
-tr td.subject
-  {
-  padding-right: 10px;
-  }
 
-tr td.subject, div.issue
-  {
+div.issue {
   background-repeat: no-repeat;
   background-position: 100% -10px;
-  }
+}
 
-tr.priority-highest
-  {
-  background-color: #FFF9F2
-  }
-
-
-tr.priority-highest td.subject
-  {
+/*tr.priority-highest td.subject {
   background-image: url(../images/priority-highest.png);
   background-position: 100% 50%;
-  }
-div.issue.priority-highest td.priority
-  {
+}*/
+
+div.issue.priority-highest td.priority {
   background-image: url(../images/priority-highest-issue-page.png);
   padding-left: 28px;
   background-repeat: no-repeat;
   background-position-x: 2px;
-  }
-div.issue.priority-highest td.priority span
-  {
+}
+
+div.issue.priority-highest td.priority span {
   color: #C92626;
   font-weight: bold;
-  }
+}
 
-div.issue.priority-highest
-  {
+div.issue.priority-highest {
   background-color: #FFF9F2;
-  }
+}
 
-
-tr.priority-high2 td.subject, div.issue.priority-high2
-  {
+div.issue.priority-high2 {
   background-image: url(../images/priority-high-1.png);
-  }
-tr.priority-lowest td.subject, div.issue.priority-lowest
-  {
-  background-image: url(../images/priority-low-3.png);
-  }
+}
 
+div.issue.priority-lowest {
+  background-image: url(../images/priority-low-3.png);
+}
+
+tr.priority-highest {
+  background-color: #FFF9F2;
+}
+
+tr.issue td:first-child,
+tr.request td:first-child {
+  padding-left: 6px;
+}
+
+tr.issue.priority-highest> td:first-child,
+tr.request.priority-highest> td:first-child {
+  box-shadow: inset 4px 0 0 #CE1E1E;
+}
+
+tr.issue.priority-high2> td:first-child,
+tr.request.priority-high2> td:first-child {
+  box-shadow: inset 4px 0 0 #ECA7A7;
+}
+
+tr.issue.priority-lowest> td:first-child,
+tr.request.priority-lowest> td:first-child {
+  box-shadow: inset 4px 0 0 #9BB9E7;
+}
+
+
+/*
+tr.issue td:first-child {
+  padding-left: 8px;
+}
+
+tr.priority-highest td:first-child:before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 19px;
+  background-color: #CE1E1E;
+  margin-right: 3px;
+  margin-bottom: -5px;
+  margin-left: -8px;
+}
+
+tr.priority-high2 td:first-child:before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 19px;
+  background-color: #ECA7A7;
+  margin-right: 3px;
+  margin-bottom: -5px;
+  margin-left: -8px;
+}
+
+tr.priority-lowest td:first-child:before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 19px;
+  background-color: #9BB9E7;
+  margin-right: 3px;
+  margin-bottom: -5px;
+  margin-left: -8px;
+}*/
+
+/*  /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 /*-----------------------------------------------------*/
 
 
@@ -509,16 +568,12 @@ html, body {
   font-size: 10pt;
   /*background-color: #D0DCE0;*/
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
+}
+
 html {
   padding: 10px;
-  }
-
-html
-  {
   background-image: url(../images/bg_6.jpg);
-  }
-
+}
 
 /*body
   {
@@ -527,18 +582,18 @@ html
   background-repeat: no-repeat;
   }*/
 
-#main
-  {
+#main {
   background-color: #fff;
-  }
-#footer {
-border-top: 1px solid #ddd;
 }
 
-#sidebar
-  {
+#footer {
+  border-top: 1px solid #ddd;
+}
+
+#sidebar  {
   width: 310px;
-  }
+}
+
 #sidebar ul { margin: 0;  padding-left: 30px; }
 #sidebar ul li { list-style-type: inherit; }
 #sidebar #admin-menu ul li { list-style-type: none; }
@@ -547,11 +602,10 @@ border-top: 1px solid #ddd;
   margin: 0;
 }
 
-h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
-  {
+h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5 {
   border-bottom: 1px solid #ddd;
   margin: 0 0 5px 0;
-  }
+}
 
 /*-----------------------------------------------------*/
 
@@ -624,10 +678,7 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5
 
 /* jQuery UI styles ends*/
 
-
-
 .tabs ul li a.selected:hover {background-color: #fff;}
-
 
 html > body .box.tabular.settings p {
   overflow: visible !important;
@@ -644,7 +695,6 @@ a.selected, .selected {
   color: #fff;
   border-bottom-color: #fff;
 }
-
 
 a:hover,
 a.green_link:hover,
