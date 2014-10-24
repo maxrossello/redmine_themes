@@ -54,6 +54,11 @@ textarea, input[type=text], input[type=password] {
 input.autocomplete {
   padding-left: 20px !important;
 }
+
+/* for from on project revisions contextual */
+#revision_selector {
+  padding-left: 5px;
+}
 /*-----------------------------------------------------*/
 
 /* UI */
