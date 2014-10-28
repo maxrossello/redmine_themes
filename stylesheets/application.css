@@ -316,6 +316,11 @@ a.issue {
   padding-bottom: 1px;
 }
 
+tr.issue td.subject a,
+tr.issue td.id a {
+  border-bottom-color: #E0CCB7;
+}
+
 a.selected, #sidebar a.selected, .selected {
   padding: 3px;
   background-color: #ef7f1a;
