@@ -444,7 +444,9 @@ div.issue.priority-highest td.priority span {
   font-weight: bold;
 }
 
-div.issue.priority-highest {
+div.issue.priority-highest,
+div.issue.priority-highest .contextual,
+div.issue.priority-highest .lb-block-title {
   background-color: #FFF9F2;
 }
 
@@ -478,6 +480,14 @@ tr.request.priority-high2> td:first-child {
 tr.issue.priority-lowest> td:first-child,
 tr.request.priority-lowest> td:first-child {
   box-shadow: inset 4px 0 0 #9BB9E7;
+}
+
+
+div.issue.priority-highest .issue_request .contextual,
+div.issue.priority-highest .issue_request .lb-block-title,
+.issue_request .contextual,
+.issue_request .lb-block-title {
+  background-color: #FFF3CB;
 }
 
 
