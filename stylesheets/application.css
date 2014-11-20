@@ -96,6 +96,14 @@ a.issue.green_link,
   text-decoration: none;
 }
 
+a:before {
+  color: #295200;
+}
+
+div.issue a.rm-icon:before {
+  color: #999;
+}
+
 #content .tabs ul li a.selected span {
   color: #295200;
   border-bottom-color: #93B96C;
@@ -715,6 +723,11 @@ a.issue:hover,
 #main-menu li a:hover span,
 a:hover.no_line span {
   border-bottom-color: #147dc0;
+  color: #147dc0;
+}
+
+a:hover:before,
+div.issue a.rm-icon:hover:before {
   color: #147dc0;
 }
 
