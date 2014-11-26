@@ -750,3 +750,17 @@ a.no_line.selected:hover span {
   border-bottom: none;
   text-decoration: none;
 }
+
+
+span.private {
+  font-size: 11px;
+  line-height: 12px;
+  position: relative;
+  text-transform: uppercase;
+  background: #D22;
+  color: white;
+  padding: 2px 4px 2px 4px;
+  margin-right: 10px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+}
