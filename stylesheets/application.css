@@ -88,7 +88,8 @@ tr.issue td.id a.green_link,
 a.issue.green_link,
 #main-menu li a,
 #main-menu li a.selected span,
-#content .tabs ul li a {
+#content .tabs ul li a,
+#header a {
   border-bottom-color: #93B96C;
   border-bottom-width: 1px;
   border-bottom-style: solid;
@@ -156,7 +157,7 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
 #account {
   padding-right: 25px;
   background-image: url(../images/logo.png);
-  background-position: 100% 50%;
+  background-position: right center;
   background-repeat: no-repeat;
 }
 
@@ -173,6 +174,7 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
   box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
   background-position: 0px 370px;
+  padding: 0 6px;
 }
 
 #top-menu > ul > li > a span, #dropdown_top_menu li a span {
@@ -206,9 +208,12 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   font-size: 1.1em;
   border-bottom-color: #fff;
   color: #fff;
-  padding: 0 3px;
+  padding: 6px 3px;
   margin-right: 3px;
   height: 29px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+
 }
 
 #top-menu > ul > li > a:hover,
@@ -542,10 +547,10 @@ tr.priority-lowest td:first-child:before {
 
 #header {
   overflow: hidden;
-  padding: 0px;
   min-height: inherit;
   background-color: transparent;
   padding: 0px;
+  margin-top: 29px;
 }
 
 #header h1 {
