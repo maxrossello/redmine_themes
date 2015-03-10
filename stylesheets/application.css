@@ -245,7 +245,7 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
 .dropdown-menu > li > div.menu-item:hover > a {
   background-image: url(../images/toolbar_x.png);
   background-position: 0px -112px;
-  color: #FFF;
+  /*color: #FFF;*/
   text-decoration: none;
 }
 
