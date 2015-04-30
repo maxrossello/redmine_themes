@@ -97,10 +97,6 @@ a.issue.green_link,
   text-decoration: none;
 }
 
-a:before {
-  color: #295200;
-}
-
 div.issue a.rm-icon:before {
   color: #999;
 }
