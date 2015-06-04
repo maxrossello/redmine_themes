@@ -800,3 +800,9 @@ li.select2-search-choice > div {
   top: 3px !important;
   height: 12px !important;
 }
+
+textarea.wiki-edit {
+  width:100%;
+  resize:vertical;
+  box-sizing: border-box;
+}
