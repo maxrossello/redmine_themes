@@ -1,7 +1,7 @@
 ### Custom Gitlab
 ------------------------
 
-**Custom Gitlab** is a mashup of **Modula Gitlab**.
+**Custom Gitlab** is a mashup of **NYSS Gitlab**.
 
 In the spirit of further linking Gitlab and Redmine, I have created this theme.  For details on official integration, see [gitlabhq/gitlabhq#97](https://github.com/gitlabhq/gitlabhq/issues/97).
 
