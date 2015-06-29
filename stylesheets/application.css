@@ -645,7 +645,6 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5 {
 /*shadows*/
 /*-----------------------------------------------------*/
 #content {
-    position:relative;
     -webkit-box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.3);
        -moz-box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.3);
             box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.3);
