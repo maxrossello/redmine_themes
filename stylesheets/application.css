@@ -97,6 +97,22 @@ a.issue.green_link,
   text-decoration: none;
 }
 
+#content .tabs ul {
+  width: 20000px
+}
+
+#content .issue .tabs ul li {
+  background-color: #ffffdd;
+}
+#content .issue .tabs ul li a.selected {
+  background-color: #ffffdd;
+  border-bottom: 1px solid #ffffdd;
+}
+
+#content .issue .tabs-buttons {
+  background-color: #ffffdd;
+}
+
 div.issue a.rm-icon:before {
   color: #999;
 }
