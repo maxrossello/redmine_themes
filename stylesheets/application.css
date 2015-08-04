@@ -821,3 +821,7 @@ textarea.wiki-edit {
   resize:vertical;
   box-sizing: border-box;
 }
+
+div.wiki a {
+  word-wrap: break-word;
+}
