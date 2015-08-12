@@ -822,6 +822,6 @@ textarea.wiki-edit {
   box-sizing: border-box;
 }
 
-div.wiki a {
+div.wiki a, .subject h3, .description .wiki{
   word-wrap: break-word;
 }
