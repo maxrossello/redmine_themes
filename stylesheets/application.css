@@ -629,7 +629,19 @@ html {
 
 #footer {
   border-top: 1px solid #ddd;
+  background: none;
+  border: 0px;
+  clear: left;
+  color: #666666;
+  font-size: 10px;
+  margin: 4px 0 20px 0;
+  padding-bottom: 15px;
+  text-align: left;
+  display: inline-block;
+  font-weight: bold;
 }
+
+
 
 #sidebar  {
   width: 310px;
@@ -649,11 +661,6 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5 {
 }
 
 /*-----------------------------------------------------*/
-
-#footer
-    {
-    display: none;
-    }
 /* jQuery UI styles */
 
 .ui-menu .ui-menu-item a {
