@@ -52,7 +52,11 @@ textarea, input[type=text], input[type=password] {
 }
 
 input.autocomplete {
-  padding-left: 20px !important;
+  /*padding-left: 20px !important;*/
+  padding: 4px 20px 4px 4px !important;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAo0lEQVQ4y7WSUQ2AIBCGL4IRiGAEoxjBBkTwmSciGIEIRjCCEU7YfuaNwelkPnxDhPvkPyFmJudcyRCZMFKLVEuFIBWFCAsC3j8KZhScER+xGLNo1gQGhQee5cYRa2cZSQosvjI18ubTLS1Bzk0KaX3rFYTfIhhs0JrIWhPf/EbG/PEi7ZWLtNUkNUHGQCbj+FKiCVp4EdN8ESRWNPY+QQ/dggvAl0v7SYIpuAAAAABJRU5ErkJggg==) no-repeat 100% 50%;
+  box-sizing: border-box;
+  border-radius: 2px;
 }
 
 /* for from on project revisions contextual */
