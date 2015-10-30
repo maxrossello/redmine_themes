@@ -638,8 +638,8 @@ html {
   clear: left;
   color: #666666;
   font-size: 10px;
-  margin: 4px 0 20px 0;
-  padding-bottom: 15px;
+  /*margin: 4px 0 20px 0;*/
+  /*padding-bottom: 15px;*/
   text-align: left;
   display: inline-block;
   font-weight: bold;
