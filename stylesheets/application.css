@@ -4,7 +4,7 @@
 .done_button_annotation {
   background-image: url(../images/cat_foodlove-64.png);
   background-repeat: no-repeat;
-  padding: 0px 0px 0px 88px;
+  padding: 0 0 0 88px;
   background-position: 10px;
   min-height: 64px;
 }
@@ -12,7 +12,7 @@
 .done_button_anno_48 {
   background-image: url(../images/cat_foodlove-48.png);
   background-repeat: no-repeat;
-  padding: 0px 0px 0px 70px;
+  padding: 0 0 0 70px;
   background-position: 10px;
   min-height: 48px;
 }
@@ -69,7 +69,7 @@ input.autocomplete {
 /*-----------------------------------------------------*/
 
 a.ui-dialog-titlebar-close {
-  border-bottom-width: 0px !important;
+  border-bottom-width: 0 !important;
 }
 
 .ui-widget.modal {
@@ -129,7 +129,7 @@ div.issue a.rm-icon:before {
 #content .tabs ul li a
   {
   font-weight: normal;
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 8px 8px 0 0;
   background-color: #E6E6E6;
   }
 
@@ -137,12 +137,12 @@ div.issue a.rm-icon:before {
   {
   color: #336600;
   text-decoration: none;
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 8px 8px 0 0;
   }
 
 #main-menu li a:hover
   {
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 8px 8px 0 0;
   background-color: #eee;
   }
 
@@ -170,15 +170,15 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
 #top-menu {
   position: fixed;
   width: 100%;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   height: 29px;
   z-index: 999;
   background-color: #69AD15;
   -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
   -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
   box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
-  background-position: 0px 370px;
+  background-position: 0 370px;
   padding: 0 6px;
 }
 
@@ -271,7 +271,7 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
 #dropdown_top_menu a span.count,
 #top-menu a span.count, span.count {
   background-color: #077C10;
-  padding: 0px 4px 0px 4px;
+  padding: 0 4px 0 4px;
   position: relative;
   top: -2px;
   border-radius: 8px 8px;
@@ -297,7 +297,7 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
 #top-menu li a span.count, #top-menu li a #my_page_issues_count,
 #dropdown_top_menu li a span.count, #dropdown_top_menu li a #my_page_issues_count,
 div.thumbnails a {
-  border-bottom-width: 0px;
+  border-bottom-width: 0;
 }
 
 #top-menu li a.in_link span,
@@ -346,7 +346,7 @@ tr.issue td.id a {
 a.selected, #sidebar a.selected, .selected {
   padding: 3px;
   background-color: #ef7f1a;
-  border-radius: 0px;
+  border-radius: 0;
   color: #fff;
 }
 
@@ -560,7 +560,7 @@ tr.priority-lowest td:first-child:before {
   overflow: hidden;
   min-height: inherit;
   background-color: transparent;
-  padding: 0px;
+  padding: 0;
   margin-top: 29px;
 }
 
@@ -568,8 +568,8 @@ tr.priority-lowest td:first-child:before {
   overflow: hidden;
   color: #000;
   font-weight: normal;
-  padding: 0px 0px 10px 0px;
-  margin: 0px;
+  padding: 0 0 10px 0;
+  margin: 0;
 }
 
 
@@ -590,14 +590,14 @@ tr.priority-lowest td:first-child:before {
 }
 
 #main-menu li {
-border-radius: 8px 8px 0px 0px;
+border-radius: 8px 8px 0 0;
 background-color: #EEEEEE;
 }
 
 
 
 #wrapper {
-  margin: 0px 0px 0px 0px;
+  margin: 0;
   background-color: transparent;
   }
 
@@ -632,9 +632,8 @@ html {
 }
 
 #footer {
-  border-top: 1px solid #ddd;
+  border-top: 0 solid #ddd;
   background: none;
-  border: 0px;
   clear: left;
   color: #666666;
   font-size: 10px;
@@ -687,7 +686,6 @@ h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5 {
 
 .ui-menu-item a.ui-state-focus {
   background: none;
-  color: inherit;
   border: none;
   border-bottom-color: #147dc0;
   color: #147dc0;
@@ -729,7 +727,7 @@ html > body .box.tabular.settings p {
 a.selected, .selected {
   padding: 3px;
   background-color: #ef7f1a;
-  border-radius: 0px;
+  border-radius: 0;
   color: #fff;
 }
 
@@ -789,9 +787,9 @@ input.main-form-button {
 .select2-container-multi .select2-choices .select2-search-choice {
   margin: 3px 0 3px 3px !important;
   border: 1px solid #CCC !important;
-  -webkit-border-radius: 0px !important;
-  -moz-border-radius: 0px !important;
-  border-radius: 0px !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
   -webkit-box-shadow: none !important;
   box-shadow:  none !important;
 }
@@ -819,3 +817,23 @@ textarea.wiki-edit {
 div.wiki a, .subject h3, .description .wiki{
   word-wrap: break-word;
 }
+
+.controller-issues .ui-widget-content{
+  padding: 15px;
+  font-size: 10pt;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.controller-issues li.ui-menu-item span{
+  border-bottom: 1px dotted;
+  font-weight: normal;
+}
+
+.controller-issues li.ui-menu-item.ui-state-focus{
+  background: none;
+  border: none;
+  color: #147dc0;
+  font-weight: normal;
+  margin: 0;
+}
+
