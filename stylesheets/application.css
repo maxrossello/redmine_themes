@@ -818,22 +818,45 @@ div.wiki a, .subject h3, .description .wiki{
   word-wrap: break-word;
 }
 
-.controller-issues .ui-widget-content, .controller-sd_requests.action-show .ui-widget-content{
+.controller-issues .ui-widget-content{
   padding: 15px;
   font-size: 10pt;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #295200;
 }
 
-.controller-issues li.ui-menu-item span, .controller-sd_requests.action-show li.ui-menu-item span{
+.controller-issues li.ui-menu-item span{
   border-bottom: 1px dotted;
   font-weight: normal;
+  border-bottom-color: #295200;
 }
 
-.controller-issues li.ui-menu-item.ui-state-focus, .controller-sd_requests.action-show li.ui-menu-item.ui-state-focus{
+.controller-issues li.ui-menu-item.ui-state-focus{
   background: none;
   border: none;
   color: #147dc0;
   font-weight: normal;
   margin: 0;
+}
+
+.controller-sd_requests.action-show li.ui-menu-item.ui-state-focus{
+  background: none;
+  border: none;
+  color: #147dc0;
+  font-weight: normal;
+  margin: 0;
+}
+
+.controller-sd_requests.action-show li.ui-menu-item span{
+  border-bottom: 1px dotted;
+  font-weight: normal;
+  border-bottom-color: #295200;
+}
+
+.controller-sd_requests.action-show .ui-widget-content{
+  padding: 15px;
+  font-size: 10pt;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #295200;
 }
 
