@@ -94,7 +94,7 @@ a.issue.green_link,
 #main-menu li a.selected span,
 #content .tabs ul li a,
 #header a {
-  border-bottom-color: #93B96C;
+  border-bottom-color: rgba(147,185,108,0.40);
   border-bottom-width: 1px;
   border-bottom-style: solid;
   color: #295200;
@@ -318,11 +318,11 @@ a.no_line span, a.icon span, #main-menu li a span {
   text-decoration: none;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: #93B96C;
+  border-bottom-color: rgba(147,185,108,0.40);
 }
 
 a.no_line.selected span {
-  border-bottom-color: #fff;
+  border-bottom-color: rgba(255,255,255,0.30);
 }
 
 a.in_link span {
@@ -343,10 +343,10 @@ tr.issue td.id a {
   border-bottom-color: #E0CCB7;
 }
 
-a.selected, #sidebar a.selected, .selected {
+a.selected, #sidebar a.selected, .selected, a.lp_period.selected {
   padding: 3px;
   background-color: #ef7f1a;
-  border-radius: 0;
+  border-radius: 4px;
   color: #fff;
 }
 
@@ -504,50 +504,6 @@ div.issue.priority-highest .issue_request .lb-block-title,
   background-color: #FFF3CB;
 }
 
-
-/*
-tr.issue td:first-child {
-  padding-left: 8px;
-}
-
-tr.priority-highest td:first-child:before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 19px;
-  background-color: #CE1E1E;
-  margin-right: 3px;
-  margin-bottom: -5px;
-  margin-left: -8px;
-}
-
-tr.priority-high2 td:first-child:before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 19px;
-  background-color: #ECA7A7;
-  margin-right: 3px;
-  margin-bottom: -5px;
-  margin-left: -8px;
-}
-
-tr.priority-lowest td:first-child:before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 19px;
-  background-color: #9BB9E7;
-  margin-right: 3px;
-  margin-bottom: -5px;
-  margin-left: -8px;
-}*/
-
-/*  /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-/*-----------------------------------------------------*/
-
-
-/*-----------------------------------------------------*/
 
 
 #loggedas {
@@ -724,13 +680,14 @@ html > body .box.tabular.settings p {
   overflow: visible !important;
 }
 
+/*
 a.selected, .selected {
   padding: 3px;
   background-color: #ef7f1a;
   border-radius: 0;
   color: #fff;
 }
-
+*/
 .selected a, a.selected span, a:hover.selected span {
   color: #fff;
   border-bottom-color: #fff;
