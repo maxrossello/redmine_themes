@@ -173,7 +173,7 @@ a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.ic
   left: 0;
   top: 0;
   height: 29px;
-  z-index: 999;
+  z-index: 10001;
   background-color: #69AD15;
   -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
   -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
