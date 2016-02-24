@@ -816,4 +816,18 @@ div.wiki a, .subject h3, .description .wiki{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #295200;
 }
-
+span.pagination li > a {
+  border-bottom: none;
+  text-decoration: none;
+  color: #167;
+}
+.pagination ul.pages li span {
+  padding: 0;
+}
+.pagination ul.pages li a,
+.pagination ul.pages li > span {
+  padding: 3px 8px;
+}
+span.pagination li > a.in_link span {
+  border-bottom: none;
+}
