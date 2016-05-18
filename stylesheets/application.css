@@ -816,11 +816,20 @@ div.wiki a, .subject h3, .description .wiki{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #295200;
 }
+
+.pagination ul.pages li{
+  border: 1px solid #EAEAEA;
+}
+
 span.pagination li > a {
   border-bottom: none;
   text-decoration: none;
-  color: #167;
 }
+
+.pagination ul.pages li.page:hover {
+  background-color: transparent;
+}
+
 .pagination ul.pages li span {
   padding: 0;
 }
@@ -829,5 +838,32 @@ span.pagination li > a {
   padding: 3px 8px;
 }
 span.pagination li > a.in_link span {
-  border-bottom: none;
+  /*border-bottom: none;*/
+}
+
+.pagination ul.pages li.current{
+  background-color: #ef7f1a;
+  border-color: #ef7f1a;
+}
+
+.pagination ul.pages li.page a:hover,
+.pagination ul.pages li.page a:active {
+  border-bottom-color: #147dc0;
+  color: #147dc0;
+}
+
+/*MEDIA QUIRES*/
+
+@media (max-width: 599px){
+  span.pagination > ul.pages > li.current {
+    display: inline-block;
+    width: 25%;
+    overflow: hidden;
+  }
+
+  span.pagination > ul.pages > li.previous, span.pagination > ul.pages > li.next {
+    display: inline-block;
+    width: 35%;
+    overflow: hidden;
+  }
 }
