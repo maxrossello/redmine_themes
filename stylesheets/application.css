@@ -818,10 +818,13 @@ div.wiki a, .subject h3, .description .wiki{
 }
 
 
+.ld_photo img.gravatar{
+  border-radius: 0;
+}
+
 img.gravatar{
   border-radius: 50%;
 }
-
 
 #history h4{
   padding: 7px 3px 5px 3px;
