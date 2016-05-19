@@ -817,6 +817,12 @@ div.wiki a, .subject h3, .description .wiki{
   color: #295200;
 }
 
+
+img.gravatar{
+  border-radius: 50%;
+}
+
+
 #history h4{
   padding: 7px 3px 5px 3px;
   border: 1px solid #EFEFEF;
