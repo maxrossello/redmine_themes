@@ -1,0 +1,22 @@
+@import url(../../../stylesheets/responsive.css);
+
+@media all and (max-width: 899px){
+    #header{
+        background-color: #69AD15;
+    }
+}
+
+@media all and (max-width: 599px) {
+    span.pagination > ul.pages > li.current {
+        display: inline-block;
+        width: 25%;
+        overflow: hidden;
+    }
+
+    span.pagination > ul.pages > li.previous, span.pagination > ul.pages > li.next {
+        display: inline-block;
+        width: 35%;
+        overflow: hidden;
+    }
+}
+

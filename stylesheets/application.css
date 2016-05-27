@@ -854,16 +854,4 @@ span.pagination li > a.in_link span {
 
 /*MEDIA QUIRES*/
 
-@media (max-width: 599px){
-  span.pagination > ul.pages > li.current {
-    display: inline-block;
-    width: 25%;
-    overflow: hidden;
-  }
 
-  span.pagination > ul.pages > li.previous, span.pagination > ul.pages > li.next {
-    display: inline-block;
-    width: 35%;
-    overflow: hidden;
-  }
-}
