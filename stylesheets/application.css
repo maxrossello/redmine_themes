@@ -852,6 +852,37 @@ span.pagination li > a.in_link span {
   color: #147dc0;
 }
 
-/*MEDIA QUIRES*/
+.ld_photo img.gravatar{
+  border-radius: 0;
+}
 
+img.gravatar{
+  border-radius: 50%;
+}
+
+#history h4{
+  padding: 7px 3px 5px 3px;
+  border: 1px solid #EFEFEF;
+}
+#history h4 img.gravatar{
+  border-radius: 50%;
+}
+
+#history h4 + div.wiki{
+  margin-left: 40px;
+}
+
+#tab-content-comments .sd_journal_comment .contextual > a, #history .journal .contextual > a, #history_tabs .journal .contextual > a{
+  border-bottom: none;
+}
+
+#history .journal h4 > .contextual, #history_tabs .journal h4 > .contextual{
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 5px;
+}
+
+#history .journal h4 > .journal-link, #history_tabs .journal h4 > .journal-link{
+  border: none;
+}
 
