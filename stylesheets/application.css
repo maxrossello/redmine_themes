@@ -838,17 +838,17 @@ img.gravatar{
   margin-left: 40px;
 }
 
-#tab-content-comments .sd_journal_comment .contextual > a, #history .journal .contextual > a{
+#tab-content-comments .sd_journal_comment .contextual > a, #history .journal .contextual > a, #history_tabs .journal .contextual > a{
   border-bottom: none;
 }
 
-#history .journal h4 > .contextual{
+#history .journal h4 > .contextual, #history_tabs .journal h4 > .contextual{
   margin-top: 0;
   padding-left: 0;
   padding-right: 5px;
 }
 
-#history .journal h4 > .journal-link{
+#history .journal h4 > .journal-link, #history_tabs .journal h4 > .journal-link{
   border: none;
 }
 
