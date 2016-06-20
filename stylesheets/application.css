@@ -856,8 +856,14 @@ span.pagination li > a.in_link span {
   border-radius: 0;
 }
 
+div.issue img.gravatar{
+  padding: 0;
+}
+
 img.gravatar{
   border-radius: 50%;
+  border: none;
+  padding: 0;
 }
 
 #history h4{
@@ -866,6 +872,7 @@ img.gravatar{
 }
 #history h4 img.gravatar{
   border-radius: 50%;
+  padding: 0;
 }
 
 #history h4 + div.wiki{
