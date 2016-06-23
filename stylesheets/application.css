@@ -893,3 +893,8 @@ img.gravatar{
   border: none;
 }
 
+fieldset{
+  /*fix fieldset for resize object's*/
+  min-width: 0;
+}
+
