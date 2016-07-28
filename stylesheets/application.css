@@ -897,4 +897,9 @@ fieldset{
   /*fix fieldset for resize object's*/
   min-width: 0;
 }
-
+#footer {
+  width: 100%;
+}
+#footer .bgl {
+  float: left;
+}
