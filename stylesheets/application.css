@@ -93,7 +93,7 @@ a.issue.green_link,
 #main-menu li a,
 #main-menu li a.selected span,
 #content .tabs ul li a,
-:not(#main-menu).tabs li a,
+body :not(#main-menu).tabs li a,
 #header a {
   border-bottom-color: rgba(147,185,108,0.40);
   border-bottom-width: 1px;
@@ -123,13 +123,13 @@ div.issue a.rm-icon:before {
 }
 
 #content .tabs ul li a.selected span,
-:not(#main-menu) .tabs ul li a.selected span {
+body :not(#main-menu) .tabs ul li a.selected span {
   color: #295200;
   border-bottom-color: #93B96C;
 }
 
 #content .tabs ul li a,
-:not(#main-menu) .tabs ul li a {
+body :not(#main-menu) .tabs ul li a {
   font-weight: normal;
   border-radius: 8px 8px 0 0;
   background-color: #E6E6E6;
@@ -137,12 +137,12 @@ div.issue a.rm-icon:before {
 
 /* ---- Redmine tabs fix. Not only in content ---- */
 
-:not(#main-menu).tabs {height: 2.6em; margin-bottom:1.2em; position:relative; overflow:hidden;}
+body :not(#main-menu).tabs {height: 2.6em; margin-bottom:1.2em; position:relative; overflow:hidden;}
 
-:not(#main-menu).tabs ul {margin:0; position:absolute; bottom:0; padding-left:0.5em; width: 2000px; border-bottom: 1px solid #bbbbbb;}
+body :not(#main-menu).tabs ul {margin:0; position:absolute; bottom:0; padding-left:0.5em; width: 2000px; border-bottom: 1px solid #bbbbbb;}
 
 
-:not(#main-menu).tabs ul li a {
+body :not(#main-menu).tabs ul li a {
   display:block;
   font-size: 0.9em;
   text-decoration:none;
@@ -150,24 +150,25 @@ div.issue a.rm-icon:before {
   padding:4px 6px 4px 6px;
   border: 1px solid #ccc;
   background-color: #E6E6E6;
+  color: #295200;
   font-weight: normal;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
 
-:not(#main-menu).tabs ul li a:hover {
+body :not(#main-menu).tabs ul li a:hover {
   background-color: #ffffdd;
   text-decoration:none;
 }
 
-:not(#main-menu).tabs ul li a.selected {
+body :not(#main-menu).tabs ul li a.selected {
   background-color: #fff;
   border: 1px solid #bbbbbb;
   border-bottom: 1px solid #fff;
   color: #444;
 }
 
-:not(#main-menu).tabs ul li {
+body :not(#main-menu).tabs ul li {
   float:left;
   list-style-type:none;
   white-space:nowrap;
