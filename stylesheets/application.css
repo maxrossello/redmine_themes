@@ -181,12 +181,13 @@ body :not(#main-menu).tabs ul li {
 /* ---- Redmine tabs fix ends ---- */
 
 
-#main-menu li a.selected
-  {
+#main-menu.tabs ul li a.selected {
   color: #336600;
   text-decoration: none;
   border-radius: 8px 8px 0 0;
-  }
+  background:#fff;
+}
+
 
 #main-menu li a:hover,
 #main-menu li a.new-object:hover {
@@ -203,21 +204,16 @@ body :not(#main-menu).tabs ul li {
   background-color: inherit;
 }
 
-#main-menu li a.new-object,
-#main-menu li a.new-object:hover {
-  border-radius: 0;
-}
-
 #main-menu li:hover ul.menu-children,
 #main-menu li ul.menu-children.visible {
   display: block;
 }
 
-#main-menu ul.menu-children li a {
+#main-menu ul ul.menu-children li a {
   border-radius: 0;
   background-color: #fff;
 }
-#main-menu ul.menu-children li a:hover {
+#main-menu ul ul.menu-children li a:hover {
   border-radius: 0;
   background-color: #ffffdd;
 }
