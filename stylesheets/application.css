@@ -202,6 +202,12 @@ body :not(#main-menu).tabs ul li {
   color: #295200;
   background-color: inherit;
 }
+
+#main-menu li a.new-object,
+#main-menu li a.new-object:hover {
+  border-radius: 0;
+}
+
 #main-menu li:hover ul.menu-children,
 #main-menu li ul.menu-children.visible {
   display: block;
