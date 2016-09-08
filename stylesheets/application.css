@@ -584,7 +584,7 @@ div.issue.priority-highest .issue_request .lb-block-title,
 
 
 #header {
-  /*overflow: hidden;*/
+  overflow: hidden;
   min-height: inherit;
   background-color: transparent;
   padding: 0;
