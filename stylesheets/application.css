@@ -17,6 +17,14 @@
   min-height: 48px;
 }
 
+.big_eyed_owl_128 {
+  background-image: url(../images/big_eyed_owl-128.png);
+  background-repeat: no-repeat;
+  padding: 0 0 0 160px;
+  background-position: 10px;
+  min-height: 128px;
+}
+
 /* Global styles */
 /*-----------------------------------------------------*/
 .h, .H {
