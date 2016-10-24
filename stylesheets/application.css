@@ -622,6 +622,7 @@ div.issue.priority-highest .issue_request .lb-block-title,
 
 #main-menu {
   position: static;
+  width: 100%;
 }
 
 #main-menu li {
