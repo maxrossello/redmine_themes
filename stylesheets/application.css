@@ -416,6 +416,9 @@ a.issue {
   border-bottom-color: #CDA376;
   padding-bottom: 1px;
 }
+tr.issue td.user {
+  white-space: normal;
+}
 
 tr.issue td.subject a,
 tr.issue td.id a {
