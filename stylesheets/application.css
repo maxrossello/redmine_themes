@@ -416,7 +416,8 @@ a.issue {
   border-bottom-color: #CDA376;
   padding-bottom: 1px;
 }
-tr.issue td.user {
+tr.issue td.user,
+tr.issue td.list {
   white-space: normal;
 }
 
