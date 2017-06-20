@@ -1,6 +1,7 @@
 @import url(../../../stylesheets/application.css);
 
 
+
 .done_button_annotation {
   background-image: url(../images/cat_foodlove-64.png);
   background-repeat: no-repeat;
@@ -656,16 +657,13 @@ html, body {
 }
 
 html {
-  padding: 10px;
+  padding: 0;
   background-image: url(../images/bg_6.jpg);
 }
 
-/*body
-  {
-  background-image: url(../images/logo.png);
-  background-position: 100% 31px;
-  background-repeat: no-repeat;
-  }*/
+body {
+  padding: 10px;
+}
 
 #main {
   background-color: #fff;
