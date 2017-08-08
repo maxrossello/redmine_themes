@@ -991,3 +991,12 @@ fieldset{
 #footer .bgl {
   float: left;
 }
+
+.journal.has-notes {
+  position: relative;
+}
+.journal.has-notes .wiki .contextual:first-child {
+  position: absolute;
+  top: 7px;
+  right: 4em;
+}
