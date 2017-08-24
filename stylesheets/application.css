@@ -1000,3 +1000,8 @@ fieldset{
   top: 7px;
   right: 4em;
 }
+#tab-content-comments h4,
+#tab-content-history h4 {
+  padding: 7px 3px 5px 3px;
+  border: 1px solid #EFEFEF;
+}
