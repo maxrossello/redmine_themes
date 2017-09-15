@@ -59,6 +59,9 @@ textarea, input[type=text], input[type=password] {
   border: 1px solid #ccc;
   padding: 3px;
 }
+input[type=text].icon {
+  padding-left: 20px;
+}
 
 input.autocomplete {
   /*padding-left: 20px !important;*/
