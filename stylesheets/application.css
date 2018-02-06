@@ -236,11 +236,6 @@ body :not(#main-menu).tabs ul li {
   border-left: 1px solid #ccc;
 }
 
-
-a.in_link {
-  border-bottom-style: dotted;
-}
-
 a.no_line, a.icon, tr.issue td.subject a.icon, tr.issue td.id a.icon, a.issue.icon, #main-menu li a, #top-menu li a, #dropdown_top_menu li a {
   border-bottom: none;
 }
