@@ -1042,3 +1042,6 @@ a.collapsible{
 blockquote {
   margin-left: 2.4em;
 }
+.nodata {
+  padding: 6px 4px 6px 4px;
+}
