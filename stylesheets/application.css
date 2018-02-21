@@ -701,6 +701,7 @@ body {
 h2, .wiki h1, .wiki h2,  .wiki h3,  .wiki h4, .wiki h5 {
   border-bottom: 1px solid #ddd;
   margin: 0 0 5px 0;
+  padding-bottom: 5px;
 }
 
 /*-----------------------------------------------------*/
