@@ -771,3 +771,30 @@ table.query-columns td.buttons input[type=button] {
 select[multiple="multiple"] {
   height: auto !important;
 }
+
+h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+h2, .wiki h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h3, .wiki h2 {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+h4, .wiki h3 {
+  border-bottom: none;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+h5, .wiki h4 {
+  border-bottom: none;
+  font-size: 1em;
+  font-weight: bold;
+}
