@@ -581,12 +581,15 @@ code {
   display: inline-block;
 }
 #header > h1 {
-  margin: 0 20px 2px 9px;
+  margin: 0 20px 20px 9px;
 }
 #header > h1:before {
-  content: url("../images/logo.png");
   vertical-align: middle;
   margin: 0 29px 0 0;
+}
+
+#header h1 .breadcrumbs {
+  display: inline-block;
 }
 
 #quick-search select {
