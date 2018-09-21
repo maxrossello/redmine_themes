@@ -88,7 +88,7 @@ input[type="button"] {
   -o-background-clip: padding-box;
   -webkit-background-clip: padding;
   background-clip: padding-box;
-  background: #d92e47;
+  background: #ff3264;
   border: none;
   cursor: pointer;
   color: #fff;
@@ -120,7 +120,7 @@ input[type="submit"]:active,
 input[type="button"]:hover,
 input[type="button"]:active {
   background: #fff;
-  color: #d92e47;
+  color: #ff3264;
 }
 button::-moz-focus-inner,
 a.button::-moz-focus-inner,
@@ -523,7 +523,7 @@ h1, h2, h3, h4 {
 }
 
 a, a:link, a:visited {
-  color: #d92e47;
+  color: #ff3264;
   -moz-transition: color 0.5s;
   -o-transition: color 0.5s;
   -webkit-transition: color 0.5s;
@@ -531,7 +531,7 @@ a, a:link, a:visited {
 }
 a:hover, a:link:hover, a:visited:hover {
   text-decoration: none;
-  color: #ed9aa6;
+  color: #ffb2c4;
 }
 th a, th a:link, th a:visited {
   color: #484848;
@@ -631,7 +631,7 @@ code {
   transition: border-color 0.5s;
 }
 #main-menu li a.selected, #main-menu li a:hover {
-  border-top: 3px solid #d92e47;
+  border-top: 3px solid #ff3264;
   background: transparent;
 }
 #main-menu li a.selected {
@@ -719,14 +719,14 @@ div.issue {
 }
 #update fieldset.tabular legend {
   cursor: pointer;
-  color: #d92e47;
+  color: #ff3264;
   -moz-transition: color 0.5s;
   -o-transition: color 0.5s;
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
 }
 #update fieldset.tabular legend:hover {
-  color: #ed9aa6;
+  color: #ffb2c4;
 }
 #update fieldset.tabular legend small,
 #update fieldset.tabular div,
