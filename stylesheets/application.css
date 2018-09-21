@@ -639,6 +639,19 @@ code {
   background: #fff;
 }
 
+#main-menu li a.new-object {
+  background-color: #ff3264;
+  border-top: 3px solid #ff3264;
+}
+
+#main-menu li a.new-object:hover {
+  background-color: #202020;
+}
+
+#main-menu .menu-children li a {
+  border-top: none;
+}
+
 #main {
   *zoom: 1;
 }

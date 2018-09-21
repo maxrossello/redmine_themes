@@ -135,6 +135,20 @@ code {
   }
 }
 
+#main-menu li a.new-object {
+	background-color: $hotpink;
+	border-top: 3px solid $hotpink;
+}
+
+#main-menu li a.new-object:hover {
+	background-color: #202020;
+}
+
+#main-menu .menu-children li a {
+	border-top: none;
+}
+
+
 // Content
 #main {
   @include pie-clearfix;
