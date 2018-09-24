@@ -108,6 +108,22 @@ code {
   label {
     line-height: 2.1;
   }
+  #q {
+    height: 30px;
+  }
+}
+
+// Project Select
+.drdn-trigger {
+	height: 30px;
+}
+
+.drdn-content {
+	top: 32px;
+}
+.drdn-items>*:focus {
+	background-color: #759FCF;
+	color: #fff !important;
 }
 
 // Menu

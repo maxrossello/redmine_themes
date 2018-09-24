@@ -609,6 +609,22 @@ code {
 #quick-search label {
   line-height: 2.1;
 }
+#quick-search #q {
+  height: 30px;
+}
+
+.drdn-trigger {
+  height: 30px;
+}
+
+.drdn-content {
+  top: 32px;
+}
+
+.drdn-items > *:focus {
+  background-color: #759FCF;
+  color: #fff !important;
+}
 
 #main-menu {
   position: relative;
