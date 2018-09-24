@@ -122,6 +122,10 @@ code {
 	top: 32px;
 }
 
+.drdn-items>a {
+	transition: none;
+}
+
 .drdn-items>a:hover {
 	background-color: $hotpink;
 	color: #fff !important;
