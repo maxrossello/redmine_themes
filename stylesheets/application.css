@@ -621,8 +621,14 @@ code {
   top: 32px;
 }
 
+.drdn-items > a:hover {
+  background-color: #ff3264;
+  color: #fff !important;
+  transition: none;
+}
+
 .drdn-items > *:focus {
-  background-color: #759FCF;
+  background-color: #ff3264;
   color: #fff !important;
 }
 
@@ -664,8 +670,17 @@ code {
   background-color: #202020;
 }
 
+#main-menu .menu-children {
+  border-right: 1px solid #202020;
+  border-bottom: 1px solid #202020;
+  border-left: 1px solid #202020;
+}
+
 #main-menu .menu-children li a {
   border-top: none;
+}
+#main-menu .menu-children li a:hover {
+  background-color: #ff3264;
 }
 
 #main {

@@ -121,8 +121,15 @@ code {
 .drdn-content {
 	top: 32px;
 }
+
+.drdn-items>a:hover {
+	background-color: $hotpink;
+	color: #fff !important;
+	transition: none;
+}
+
 .drdn-items>*:focus {
-	background-color: #759FCF;
+	background-color: $hotpink;
 	color: #fff !important;
 }
 
@@ -160,8 +167,17 @@ code {
 	background-color: #202020;
 }
 
+#main-menu .menu-children {
+	border-right: 1px solid $gray-dark;
+	border-bottom: 1px solid $gray-dark;
+	border-left: 1px solid $gray-dark;
+}
+
 #main-menu .menu-children li a {
 	border-top: none;
+	&:hover {
+		background-color: $hotpink;
+	}
 }
 
 
@@ -283,6 +299,7 @@ select#time_entry_activity_id {
   }
 }
 
+// Cancel-Button in edit overlay
 input[type="submit"] + a + a {
 	font-size: 16px;
 	padding: 0 15px;
