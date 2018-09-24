@@ -797,6 +797,12 @@ select#time_entry_activity_id {
   }
 }
 
+input[type="submit"] + a + a {
+  font-size: 16px;
+  padding: 0 15px;
+  line-height: 2;
+}
+
 table.query-columns td.buttons input[type=button] {
   padding: 0;
 }
