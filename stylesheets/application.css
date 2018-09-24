@@ -514,7 +514,7 @@ body {
   font: normal 14px/1.5 'Open Sans', sans-serif;
   font-size: 14px;
   color: #484848;
-  background: red;
+  background: #fff;
 }
 
 h1, h2, h3, h4 {
@@ -546,6 +546,16 @@ code {
   font-size: 85%;
   background-color: #fafafa;
   border: 1px solid #e2e2e2;
+}
+
+#login-form {
+  border: none;
+  background-color: #fff;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+  height: 30px;
 }
 
 #top-menu {
@@ -586,6 +596,11 @@ code {
 #header > h1:before {
   vertical-align: middle;
   margin: 0 29px 0 0;
+}
+
+.controller-welcome #header,
+.controller-account #header {
+  display: none;
 }
 
 #header h1 .breadcrumbs {
