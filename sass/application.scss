@@ -112,9 +112,9 @@ code {
     margin-left: 8px;
   }
   input {
-    background: lighten($gray-dark, 5%);
+    background-color: #fff;
     border: none;
-    color: #FFF;
+    color: $gray-text;
     padding: 0px 6px;
     height: 2.4em;
     margin-left: 4px;
@@ -125,6 +125,7 @@ code {
   }
   #q {
     height: 30px;
+    border: none;
   }
 }
 
