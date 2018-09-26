@@ -598,7 +598,6 @@ code {
   margin: 0 29px 0 0;
 }
 
-.controller-welcome #header,
 .controller-account #header {
   display: none;
 }
@@ -837,6 +836,32 @@ input[type="submit"] + a + a {
   line-height: 2;
 }
 
+/* Contextual Icon Buttons
+.contextual .icon {
+	padding: 10px 10px 10px 40px;
+	background-color: $hotpink;
+	background-position: 10px 50%;
+	color: #fff;
+}
+
+.contextual .icon:hover {
+	background-color: $gray-dark;
+	color: #fff;
+	transition: 0.5s ease;
+}*/
+/* Icons
+
+.icon-time-add {
+	background-image: url(../images/time-add.png);
+}
+
+.icon-copy {
+	background-image: url(../images/copy.png);
+}
+
+.icon-fav-off {
+	background-image: url(../images/fav-off.png);
+}*/
 table.query-columns td.buttons input[type=button] {
   padding: 0;
 }
