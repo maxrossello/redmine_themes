@@ -1,0 +1,107 @@
+$spacing: $spacing/2
+@media all and (max-device-width: 767px), all and (max-width: 449px)
+  body
+    font-size: 1em
+    margin: 0
+    min-width: 0
+  #loggedas, #sidebar, #footer
+    display: none
+  #top-menu
+    #account
+      bottom: -2em
+      position: absolute
+    ul
+      +border-radius(0)
+      +box-shadow(none)
+      width: 100%
+      li
+        width: 20%
+        a
+          overflow: hidden
+          padding: $spacing
+          text-align: center
+          text-overflow: ellipsis
+        &:first-child a
+          border-left: 0
+          +border-radius(0)
+        &:last-child a
+          border-right: 0
+          +border-radius(0)
+  #header
+    margin: $spacing*4 0 $spacing*2 0
+    h1
+      margin: $spacing
+    .project_selector
+      margin-top: $spacing
+    #main-menu
+      margin: 0
+    #quick-search
+      color: transparent
+      margin-right: $spacing
+      a
+        display: none
+  #main
+    border: 0
+    +border-radius(0)
+    +box-shadow(none)
+    #content, &.nosidebar #content
+      margin: $spacing
+
+    h2
+      margin: 1em 0 $spacing 0
+
+  .splitcontentleft, .splitcontentright
+    float: none
+    width: auto
+  .box
+    padding: $spacing
+  .contextual
+    float: none
+    padding: 0
+    white-space: normal // Allows wrapping
+
+  // Tabs
+  #content .tabs
+    height: auto
+    overflow: auto
+    ul
+      width: auto
+      position: relative
+  .tabs-buttons
+    display: block
+
+  // Forms
+  form
+    em
+      margin-left: 0
+  .tabular
+    p
+      padding: $spacing
+      label
+        display: block
+        float: none
+        margin-left: 0
+        text-align: left
+  .tabular.settings
+    p
+      padding: $spacing
+    label
+      margin-left: 0
+
+  // Page specific
+  .action-login, .action-lost_password
+    #wrapper
+      width: auto
+    #top-menu
+      margin-right: $spacing
+
+  #login-form
+    table
+      background: none
+      border: none
+      margin: $spacing*2 0 $spacing 0
+
+  // Issues pages
+  .controller-issues
+    #content .contextual:first-child
+      display: none

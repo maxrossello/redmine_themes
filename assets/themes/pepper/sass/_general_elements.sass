@@ -1,0 +1,71 @@
+body
+  background: #f0f5fe url(../images/body_noise.gif)
+  color: $text_color
+  font-family: helvetica, 'helvetica neue', arial, sans-serif
+  font-size: 76%
+  line-height: 1.6em
+  margin: 10px
+
+#wrapper
+  background: none
+
+// Links
+a
+  &:link
+    color: $link_color
+    text-decoration: underline // Redmine default override
+  &:visited
+    color: $link_visited_color
+  &:hover, &:active
+    color: $link_hover_color
+    text-decoration: underline
+  img
+    border: none
+
+// Lists
+ul, ol
+  margin: 1em 0
+  padding: 0
+li
+  margin-left: 1.5em
+  padding: 0
+
+// Headings
+h1, h2, h3
+  border: none // Redmine default override
+  font-family: 'Myriad Pro', arial, sans-serif
+  letter-spacing: -1px
+  padding: 0
+h1
+  font-size: 1.96em
+h2, .wiki h1
+  font-size: 1.96em
+  margin-bottom: 0.4em
+  margin-top: 0
+h3
+  font-size: 1.4em
+  margin-bottom: 0.2em
+  margin-top: 1.2em
+
+hr
+  background: none
+  border: none
+  border-top: 1px solid $separator_color
+
+#sidebar
+  h2, h3
+    color: $text_color
+  p
+    clear: both
+
+// The subproject breadcrumb navigation
+#header
+  h1
+    a.root,
+    a.ancestor
+      color: $text_color*3
+      font-size: 1em
+      text-decoration: none
+      &:hover
+        color: $link_hover_color
+        text-decoration: underline

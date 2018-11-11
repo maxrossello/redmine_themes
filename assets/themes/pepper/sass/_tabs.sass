@@ -1,0 +1,47 @@
+// Styles for the Redmine navigation "tabs".
+// We currently style them as a vertical list of items, not like a tabbed list
+
+$tab_arrow_size: $spacing/2
+
+#content .tabs
+  background: adjust-lightness($box_background_color, -5%)
+  +background(adjust-lightness($box_background_color, -5%) linear-gradient(top, $box_background_color, adjust-lightness($box_background_color, -5%) 80%, adjust-lightness($box_background_color, -12%)))
+  +border-radius($outside_border_radius / 2)
+  +border-bottom-radius(0)
+  height: 3em
+  ul
+    +navigation-list
+    border: 0
+    padding: 0
+    li
+      background: transparent
+      margin: 0
+      a
+        background: transparent
+        border: 0
+        font-weight: normal
+        padding: $tab_arrow_size+2 $spacing/2
+        &:hover
+          background: transparent
+          color: $link_hover_color
+        &.selected
+          background: transparent
+          border: 0
+          color: $text_color
+          position: relative
+          &:after
+            position: absolute
+            bottom: 0
+            left: 50%
+            content: ''
+            display: block
+            border-top: 0
+            border-right: $tab_arrow_size solid transparent
+            border-bottom: $tab_arrow_size solid white
+            border-left: $tab_arrow_size solid transparent
+            width: 0px
+            margin-left: -$tab_arrow_size
+          &:hover
+            background: transparent
+  .tabs-buttons
+    display: none

@@ -1,0 +1,313 @@
+/* load the default Redmine stylesheet */
+@import url(../../../stylesheets/application.css);
+
+/*                                                      
+                                    _/            _/         
+   _/_/_/  _/_/      _/_/      _/_/_/  _/    _/  _/    _/_/_/
+  _/    _/    _/  _/    _/  _/    _/  _/    _/  _/  _/    _/ 
+ _/    _/    _/  _/    _/  _/    _/  _/    _/  _/  _/    _/  
+_/    _/    _/    _/_/      _/_/_/    _/_/_/  _/    _/_/_/
+
+
+Theme:		Modula Gitlab
+Updated:	2012/10/05
+Author:		www.modula.fi, www.doublerebel.com	
+
+*/
+
+@import url(../../../stylesheets/application.css);
+@font-face{font-family:Korolev;src:url("korolev-medium-compressed.otf")}
+
+body, #wrapper { background-color:#3c3c3c; font-family: helvetica, "microsoft sans serif", arial, sans-serif; }
+body, #wrapper { background-color: white; color: #333; }
+
+a, a:link, a:visited { color: #7aa054; outline:none;}
+a:hover { text-decoration: none; color: #455138;}
+#sidebar label, #sidebar a:link, #sidebar a:hover, #sidebar a:active, #sidebar a:visited { color: #f0f0f0; color: #222 }
+
+#header {
+	width: 100%;
+	padding: 0;
+	margin: 0 0 24px;
+	top: 1px;
+	left: 0;
+	background: #F1F1F1;
+	border-bottom: 1px solid #CCC;
+	box-shadow: 0 -1px 0 white inset;
+	-moz-box-shadow: 0 -1px 0 #fff inset;
+	-webkit-box-shadow: 0 -1px 0 white inset;
+	z-index: 10;
+	/*height: 60px;*/
+	height: auto;
+	overflow: hidden;
+}
+#header a { color: #888; }
+#header #quick-search { margin: 0 24px; }
+#top-menu { margin: 0; }
+#top-menu { background-color: #2e2e2e; font-size: .9em; position: relative; margin-left: -.3em; padding: 0; height: 21px }
+#top-menu ul { padding: 0 21px; }
+#top-menu li, #top-menu #loggedas { color: #ddd; line-height: 21px; margin-right: 0px;}
+#top-menu li a { color: #aaa; font-weight: normal; padding:4px 5px; }
+#top-menu li a:hover { color: #fff; text-decoration: none; }
+
+#main { background: white; margin: 0 24px 0px 24px; }
+#content { 
+	width: 74.5%;
+	background: #F9F9F9;
+	margin-bottom: 25px;
+	border: 1px solid #EAEAEA;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border-color: #CCC;
+	-moz-box-shadow: 0 0 0 3px #eee;
+	-webkit-box-shadow: 0 0 0 3px #EEE;
+	box-shadow: 0 0 0 3px #EEE;
+}
+.splitcontentleft { margin-left: 4px; }
+.splitcontentright { margin-top: 12px; }
+ul.projects.root { margin: 0 4px; }
+ul.projects div.root a.project { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+#sidebar { width: 21.5%; }
+#sidebar p { color: #444; }
+
+#footer { background-color: white; border: 0px; clear: left; color:#666666; font-size:9px; margin:4px 0 20px 20px; padding-bottom:15px; text-align:left; }
+#footer a:hover { background:#666666 none repeat scroll 0 0; color:#FFFFFF !important;}
+#footer a:link, #footer a:visited { color:#666666; }
+
+p.subtitle { font-style:normal; }
+
+/* Headers */
+h1, h2, h3, h4 { font-family: 'helvetica neue', helvetica, "microsoft sans serif", arial, sans-serif; }
+.wiki h1, .wiki h2, .wiki h3, .wiki h4 { font-family: 'helvetica neue', helvetica, "microsoft sans serif", arial, sans-serif; }
+h1 {
+	text-align: left;
+	font-size: 36px;
+	line-height: 36px;
+	font-weight: normal;
+	color: #474D57;
+	text-shadow: 0 1px 1px white;
+	font-family: 'Korolev', sans-serif;
+	margin: 15px 24px;
+	padding: 0;
+	width: 400px;
+	float: left;
+}
+h2, h3, h4, .wiki h1, .wiki h2, .wiki h3 { border-bottom: 0px;}
+
+h2, .wiki h1 { 
+	background-color: #cde9a7; 
+	margin: 2px 0px 10px; 
+	padding: 10px 1.4em; 
+	font-size: 13px;
+	font-weight: bold;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #455138;
+	border-right: 1px solid #DDD;
+	border-bottom: 2px solid #CFCFCF;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border-left: 0;
+	background: #EEE;
+	background-image: -webkit-linear-gradient(#EEE 6.6%, #DFDFDF);
+	background-image: -moz-linear-gradient(#EEE 6.6%, #DFDFDF);
+	background-image: -o-linear-gradient(#EEE 6.6%, #DFDFDF);
+	-moz-box-shadow: 0 0 3px #ddd;
+	-webkit-box-shadow: 0 0 3px #DDD;
+	box-shadow: 0 0 3px #DDD;
+}
+.wiki h1 { font-family: helvetica, "microsoft sans serif", arial, sans-serif; }
+.wiki h2 { background-color: #fff; }
+
+h3, h4 { font-weight: normal; color: #7aa054;}
+h1, h2, h3 { color: #333; }
+
+#sidebar h3 { color: #7AA054; border-bottom:1px solid #989898; padding:6px 0; }
+
+/* Links */
+
+#sidebar a:hover { background-color:#003399; color:#FFFFFF; text-decoration: none;}
+
+/* Menu */
+#main-menu {
+	margin: -8px 1.5em -2px;
+	float: left;
+	width: 850px;
+	position: relative;
+}
+#main-menu li a { font-weight: normal; padding: 6px 8px 8px; color: #888; }
+#main-menu li a:hover { 
+	color: #333;
+	background: transparent; 
+	text-decoration: none; 
+}
+#main-menu li a.selected, #main-menu li a.selected:hover { 
+	background-color:#fff; 
+	color: #111; 
+	-moz-border-radius-topleft: .3em; -webkit-border-top-left-radius: .3em;
+	-moz-border-radius-topright: .3em; -webkit-border-top-right-radius: .3em;
+}
+
+/* Settings menu */
+
+#content .tabs ul li a {
+	font-weight: normal;
+	font-size: .9em;
+	border-top: 1px #fff solid;
+	border-right: 1px #fff solid;
+	border-left: 1px #fff solid;
+	background: #fff;
+	-moz-border-radius-topleft: .3em; -webkit-border-top-left-radius: .3em;
+	-moz-border-radius-topright: .3em; -webkit-border-top-right-radius: .3em;
+}
+
+#content .tabs ul li a:hover {
+	background: #fff;
+	color: #333;
+}
+
+#content .tabs ul li a.selected {
+	font-weight: normal;
+	color:#455138;
+	-moz-border-radius-topleft: .3em; -webkit-border-top-left-radius: .3em;
+	-moz-border-radius-topright: .3em; -webkit-border-top-right-radius: .3em;
+}
+
+/* Tables */
+table.list { border: none; }
+table.list th { background-color: #fff; }
+table.list tbody td, table.list tbody tr td { border-bottom: solid 1px #ddd; padding:4px 10px 4px 3px; }
+table.list thead th {
+	border: none;
+	border-bottom:1px solid #999999;
+	font-size:9px;
+	font-weight:normal;
+	padding:0pt 3px 3px;
+	text-transform:uppercase;
+}
+
+table.list thead th a { color: #2e2e2e; }
+table.list thead th a:hover { color: #2e2e2e; }
+
+/* Issues grid styles by priorities (provided by Wynn Netherland) */
+table.list tr.issue a { color: #3c3c3c; }
+
+tr.odd.priority-5, table.list tbody tr.odd.priority-5:hover { color: #900; font-weight: bold; }
+tr.odd.priority-5 { background: #ffc4c4; }
+tr.even.priority-5, table.list tbody tr.even.priority-5:hover { color: #900; font-weight: bold; }
+tr.even.priority-5 { background: #ffd4d4; }
+tr.priority-5 a, tr.priority-5:hover a { color: #900; }
+tr.odd.priority-5 td, tr.even.priority-5 td { border-color: #ffb4b4; }
+
+tr.odd.priority-4, table.list tbody tr.odd.priority-4:hover { color: #900; }
+tr.odd.priority-4 { background: #ffc4c4; }
+tr.even.priority-4, table.list tbody tr.even.priority-4:hover { color: #900; }
+tr.even.priority-4 { background: #ffd4d4; }
+tr.priority-4 a { color: #900; }
+tr.odd.priority-4 td, tr.even.priority-4 td { border-color: #ffb4b4; }
+
+tr.odd.priority-3, table.list tbody tr.odd.priority-3:hover { color: #900; }
+tr.odd.priority-3 { background: #fee; }
+tr.even.priority-3, table.list tbody tr.even.priority-3:hover { color: #900; }
+tr.even.priority-3 { background: #fff2f2; }
+tr.priority-3 a { color: #900; }
+tr.odd.priority-3 td, tr.even.priority-3 td { border-color: #fcc; }
+
+tr.odd.priority-1, table.list tbody tr.odd.priority-1:hover { color: #559; }
+tr.odd.priority-1 { background: #eaf7ff; }
+tr.even.priority-1, table.list tbody tr.even.priority-1:hover { color: #559; }
+tr.even.priority-1 { background: #f2faff; }
+tr.priority-1 a { color: #559; }
+tr.odd.priority-1 td, tr.even.priority-1 td { border-color: #add7f3; }
+
+p.breadcrumb {
+	background-color:#EEEEEE;
+	border-bottom:1px solid white;
+	font-size:0.9em;
+	margin:-6px -10px 6px;
+	padding:6px;
+	text-indent:15px;
+}
+
+/* Fields */
+input[type='text'], input[type='password'], textarea { font-size: 13px; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; }
+input[type="text"], textarea, select { padding: 2px;  }
+input[type="text"]:focus, textarea:focus, select:focus {  }
+option {  }
+input#issue_subject { font-size: 200%; width: 90%; }
+input#issue_subject, #project_description { width: 92.5%; }
+textarea#issue_description { width: 93%;}
+
+/* Misc */
+#q { /* search/query input */
+	background-image: url("icon-search.png");
+	background-repeat: no-repeat;
+	background-position: 10px;
+	padding-left: 25px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #CCC;
+	margin: 15px 0;
+}
+
+input[type="text"], textarea, select {
+	border: 1px #989898 solid;
+	background-color: white;
+	-moz-border-radius-topleft: 3px; -webkit-border-top-left-radius: 3px;
+	-moz-border-radius-topright: 3px; -webkit-border-top-right-radius: 3px;
+	-moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border-color: #C6C6C6;
+	box-shadow: none;
+}
+.new_issue input[type="text"], textarea, select {
+	background-color: #f5f5f5;
+}
+
+.nodata, #login-form table, .flash.notice {
+	border-width: 1px;
+	-moz-border-radius-topleft: 3px; -webkit-border-top-left-radius: 3px;
+	-moz-border-radius-topright: 3px; -webkit-border-top-right-radius: 3px;
+	-moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
+}
+
+.box { 
+	background-color: #fcfcfc;
+	border-top: 1px #eee solid;
+	border-right: 1px #ccc solid;
+	border-bottom: 1px #ccc solid;
+	border-left: 1px #eee solid;
+	-moz-border-radius-topleft: 3px; -webkit-border-top-left-radius: 3px;
+	-moz-border-radius-topright: 3px; -webkit-border-top-right-radius: 3px;
+	-moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
+	padding: 15px;
+}
+
+#attachments_fields input[type="text"] {
+	width: 39%;
+}
+
+.jstElements { margin-right: 3.5em;}
+.tabular label { font-weight: normal;}
+
+.contextual { margin-top: 1.2em; margin-right: 2em; font-size: 0.9em;}
+.contextual a{ color:#455138;}
+
+table.list thead th { font-size:.8em; }
+
+tr.message td.last_message {  font-size:.9em; }
+
+div#activity dl, #search-results { margin-left:0em; }
+div#activity dd, #search-results dd { font-size:1em; }
+
+span.description { margin: .5em 0;}
+
+hr { background:#eee none repeat scroll 0% 0%; }

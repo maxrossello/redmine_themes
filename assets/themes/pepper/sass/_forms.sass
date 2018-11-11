@@ -1,0 +1,167 @@
+// Forms
+form
+  // em is used for form hints
+  em
+    display: block
+    font-size: 0.8em
+    font-style: normal
+  // p is used for form field wrappers
+  p
+    margin: $spacing/2 0
+    overflow: hidden
+  input
+    margin: 2px 0
+    max-width: 80%
+  input[type=checkbox]
+    margin: ($form_element_padding + 2) 0.25em ($form_element_padding + 2) 0
+  input[type=password], input[type=text], textarea
+    border: 1px solid $meta_color
+    +border-radius($form_element_padding/2)
+    +box-shadow(inset rgba(0,0,0,0.2) 1px 1px 2px)
+    padding: $form_element_padding
+    &:focus, &:hover
+      border-color: $link_hover_color
+  input.autocomplete
+    padding-left: $form_element_padding + 16px
+  select
+    margin: ($form_element_padding + 1) 0
+    max-width: 99%
+
+  // It would be nice if submit buttons had a class or a containing element
+  input[type=submit]
+    cursor: pointer
+    margin: $spacing/2 1em $spacing/2 0
+    padding: $spacing/2 $spacing
+    &:focus, &:hover
+      +box-shadow($link_hover_color 0 0 $spacing/2)
+  .box + input[type=submit]
+    font-weight: bold
+
+label
+  font-weight: bold
+  margin: 2px 0 2px 0
+  padding: $form_element_padding 0
+  text-align: right
+  input[type=checkbox]
+    margin-top: $form_element_padding - 1
+  &.block
+    input[type=checkbox]
+      margin-right: 0.5em
+
+#issue_subject
+  width: 75%
+
+fieldset
+  +box
+  &.box
+    margin-left: -1px
+    margin-right: -1px
+  &.collapsible
+    border-width: 1px // Redmine default override
+  legend
+    font-weight: bold
+    margin-top: $spacing / 2
+    padding: 0
+    text-shadow: $box_background_color 0 0 2px
+  label
+    text-align: left
+    &.floating
+      width: 18%
+  p
+    clear: left
+
+.box
+  fieldset
+    // Fieldsets inside a box element shouldn't get the box styling
+    border: 0
+    background: none
+    +box-shadow(none)
+    margin: 0
+    padding: 0
+
+.errorExplanation, .error
+  color: $error_color
+  h2
+    font-size: 1em
+  p
+    margin-top: 0
+.fieldWithErrors input
+  border-color: $error_color
+
+
+div.jstElements,
+div.jstEditor
+  padding: 0
+
+div.jstElements
+  button
+    margin-right: 1px
+  .help
+    margin-right: 0
+div.jstEditor
+  textarea
+    width: 98%
+
+#attachments_fields
+  display: block
+  label.inline
+    display: block
+    float: none
+    text-align: left
+    width: auto
+    margin-bottom: 0
+    span
+      margin-right: 1em
+  br
+    // Looks like we're using a br tag for layout purposes?
+    display: none
+  input[type=file]
+    margin-left: 17%
+  input[type=file]:first-child
+    margin-left: 0
+
+#watchers_form
+  overflow: hidden
+  .floating
+    float: left
+    font-weight: normal
+    margin: 0
+    text-align: left
+    width: 25%
+
+// The login form is in a table for some reason.
+form
+  table
+    margin: $spacing 0
+    td, th
+      padding: 0.2em
+    td
+      label
+        float: none
+        text-align: inherit
+        width: auto
+      input
+        clear: left
+        float: left
+        margin-right: 1em
+    table
+      // Tables inside tables in the issues filter - hello 2003
+      margin: 0
+  fieldset
+    table
+      margin-top: 0
+
+// Search for watchers form
+#users_for_watcher label
+  text-align: left
+
+
+#filters
+  table
+    margin: 0
+
+.splitcontentleft, .splitcontentright
+  fieldset
+    margin: 0 0 $spacing 0
+    legend
+      margin-top: 0

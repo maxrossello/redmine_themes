@@ -1,0 +1,247 @@
+@mixin navigation
+  +navigation_list
+  +clearfix
+  +box-shadow(rgba(0,0,0,0.2) 1px 1px 4px)
+  +background(#666666 linear-gradient(top, #777777, #444444))
+  +border-radius($outside_border_radius)
+  float: left
+  overflow: visible // Don't clip the project submenu
+
+  li a
+    // Colors for browsers without rgba support
+    border-left: 1px solid #7e7e7e
+    border-top: 1px solid #7e7e7e
+    border-right: 1px solid #424242
+    border-bottom: 1px solid #424242
+    // Colors for proper browsers
+    border-left: 1px solid rgba(200,200,200,0.3)
+    border-top: 1px solid rgba(200,200,200,0.3)
+    border-right: 1px solid rgba(0,0,0,0.3)
+    border-bottom: 1px solid rgba(0,0,0,0.3)
+    padding: $spacing/2 $spacing
+  li:first-child a
+    +border-left-radius($outside_border_radius)
+  li:last-child a
+    +border-right-radius($outside_border_radius)
+  a
+    color: #ffffff
+    text-decoration: none
+    text-shadow: rgba(0,0,0,0.5) 1px 1px 1px
+    &:hover
+      text-decoration: underline
+    &.active, &:active
+      // For when a menu item with a submenu has been clicked
+      border-left: 1px solid rgba(0,0,0,0.3)
+      border-top: 1px solid rgba(0,0,0,0.3)
+      border-right: 1px solid rgba(200,200,200,0.3)
+      border-bottom: 1px solid rgba(200,200,200,0.3)
+      +box-shadow(rgba(0,0,0,0.5) 0 0 1em inset)
+
+
+#top-menu
+  +has-layout
+  &:after
+    // Clear any floats
+    content: ''
+    display: block
+    overflow: hidden
+    clear: both
+
+  // Reset Redmine stuff
+  background: none
+  font-size: 1em
+  height: auto
+  padding: 0
+  position: relative
+  z-index: 999 // Make sure we render the project dropdown menu on top of other content
+  a
+    font-weight: normal
+    margin-right: inherit
+  #account, #loggedas
+    position: absolute
+    right: 0
+    text-align: right
+    width: auto
+    a:active
+      +box-shadow(none)
+  #account
+    bottom: 0
+    ul
+      background: none
+      +box-shadow(none)
+      margin-left: auto
+      margin-right: auto
+      a
+        border: none
+        color: $link_color
+        display: block
+        padding: 0
+        padding-left: 1em
+        text-shadow: none
+  #loggedas
+    border-bottom: 1px solid $separator_color
+    color: $text_color
+    float: right
+    margin-right: inherit
+    width: inherit
+    a
+      color: $link_color
+
+  ul
+    +navigation
+
+// Submenu for project selection
+.project_selector
+  $selector_height: 1.96em // make it roughly the height of #header h1
+  +navigation
+  float: left
+  font-size: 12px
+  font-weight: normal
+  letter-spacing: 0
+  position: relative
+  text-shadow: none
+  .toggle
+    background: url(../images/iconic/gray_light/arrow_down_12x12.png) 50% 50% no-repeat
+    height: $selector_height
+    text-indent: -999em
+    display: block
+    padding: 0
+    width: $selector_height // Square
+  .toggle:active, .toggle:hover, a.toggle:active, a.active
+    background-image: url(../images/iconic/white/arrow_down_12x12.png)
+    border: 0
+    box-shadow: none
+
+  ul.projects
+    +navigation
+    +box-shadow(rgba(0,0,0,0.5) 0 0 $spacing/2)
+    border: 0
+    float: none
+    margin: 0
+    overflow: hidden
+    padding: 0
+    position: absolute
+    top: $selector_height
+    left: 0
+    z-index: 999 // Display on top of other content
+    li
+      float: none
+      a
+        +border-radius(0)
+        white-space: nowrap
+      .selected:before
+        content: '✔ '
+
+#header
+  background: none
+  color: $text_color
+  height: auto
+  margin: $spacing*2 0 $spacing/4 0
+  padding: 0
+  h1
+    float: left
+    margin: 0 $spacing/4 0 $spacing
+    padding: $spacing/4 0
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.9)
+  #main-menu
+    clear: both
+    float: left
+    margin-right: auto
+    position: relative
+    left: 0
+    ul
+      +navigation_list
+      margin-left: $spacing/2 // Aligns the first link with the heading, since the link has $spacing/2 padding-left
+      li
+        margin-right: 1px
+      a
+        background: none // Override Redmine default
+        color: #333333
+        font-weight: normal
+        &:hover, &:active
+          color: $link_color
+        &.selected
+          font-weight: bold // Override Redmine default
+  #quick-search
+    text-align: right
+    form
+      display: block
+      float: left
+    a
+      color: $text_color
+      text-decoration: none
+    input
+      +border-radius(1em)
+      border-top: 1px solid #848484
+      border-right: 1px solid #c1c1c1
+      border-bottom: 1px solid #e1e1e1
+      border-left: 1px solid #c1c1c1
+      +box-shadow(inset rgba(0,0,0,0.2) 1px 1px 2px)
+      display: inline
+      margin: 0
+      padding: 0.2em 1em
+    select
+      // The Jump to project dropdown
+      float: right
+      width: $jump_to_project_width
+
+#main
+  +box-shadow(rgba(0,0,0,0.2) 1px 1px 4px)
+  background: #ffffff
+  border: 1px solid $separator_color
+  +border-radius($outside_border_radius)
+  clear: both
+  margin: 0
+  overflow: hidden
+  #content
+    background: #ffffff
+    border: 0 // Override Redmine default
+    padding-top: ($spacing / 2)
+    min-height: 21em // Keep it roughly higher than the sidebar on the Activity page
+  #sidebar
+    background: #ffffff url('../images/sidebar_separator.png') no-repeat 0 100%
+    +background(url('../images/sidebar_separator.png') 0 100% no-repeat, linear-gradient(center top, $sidebar_color 50%, #ffffff) repeat scroll 0 0 transparent)
+    +border-radius(0 0 $outside_border_radius 0)
+    float: right
+    padding-bottom: $spacing * 4
+    width: 23%
+    position: relative
+
+  &.nosidebar
+    #content
+      margin-right: $spacing
+    #sidebar
+      display: none
+
+.box
+  +box
+  h3:first-child
+    margin-top: 0
+
+#footer
+  background: none
+  border: none
+  clear: both
+  font-size: 0.8em
+  margin: $spacing
+  text-align: center
+
+#ajax-indicator
+  background: #000000
+  background: rgba(0, 0, 0, 0.5)
+  border: 0
+  +border-radius(1em)
+  color: #FFFFFF
+  display: block
+  font-weight: normal
+  left: 50%
+  margin-left: -50px
+  opacity: 1
+  padding: 0
+  position: fixed
+  text-align: center
+  top: $spacing / 2
+  width: 100px
+  span
+    background: none
+    padding: 0

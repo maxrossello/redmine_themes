@@ -1,0 +1,93 @@
+/*---------- Colors ----------*/
+
+@linkColor: #4396CE;
+
+@topMenuBackground: #222;
+@topMenuBorderColor: #235F87;
+@topMenuLinkColor: #DDD;
+@topMenuLinkColorHover: #FFF;
+
+@headerBackground: #4496CE;
+@headerLinkColor: #EEE;
+@headerLinkColorHover: #FFF;
+@headerTitleColor: #E0F2F9;
+@headerTitleLinkColor: #1D4E6D;
+
+@sidebarTitleColor:  #295E82;
+
+@loginBackground: #222;
+@loginLabelColor: #CCC;
+
+@buttonBackground: #444;
+@buttonBackgroundLight: #FFF;
+
+@boxesBackground: #F5FFFF;
+
+/* Links */
+a, a:link, a:visited, #sidebar a.selected { color: @linkColor }
+#footer a, #footer a:link, #footer a:visited { color: @linkColor }
+/* Top bar */
+#top-menu {
+  background: @topMenuBackground;
+  border-bottom: @topMenuBorder solid @topMenuBorderColor;
+
+  a {
+    color: @topMenuLinkColor;
+    &:hover {
+      color: @topMenuLinkColorHover;
+    }
+  }
+}
+
+#header {
+  background: @headerBackground;
+
+  a {
+    color: @headerLinkColor;
+    &:hover {
+      color: @headerLinkColorHover;
+    }
+  }
+
+  h1 {
+    color: @headerTitleColor;
+    a {
+      color: @headerTitleLinkColor;
+    }
+  }
+}
+
+#sidebar {
+  h3 {
+    color: @sidebarTitleColor;
+  }
+}
+
+/* Login */
+
+.action-login #main.nosidebar #content { background: @loginBackground }
+#login-form label { color: @loginLabelColor; }
+
+/* Buttons */
+input[type="submit"], .btn {
+  #gradient > .vertical(@buttonBackground, darken(@buttonBackground, 10%));
+
+  &:hover {
+    #gradient > .vertical(darken(@buttonBackground, 5%), darken(@buttonBackground, 15%));
+  }
+
+  &.greydient {
+    #gradient > .vertical(@buttonBackgroundLight, darken(@buttonBackgroundLight, 10%));
+    color: #333 !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  }
+}
+
+/* Boxes */
+fieldset#filters, fieldset#date-range { background-color: @boxesBackground }
+.box { background-color: @boxesBackground; }
+
+/* Redmine Favourite Projects */
+.chzn-container .chzn-results .highlighted {
+  background: saturate(lighten(@headerBackground, 2.5%), 10%);
+}
