@@ -14,7 +14,7 @@ Redmine::Plugin.register :redmine_themes do
 end
 
 Rails.configuration.to_prepare do
-    Redmine::Plugin.find(:redmine_azcom_customization).requires_redmine_plugin :redmine_pluggable_themes, :version_or_higher => '1.0.0'
+    Redmine::Plugin.find(:redmine_themes).requires_redmine_plugin :redmine_pluggable_themes, :version_or_higher => '1.0.0'
 end
 
 
