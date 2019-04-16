@@ -509,7 +509,7 @@ $logo-image-width:              143px !default;
 $logo-image-height:             50px !default;
 $logo-position-horizontal:      $header-padding-vertical !default;
 $logo-position-vertical:        center !default;
-$logo-space:                    floor($header-padding-vertical / 2) !default;
+$logo-space:                    floor($header-padding-vertical / 2) + 20px !default;
 
 $main-menu-bg:                  $gray-100 !default;
 $main-menu-bg-hover:            $gray-100 !default;

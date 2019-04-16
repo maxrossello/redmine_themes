@@ -122,6 +122,12 @@
 
     @if $use-logo {
       padding-left: $logo-image-width + $logo-position-horizontal + $logo-space;
+      // TODO: make it dynamic
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      border-bottom: solid 1px $eea-gray;
+
       background-image: url("../images/logo/logo.png");
       background-repeat: no-repeat;
       background-position: $logo-position-horizontal $logo-position-vertical;
