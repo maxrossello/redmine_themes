@@ -6,7 +6,7 @@
   @extend %clearfix;
   position: relative;
   padding: $padding-small-vertical $padding-side;
-  background: $top-menu-bg;
+  background: $eea-top-menu-bg;
   color: $top-menu-text;
   font-size: $font-size-small;
 
@@ -113,8 +113,9 @@
 #header {
   @extend %clearfix;
   position: relative;
-  background-color: $header-bg;
-  color: $header-text;
+  background-color: $white;
+  color: $eea-dark-blue;
+  border-bottom: solid 1px $eea-gray;
 
   > h1 {
     padding: $header-padding-vertical $header-padding-horizontal;
@@ -150,7 +151,7 @@
   }
 
   a {
-    color: $header-link;
+    color: inherit;
   }
 }
 

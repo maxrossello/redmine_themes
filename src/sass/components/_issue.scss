@@ -17,6 +17,11 @@
     margin-bottom: $line-height-computed;
     word-wrap: break-word;
 
+    padding: 15px 15px;
+    border: 1px solid #dadce7;
+    border-radius: 3px;
+    background-color: #fafbfc;
+
     @if $use-gravatars {
       // For Redmine 3.4+
       .gravatar-with-child {

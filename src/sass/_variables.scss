@@ -41,6 +41,15 @@ $white:                         #fff !default;
 $black:                         #000 !default;
 $gray:                          hsl(hue($indigo), 20%, 85%) !default;
 
+//== EEA Colors
+//
+$eea-dark-blue:                 #3e425a;
+$eea-gray:                      #ddd;
+
+//== EEA Top menu
+//
+$eea-top-menu-bg:               #004B87;
+
 $shade-map: (
   50:                           90%,
   100:                          80%,
