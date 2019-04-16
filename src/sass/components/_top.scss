@@ -132,7 +132,7 @@
     }
 
     .root {
-      color: $header-root;
+      color: $eea-dark-blue;
       font-weight: $font-weight-semi-bold;
     }
 
@@ -177,7 +177,7 @@
 
   > form > input,
   > select {
-    border-color: $quick-search-border;
+    border-color: $eea-gray;
 
     &:focus {
       border-color: $quick-search-border-focus;
@@ -202,7 +202,7 @@
       z-index: 1003;
       height: auto;
       padding-bottom: $header-padding-horizontal / 2;
-      border-color: $quick-search-dropdown-bg;
+      border-color: $eea-gray;
       background-color: $quick-search-dropdown-bg;
 
       &::after {
