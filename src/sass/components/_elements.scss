@@ -468,6 +468,10 @@ ul.projects {
         background-color: $panel-bg;
         color: $panel-color;
 
+        .description {
+          display: none;
+        }
+
         @media screen and (min-width: $screen-sm-min) { width: calc(50% - #{$padding-side}); }
         @media screen and (min-width: $screen-md-min) { width: calc(33.333% - #{$padding-side}); }
         @media screen and (min-width: $screen-lg-min) { width: calc(25% - #{$padding-side}); }
@@ -488,7 +492,7 @@ ul.projects {
   }
 
   a.project {
-    font-size: $font-size-h3;
+    font-size: $font-size-h5;
     font-weight: $font-weight-bold;
 
     &.child {

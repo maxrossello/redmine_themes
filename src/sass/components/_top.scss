@@ -223,7 +223,7 @@
       @extend %form-field;
       @extend %fa-icon-after;
       min-width: $quick-search-width;
-      border-color: $quick-search-border;
+      border-color: $eea-gray;
 
       &::after {
         content: $fa-var-caret-down;
