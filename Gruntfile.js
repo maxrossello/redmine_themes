@@ -17,8 +17,7 @@ module.exports = function (grunt) {
 
       theme: {
         files: {
-          'stylesheets/application.css': '<%= src %>sass/application.scss',
-          'stylesheets/responsive.css': '<%= src %>sass/responsive.scss'
+          'stylesheets/application.css': '<%= src %>sass/application.scss'
         }
       },
 
