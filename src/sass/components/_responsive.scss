@@ -41,10 +41,14 @@
       .drdn-trigger {
         display: block;
         height: $responsive-header-height;
-        padding: 0;
+        padding: 0 $padding-side;
         background-color: transparent !important;
         box-shadow: none;
         line-height: $responsive-header-height;
+
+        &::before {
+          display: none;
+        }
 
         &::after {
           display: none;
