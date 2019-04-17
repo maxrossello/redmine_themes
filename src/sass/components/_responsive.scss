@@ -47,18 +47,6 @@
           box-shadow: none;
           line-height: $responsive-header-height;
 
-          // &::before {
-          //   @include fa-icon;
-          //   content: $fa-var-chevron-down;
-          //   position: relative;
-          //   top: -.1em;
-          //   width: $responsive-header-height * .75;
-          //   padding: 0;
-          //   transform: none;
-          //   font-size: .8em;
-          //   text-align: center;
-          // }
-
           &::after {
             display: none;
           }

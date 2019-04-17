@@ -42,6 +42,11 @@
 //
 // Sidebar
 // --------------------------------------------------
+table.sidebar.attributes td,
+table.sidebar.attributes th {
+  padding: 1px 8px 1px 0 !important;
+  word-break: keep-all;
+}
 
 #sidebar {
   max-width: 300px; 
@@ -68,7 +73,6 @@
   table {
     overflow: hidden;
     word-break: break-all;
-    // white-space: nowrap;
   }
 
   @if $css-grid-layout {
@@ -111,6 +115,7 @@
   }
 
   ul {
+    width: 100%;
     &:nth-child(n) {
       margin: 0 0 ($line-height-computed / 2);
       padding: 0;
@@ -170,8 +175,6 @@
 
   // Special treatment for anchor tags directly under sidebar tag
   > a {
-    margin: $sidebar-padding-vertical $sidebar-padding-horizontal;
-
     @if $sidebar-position == "left" {
       margin-left: $sidebar-padding-horizontal + 3px;
     } @else {
