@@ -44,6 +44,8 @@
 // --------------------------------------------------
 
 #sidebar {
+  max-width: 300px; 
+
   #main & {
     padding: $padding-side $sidebar-padding-horizontal;
   }
@@ -61,6 +63,12 @@
       width: 0;
       float: none;
     }
+  }
+
+  table {
+    overflow: hidden;
+    word-break: break-all;
+    // white-space: nowrap;
   }
 
   @if $css-grid-layout {
