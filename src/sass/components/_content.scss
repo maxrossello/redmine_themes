@@ -44,8 +44,11 @@
 // --------------------------------------------------
 table.sidebar.attributes td,
 table.sidebar.attributes th {
-  padding: 1px 8px 1px 0 !important;
   word-break: keep-all;
+}
+
+table.sidebar.attributes th {
+  padding: 1px 8px 1px 0 !important;
 }
 
 #sidebar {
@@ -175,12 +178,13 @@ table.sidebar.attributes th {
 
   // Special treatment for anchor tags directly under sidebar tag
   > a {
-    @if $sidebar-position == "left" {
-      margin-left: $sidebar-padding-horizontal + 3px;
-    } @else {
-      margin-right: $sidebar-padding-horizontal + 3px;
-      margin-left: 0;
-    }
+    margin: 0;
+    // @if $sidebar-position == "left" {
+    //   margin-left: $sidebar-padding-horizontal + 3px;
+    // } @else {
+    //   margin-right: $sidebar-padding-horizontal + 3px;
+    //   margin-left: 0;
+    // }
   }
 }
 

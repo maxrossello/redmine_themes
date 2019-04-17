@@ -27,15 +27,14 @@
     }
 
     #header {
+      background-color: $eea-top-menu-bg !important;
+
       #project-jump {
         padding: 0 $responsive-header-height 0 0;
 
         &.expanded {
           .drdn-trigger {
-            &::before {
-              padding: 0;
-              transform: rotate(180deg);
-            }
+            background-color: transparent !important;
           }
         }
 
