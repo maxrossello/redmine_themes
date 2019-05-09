@@ -1,4 +1,8 @@
-# PurpleMine 2
+# Taskman Redmine theme
+
+The Redmine theme used by Taskman. This repository is a fork of the "PurpleMine 2" theme.
+
+## PurpleMine 2
 
 A free Redmine theme for modern browsers.
 
