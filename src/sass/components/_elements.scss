@@ -358,6 +358,13 @@ a.close-icon {
 
 //== Resetting font for SCM (repository files)
 //
+// 106078 force filecontent-container to have auto height
+// due to https://www.redmine.org/issues/29395 calc(100vw - someheight) is used
+// which can make a full image have a smaller height than the elements below it
+// which makes that element go above the container
+.filecontent-container {
+  height: auto !important;
+}
 
 #content table.filecontent {
   width: 100%;
