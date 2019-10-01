@@ -35,6 +35,7 @@
     "sass-inline-svg": "^1.2.0"
   },
   "devDependencies": {
+    "grunt-contrib-uglify": "^4.0.1",
     "standard": "^12.0.1"
   },
   "standard": {

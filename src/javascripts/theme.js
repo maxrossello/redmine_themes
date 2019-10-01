@@ -44,4 +44,13 @@ $(function () {
   }
 
   fixHistoryView();
+
+  function editWikiQuickSearch() {
+    var pathname = window.location.pathname;
+    if  (pathname.match('/projects/.*/wiki/.*/edit') && $('#wiki_page_parent_id').length > 0) {
+	    $('#wiki_page_parent_id').select2();
+    }
+  }
+  
+  editWikiQuickSearch();
 })
