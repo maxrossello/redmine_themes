@@ -25,9 +25,9 @@ a.collapsible,
     height: 0;
     margin-right: 3px;
     transform: rotate(0);
-    border-top:   6px solid;
+    border-top: 6px solid;
     border-right: 4px solid transparent;
-    border-left:  4px solid transparent;
+    border-left: 4px solid transparent;
     vertical-align: middle;
 
     @if $collapsible-animation-time > 0 {
@@ -51,7 +51,7 @@ a.collapsible.collapsed,
     transition: max-height $collapsible-animation-time ease-out;
 
     > div {
-      display: block !important; // scss-lint:disable ImportantRule
+      display: block !important; // stylelint-disable-line declaration-no-important
       visibility: visible;
       transition: visibility 0s 0s, opacity $collapsible-animation-time;
       opacity: 1;
@@ -98,14 +98,30 @@ a.collapsible.collapsed,
 //
 
 .hidden-for-sighted {
-  position: absolute;
-  top: auto;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  // stylelint-disable declaration-no-important
+  position: absolute !important;
+  top: auto !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  // stylelint-enable declaration-no-important
 }
 
+img {
+  image-orientation: from-image;
+}
+
+.filecontent-container {
+  position: relative;
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+.filecontent-container > .filecontent {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+}
 
 //== Responsive autoscroll
 //
@@ -136,7 +152,7 @@ a.collapsible.collapsed,
   }
 
   &:last-child,
-  >:last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 
@@ -283,7 +299,7 @@ p.subtitle {
   }
 
   &.ui-sortable-placeholder {
-    visibility: visible !important; // scss-lint:disable ImportantRule
+    visibility: visible !important; // stylelint-disable-line declaration-no-important
     outline: 1px dashed $highlight-border;
     background: $highlight-bg;
   }
@@ -574,11 +590,21 @@ ul.projects {
 //
 
 div#roadmap {
+  article {
+    margin-bottom: $line-height-computed;
+  }
+
   .related-issues {
     margin-bottom: $line-height-computed;
 
     td.checkbox {
       display: none;
+    }
+
+    td.assigned_to {
+      width: 1px;
+      padding-right: 0;
+      white-space: nowrap;
     }
   }
 
@@ -591,6 +617,12 @@ div#roadmap {
       position: relative;
       top: 0;
     }
+  }
+
+  header > h3,
+  h3.version {
+    margin-bottom: 0;
+    padding-right: 0;
   }
 
   .wiki {
@@ -927,6 +959,16 @@ div.table-list.boards {
   background: $diff-in-bg-light;
 
   span {
+    background: $diff-in-bg;
+  }
+}
+
+.text-diff {
+  .diff_out {
+    background: $diff-out-bg;
+  }
+
+  .diff_in {
     background: $diff-in-bg;
   }
 }
