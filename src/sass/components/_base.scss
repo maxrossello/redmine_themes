@@ -120,6 +120,7 @@ ul,
 ol {
   margin-top: 0;
   margin-bottom: ($line-height-computed / 2);
+  padding-left: 1.5em;
 
   ul,
   ol {
@@ -151,13 +152,13 @@ samp {
 }
 
 hr {
-  margin-top:    $line-height-computed;
+  margin-top: $line-height-computed;
   margin-bottom: $line-height-computed;
   border: 0;
   border-top: 1px solid $hr-border;
 
   li & {
-    margin-top:    $line-height-computed / 2;
+    margin-top: $line-height-computed / 2;
     margin-bottom: $line-height-computed / 2;
   }
 }
@@ -167,11 +168,11 @@ blockquote {
   padding: floor($line-height-computed / 4) $padding-large-horizontal;
   border-left: 4px solid $blockquote-border-color;
 
-  >:first-child {
+  > :first-child {
     margin-top: 0;
   }
 
-  >:last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 }

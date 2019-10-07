@@ -1,4 +1,8 @@
-// scss-lint:disable SelectorDepth
+.mobile-show {
+  display: none;
+}
+
+
 
 @media screen and (max-width: $redmine-responsive-max) {
   .flyout-menu + div {
@@ -39,12 +43,15 @@
       }
 
       .drdn-trigger {
-        display: block;
-        height: $responsive-header-height;
-        padding: 0 $padding-side;
-        background-color: transparent !important;
-        box-shadow: none;
-        line-height: $responsive-header-height;
+          @include text-overflow;
+          display: block;
+          height: $responsive-header-height;
+          padding: 0 $padding-side;
+          background-color: transparent !important;
+          box-shadow: none;
+          font-size: $font-size-large;
+          font-weight: $font-weight-normal;
+          line-height: $responsive-header-height;
 
         &::before {
           display: none;
@@ -57,6 +64,7 @@
 
       .drdn-content {
         top: $responsive-header-height;
+	font-size: $font-size-base;
       }
     }
   }
@@ -75,6 +83,10 @@
     background-color: $flyout-menu-bg;
     color: $flyout-menu-text;
 
+    .search-magnifier {
+      left: 18px;
+    }
+
     &__search {
       height: $responsive-header-height;
       padding: ($padding-side / 2);
@@ -86,11 +98,27 @@
       }
     }
 
+    &__avatar {
+      img.gravatar {
+        top: 0;
+      }
+    }
+
     a {
       &,
       &:hover,
       &:focus {
         color: $flyout-menu-link;
+
+        &::before,
+        span {
+          color: inherit !important; // stylelint-disable-line declaration-no-important
+        }
+      }
+
+      &.selected {
+        background-color: $flyout-menu-link-active-bg;
+        color: $flyout-menu-link-active;
       }
     }
 
@@ -101,29 +129,55 @@
       color: $flyout-menu-header-text;
     }
 
-    #admin-menu {
-      a {
-        background-position: 8px center;
 
-        &,
-        &:hover,
-        &:focus {
-          &::before {
-            color: $flyout-menu-link;
+      #admin-menu {
+        a {
+          background-position: 8px center;
+
+          &.additionals {
+            padding-left: 32px !important; // stylelint-disable-line declaration-no-important
+
+            &::before {
+              margin-right: $padding-small-vertical;
+              font-size: $fa-font-size-base;
+            }
           }
         }
+      }
 
-        &.selected {
-          background-color: $body-bg;
-          color: $text-color;
 
-          &::before {
-            color: $text-color;
+      #watchers {
+        .contextual {
+          padding-top: $line-height-computed / 2;
+          padding-bottom: $line-height-computed / 2;
+        }
+
+        .watchers {
+          li {
+            margin: ($line-height-computed / 2) 0 0;
+            padding: 0;
+
+            img.gravatar {
+              top: 0;
+            }
+
+            a {
+              height: auto;
+              border-top: 0;
+              line-height: initial;
+            }
+
+            .delete {
+              flex: 0 0 24px;
+              margin-left: auto;
+              float: none;
+              text-align: center;
+              text-overflow: initial;
+            }
           }
         }
       }
     }
-  }
 
   #query_form_content {
     fieldset {
@@ -213,43 +267,97 @@
       margin-bottom: 5px;
     }
 
+
     label {
       display: inline-block;
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        margin-top: $check-input-margin-btn-v;
+      }
     }
   }
 
-  // For Redmine 4.0+
-  #content > .contextual .drdn {
-    padding: 0;
-    border: 0;
 
-    .drdn-trigger {
-      padding: $btn-padding-vertical $btn-padding-horizontal;
+    #content > .contextual > span {
+      margin-bottom: 0;
     }
 
-    .drdn-items {
-      a {
-        margin: 3px 0 0;
+    #content > .contextual > a,
+    #content > .contextual .drdn,
+    p.buttons a {
+      display: inline-block;
+      margin: 0 2px 5px 0;
+      float: none;
+    }
 
-        &:first-child {
-          margin-top: 0;
+    // For Redmine 4.0+
+    #content > .contextual .drdn {
+      padding: 0;
+      border: 0;
+
+      .drdn-trigger {
+        padding: $btn-padding-vertical $btn-padding-horizontal;
+      }
+
+      .drdn-items {
+        a {
+          margin: 3px 0 0;
+          padding-top: $btn-padding-vertical;
+          padding-bottom: $btn-padding-vertical;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    // For Redmine 3.4+
+    #my-page {
+      #list-left {
+        width: 100%;
+        padding-right: 0;
+        float: none;
+      }
+
+      #list-right {
+        width: 100%;
+        padding-left: 0;
+        float: none;
+      }
+    }
+
+    #issue-changesets {
+      div.changeset {
+        padding: 0;
+      }
+    }
+
+    #admin-index > #admin-menu li {
+      padding: 0;
+    }
+  }
+
+  // Tweaks for smartphones, touchscreens
+  @media (hover: none) and (pointer: coarse) {
+    .mobile-toggle-button::after {
+      margin-top: 0;
+    }
+
+    .query-columns {
+      span {
+        display: block;
+        margin-bottom: $line-height-computed / 2;
+      }
+
+      .buttons {
+        input[type="button"] {
+          display: inline-block;
         }
       }
     }
   }
 
-  // For Redmine 3.4+
-  #my-page {
-    #list-left {
-      width: 100%;
-      padding-right: 0;
-      float: none;
-    }
 
-    #list-right {
-      width: 100%;
-      padding-left: 0;
-      float: none;
-    }
-  }
-}
+
