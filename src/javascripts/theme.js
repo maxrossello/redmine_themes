@@ -47,7 +47,7 @@ $(function () {
 
   function editWikiQuickSearch() {
     var pathname = window.location.pathname;
-    if  (pathname.match('/projects/.*/wiki/.*/edit') && $('#wiki_page_parent_id').length > 0) {
+    if  ((pathname.match('/projects/.*/wiki/.*/edit') || pathname.match('/projects/.*/wiki/.*/rename')) && $('#wiki_page_parent_id').length > 0) {
 	    $('#wiki_page_parent_id').select2();
 	    $('body').addClass('page_that_uses_select2');
     }
