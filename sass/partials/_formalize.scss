@@ -59,12 +59,6 @@ textarea {
   &:invalid {
     @include box-shadow(none);
   }
-  // Add blue glow.
-  &:focus {
-    @include box-shadow(#81c2dc 0 0 5px 0);
-    // for Opera
-    z-index: 1;
-  }
 }
 
 input[type="file"],
@@ -98,7 +92,7 @@ input[type="button"] {
   overflow: visible;
   margin: 0;
   padding: 0 15px;
-  line-height: 2;
+  line-height: 1;
   text-shadow: none;
   text-decoration: none;
   vertical-align: top;
@@ -106,8 +100,8 @@ input[type="button"] {
   @include transition(all .5s);
   &:hover,
   &:active {
-    background: #fff;
-    color: $color-primary;
+    background: $gray-text;
+    color: $white;
   }
   // IE7
   *padding-top: 2px;
@@ -159,11 +153,11 @@ input[type="week"] {
   border: 1px solid;
   border-color: #848484 #c1c1c1 #e1e1e1;
   color: black;
-  outline: 0;
+  outline: none;
   margin: 0;
   padding: 2px 3px;
   text-align: left;
-  font-size: 13px;
+  font-size: 0.9rem;
   // Leaving out Helvetica Neue, to not throw off size="..."
   // on inputs. Arial is more reliable, on Windows and OS X.
   font-family: Arial, "Liberation Sans", FreeSans, sans-serif;
@@ -277,6 +271,10 @@ textarea {
   overflow: auto;
   resize: vertical;
   width: 100%;
+  
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 optgroup {
