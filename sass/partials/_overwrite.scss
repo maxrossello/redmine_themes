@@ -1,0 +1,23 @@
+#sidebarHandler {
+  margin-right: 19px !important;
+  margin-top: 31px !important;
+  right: 1px !important;
+}
+
+#hideSidebarButton {
+	background-color: $color-primary-light;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+  transform: translateY(-40px);
+  transition: all 0.5s;
+  margin-left: 3px;
+  top: 262px;
+
+  background-image: none !important;
+  width: 17px !important;
+	height: 40px !important;
+
+  &:hover {
+    background-color: $color-primary;
+  }
+}

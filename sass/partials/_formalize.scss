@@ -1,5 +1,6 @@
 
-@import "compass/css3";
+// @import "compass/css3";
+@import "../../node_modules/compass-mixins-fixed/lib/compass/css3";
 
 // Widths
 //----------------------------------------------------------------------------------------------------
@@ -83,7 +84,7 @@ input[type="button"] {
   -webkit-appearance: none;
   // @include border-radius(4px);
   @include background-clip(padding-box);
-  background: $hotpink;
+  background: $color-primary;
   // @include background-image(linear-gradient(white, #dddddd));
   border: none;
   // border-color: #dddddd #bbbbbb #999999;
@@ -106,7 +107,7 @@ input[type="button"] {
   &:hover,
   &:active {
     background: #fff;
-    color: $hotpink;
+    color: $color-primary;
   }
   // IE7
   *padding-top: 2px;

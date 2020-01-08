@@ -4,32 +4,31 @@
 // Open Sans
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800');
 
-$gray-dark: #202020;
-$gray-text: #484848;
-$hotpink: #ff3264;
-
-@import "compass";
+// @import "compass";
+@import "../node_modules/compass-mixins-fixed/lib/compass";
+@import "partials/variables";
 @import "partials/formalize";
-@import "partials/tables";
+@import "partials/tables"; // en/disable for color-highlighting of rows
+@import "partials/overwrite";
 
 body {
   font: normal 14px/1.5 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Roboto", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   color: $gray-text;
   background: #fff;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
 
 a, a:link, a:visited {
-  color: $hotpink;
+  color: $color-primary;
   @include transition(color .5s);
   &:hover {
     text-decoration: none;
-    color: lighten($hotpink, 25%);
+    color: lighten($color-primary, 25%);
   }
   th & {
     color: $gray-text;
@@ -131,7 +130,7 @@ code {
 
 // Project Select
 .drdn-trigger {
-	height: 30px;
+	height: 30px !important;
 }
 
 .drdn-content {
@@ -143,13 +142,13 @@ code {
 }
 
 .drdn-items>a:hover {
-	background-color: $hotpink;
+	background-color: $color-primary;
 	color: #fff !important;
 	transition: none;
 }
 
 .drdn-items>*:focus {
-	background-color: $hotpink;
+	background-color: $color-primary;
 	color: #fff !important;
 }
 
@@ -167,7 +166,7 @@ code {
       @include transition(border-color .5s);
       &.selected,
       &:hover {
-        border-top: 3px solid $hotpink;
+        border-top: 3px solid $color-primary;
         background: transparent;
       }
       &.selected {
@@ -180,8 +179,8 @@ code {
 
 // New Object Tab
 #main-menu li a.new-object {
-	background-color: $hotpink;
-	border-top: 3px solid $hotpink;
+	background-color: $color-primary;
+	border-top: 3px solid $color-primary;
 }
 
 #main-menu li a.new-object:hover {
@@ -197,7 +196,7 @@ code {
 #main-menu .menu-children li a {
 	border-top: none;
 	&:hover {
-		background-color: $hotpink;
+		background-color: $color-primary;
 	}
 }
 
@@ -214,7 +213,8 @@ code {
 
 #sidebar {
   width: 22%;
-  margin-left: 3%;
+  // margin-left: 3%;
+  padding-top: 1.5rem;
   h3 {
     margin-top: 23px;
   }
@@ -272,10 +272,10 @@ div.issue {
   fieldset.tabular {
     legend {
       cursor: pointer;
-      color: $hotpink;
+      color: $color-primary;
       @include transition(color .5s);
       &:hover {
-        color: lighten($hotpink, 25%);
+        color: lighten($color-primary, 25%);
       }
     }
     legend small,
@@ -330,7 +330,7 @@ input[type="submit"] + a + a {
 /* Contextual Icon Buttons
 .contextual .icon {
 	padding: 10px 10px 10px 40px;
-	background-color: $hotpink;
+	background-color: $color-primary;
 	background-position: 10px 50%;
 	color: #fff;
 }

@@ -3,11 +3,14 @@
 
 $gray-dark: #202020;
 $gray-text: #484848;
-$hotpink: #d92e47;
+$color-primary: #d92e47;
 
-@import "compass";
+// @import "compass";
+@import "node_modules/compass-mixins-fixed/lib/compass";
+@import "partials/variables";
 @import "partials/formalize-rtl";
 @import "partials/tables-rtl";
+@import "partials/overwrite";
 
 
 // Header
