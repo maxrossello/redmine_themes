@@ -472,6 +472,12 @@ table.query-columns td.buttons input[type=button] {
   background-color: rgba($color-primary, 0.1) !important;
 }
 
+// Options
+#options .buttons > input[type='button'] {
+  margin-bottom: 5px;
+  width: 50px;
+}
+
 // Filters
 select[multiple="multiple"] {
   height: auto !important;
@@ -696,9 +702,25 @@ div.journal {
   color: darken($gray-background, 40%);
 }
 
+// Calendar
+table.cal {
+  td.today {
+    background-color: rgba($color-primary, 0.2);
+  }
+  div.tooltip:hover span.tip {
+    border-radius: 3px;
+    box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.4);
+  }
+}
+
 // Plugin: Redmine Silencer
 p.plugin_redmine_silencer {
   display: inline-block;
   margin-left: 20px;
   margin-top: 10px;
+}
+
+// Misc
+.block-receiver {
+  border: 0 !important;
 }

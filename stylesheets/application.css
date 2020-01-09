@@ -856,6 +856,11 @@ table.query-columns td.buttons input[type=button] {
   background-color: rgba(2, 136, 209, 0.1) !important;
 }
 
+#options .buttons > input[type=button] {
+  margin-bottom: 5px;
+  width: 50px;
+}
+
 select[multiple=multiple] {
   height: auto !important;
 }
@@ -1050,10 +1055,22 @@ div.journal.has-notes .wiki p:first-of-type, div.journal.has-notes .wiki blockqu
   color: #919191;
 }
 
+table.cal td.today {
+  background-color: rgba(2, 136, 209, 0.2);
+}
+table.cal div.tooltip:hover span.tip {
+  border-radius: 3px;
+  box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
 p.plugin_redmine_silencer {
   display: inline-block;
   margin-left: 20px;
   margin-top: 10px;
+}
+
+.block-receiver {
+  border: 0 !important;
 }
 
 /*# sourceMappingURL=application.css.map */
