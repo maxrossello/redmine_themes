@@ -428,10 +428,10 @@ h1, h2, h3, h4 {
 
 a, a:link, a:visited {
   color: #0288d1;
-  -webkit-transition: color 0.5s;
-  -moz-transition: color 0.5s;
-  -o-transition: color 0.5s;
-  transition: color 0.5s;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
 }
 a:hover, a:link:hover, a:visited:hover {
   text-decoration: none;
@@ -815,18 +815,43 @@ table.query-columns td.buttons input[type=button] {
   padding: 0;
 }
 
+.issues tbody a:hover {
+  color: #484848;
+}
 .issues tbody .id a {
   font-size: 0.8rem;
   border: 1px solid;
   border-radius: 3px;
-  padding: 0 2px 1px;
   color: rgba(72, 72, 72, 0.75);
+  display: inline-block;
+  position: relative;
+  top: -1px;
 }
 .issues tbody .id a:hover {
   color: #0288d1;
 }
 .issues tbody .id a::before, .issues tbody .id a::after {
   content: "  ";
+}
+.issues tbody td.assigned_to a {
+  display: inline-block;
+  min-width: 3.125rem;
+  border-radius: 0.81rem;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #8CCAEB;
+  font-size: 0.8rem;
+  color: white;
+  transition: all 0.3s;
+  position: relative;
+  top: -1px;
+}
+.issues tbody td.assigned_to a:hover {
+  background-color: #484848;
+}
+.issues tbody td.priority {
+  padding-top: 2px;
 }
 .issues tbody td.priority::first-line {
   font-size: 0.8rem;
@@ -835,21 +860,44 @@ table.query-columns td.buttons input[type=button] {
 .issues tbody td.priority::before, .issues tbody td.priority::after {
   content: "  ";
 }
+.issues tbody .priority-5 td.subject a::after, .issues tbody .priority-6 td.subject a::after, .issues tbody .priority-7 td.subject a::after, .issues tbody .priority-lowest td.subject a::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #7045D1;
+  position: relative;
+  left: 10px;
+  bottom: 1px;
+}
 .issues tbody .priority-default td.priority::first-line, .issues tbody .priority-default td.priority::before, .issues tbody .priority-default td.priority::after {
-  background-color: #9DB9D5;
+  background-color: #8CCAEB;
 }
 .issues tbody .priority-5 td.priority::first-line, .issues tbody .priority-5 td.priority::before, .issues tbody .priority-5 td.priority::after {
-  background-color: #B00;
+  background-color: #7045D1;
+}
+.issues tbody .priority-5 td.subject a::after {
+  background-color: #7045D1;
 }
 .issues tbody .priority-6 td.priority::first-line, .issues tbody .priority-6 td.priority::before, .issues tbody .priority-6 td.priority::after {
-  background-color: #D00;
+  background-color: #E044A3;
+}
+.issues tbody .priority-6 td.subject a::after {
+  background-color: #E044A3;
 }
 .issues tbody .priority-7 td.priority::first-line, .issues tbody .priority-7 td.priority::before, .issues tbody .priority-7 td.priority::after {
-  background-color: #F00;
+  background-color: #FF3455;
+}
+.issues tbody .priority-7 td.subject a::after {
+  background-color: #FF3455;
 }
 .issues tbody .priority-lowest td.priority::first-line, .issues tbody .priority-lowest td.priority::before, .issues tbody .priority-lowest td.priority::after {
   background-color: #c7d0d8;
   color: rgba(72, 72, 72, 0.75);
+}
+.issues tbody .priority-lowest td.subject a::after {
+  background-color: #c7d0d8;
 }
 
 .odd:hover, .even:hover, .list tr:hover {
@@ -1048,6 +1096,25 @@ div.journal.has-notes.has-details .thumbnails::before {
 div.journal.has-notes .wiki p:first-of-type, div.journal.has-notes .wiki blockquote:first-of-type {
   margin-block-start: 0;
   margin-block-end: 0.5em;
+}
+
+#context-menu {
+  transform: translateY(-160px);
+  border-radius: 3px;
+  box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.4);
+}
+#context-menu ul {
+  width: 13rem !important;
+  border-radius: 3px !important;
+}
+#context-menu ul li a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#context-menu li.folder ul {
+  left: calc(13rem - 2px) !important;
+  box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.4);
 }
 
 .warning, .nodata {
