@@ -25,7 +25,7 @@ h1, h2, h3, h4 {
 
 a, a:link, a:visited {
   color: $color-primary;
-  @include transition(color .5s);
+  @include transition(color .4s);
   &:hover {
     text-decoration: none;
     color: lighten($color-primary, 25%);
@@ -411,12 +411,18 @@ table.query-columns td.buttons input[type=button] {
 }
 
 .issues tbody {
-  & .id a {
+  a:hover {
+    color: $gray-text;
+  }
+
+  .id a {
     font-size: 0.8rem;
     border: 1px solid;
     border-radius: 3px;
-    padding: 0 2px 1px;
     color: rgba($gray-text, 0.75);
+    display: inline-block;
+    position: relative;
+    top: -1px;
 
     &:hover {
       color: $color-primary;
@@ -426,13 +432,48 @@ table.query-columns td.buttons input[type=button] {
     }
   }
 
+  td.assigned_to a {
+    display: inline-block;
+    min-width: 3.125rem;
+    border-radius: 0.81rem;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: $color-primary-person;
+    font-size: 0.8rem;
+    color: $white;
+    transition: all 0.3s;
+    position: relative;
+    top: -1px;
+
+    &:hover {
+      background-color: $gray-text;
+    }
+  }
+
   & td.priority {
+    padding-top: 2px;
+
     &::first-line {
       font-size: 0.8rem;
       color: #fff;
     }
     &::before, &::after {
       content: '\00a0\00a0';
+    }
+  }
+
+  .priority-5, .priority-6, .priority-7, .priority-lowest {
+      td.subject a::after {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $color-priority-5;
+      position: relative;
+      left: 10px;
+      bottom: 1px;
     }
   }
 
@@ -447,11 +488,19 @@ table.query-columns td.buttons input[type=button] {
       background-color: $color-priority-5;
     }
   }
+  & .priority-5 td.subject a {
+    // color: $color-priority-5;
+    &::after { background-color: $color-priority-5; }
+  }
 
   & .priority-6 td.priority {
     &::first-line, &::before, &::after {
       background-color: $color-priority-6;
     }
+  }
+  & .priority-6 td.subject a {
+    // color: $color-priority-6;
+    &::after { background-color: $color-priority-6; }
   }
 
   & .priority-7 td.priority {
@@ -459,12 +508,20 @@ table.query-columns td.buttons input[type=button] {
       background-color: $color-priority-7;
     }
   }
+  & .priority-7 td.subject a {
+    // color: $color-priority-7;
+    &::after { background-color: $color-priority-7; }
+  }
 
   & .priority-lowest td.priority {
     &::first-line, &::before, &::after {
       background-color: $color-priority-lowest;
       color: rgba($gray-text, 0.75);
     }
+  }
+  & .priority-lowest td.subject a {
+    // color: darken($color-priority-lowest, 10%);
+    &::after { background-color: $color-priority-lowest; }
   }
 }
 
