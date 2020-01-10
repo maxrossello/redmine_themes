@@ -798,6 +798,185 @@ p.plugin_redmine_silencer {
   margin-top: 10px;
 }
 
+// Plugin: Agile
+.agile-board {
+  .issue-card {
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-top: 5px solid $gray-light;
+    border-bottom: 5px solid $gray-light !important;
+    border-radius: 3px;
+    background-color: $gray-text !important;
+    box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    transition: box-shadow 0.2s;
+
+    &:hover {
+      box-shadow: $box-shadow-hover;
+    }
+  }
+
+  .fields {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .project {
+      background-color: $gray-text;
+      border: 0;
+      color: $white;
+      flex-grow: 1;
+      font-size: 0.8rem;
+      margin: 0;
+      order: 2;
+      padding: 0 5px 0 0;
+      text-align: right;
+    }
+
+    .issue-id {
+      color: $white;
+      flex-grow: 20;
+      font-size: 0.8rem;
+      order: 1;
+
+      strong {
+        display: inline-block;
+        font-weight: normal;
+        padding-left: 5px;
+      }
+      .hours {
+        font-size: 0.8rem;
+        color: rgba($white, 0.5);
+      }
+    }
+
+    .name {
+      background-color: $gray-light !important;
+      display: block;
+      flex-basis: 100%;
+      order: 3;
+      padding: 5px 5px 0;
+
+      a {
+        color: $gray-text;
+        font-weight: normal;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+
+    .attributes {
+      background-color: $gray-light !important;
+      color: $gray-medium;
+      flex-basis: 100%;
+      font-size: 0.8rem;
+      order: 4;
+      padding: 0 5px;
+
+      b::before {
+        content: '› ';
+      }
+    }
+
+    .info {
+      border: 0;
+      margin: 0;
+      padding: 0 5px;
+    }
+    .last_comment {
+      background-color: $gray-light;
+      display: block;
+      order: 50;
+      padding-top: 10px;
+    }
+    .thumbnail {
+      background-color: $gray-light;
+      background-position: 5px 0;
+      background-size: contain;
+      height: 60px;
+      margin: 0;
+      order: 70;
+      width: 100%;
+    }
+    .description {
+      background-color: $gray-light;
+      display: block;
+      order: 60;
+      width: 100%;
+    }
+
+    .assigned-user {
+      background-color: $gray-light !important;
+      display: block;
+      flex-basis: 100%;
+      order: 5;
+      padding-top: 2px;
+
+      .user a {
+        background-color: $color-primary-person;
+        border-radius: 0.81rem;
+        box-sizing: border-box;
+        color: $white;
+        display: inline-block;
+        font-size: 0.8rem;
+        min-width: 3.125rem;
+        padding: 0 5px;
+        text-align: center;
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: $gray-text;
+        }
+      }
+    }
+
+    .quick-comment {
+      background-color: $gray-light;
+      margin: 0;
+      order: 100;
+      padding: 5px 5px 0;
+
+      .wiki-edit {
+        margin-bottom: 5px;
+      }
+      a {
+        display: inline-block;
+        position: relative;
+        top: -3px;
+
+        :hover {
+          color: $gray-text;
+        }
+      }
+    }
+  }
+
+  tr.swimlane:hover {
+    background-color: rgba($color-primary, 0.02) !important;
+  }
+
+  .context-menu-selection {
+    &:hover {
+      background-color: $gray-text !important;
+    }
+
+    .name a {
+      color: $color-primary !important;
+    }
+    .attributes {
+      color: $gray-medium !important;
+    }
+    .project {
+      color: $white !important;
+    }
+  }
+
+}
+
 // Misc
 .block-receiver {
   border: 0 !important;
