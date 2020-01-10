@@ -1,6 +1,6 @@
 {
   "name": "lab-redmine-theme-flat",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "labor b redmine theme",
   "scripts": {
     "compile": "sass sass/application.scss stylesheets/application.css",
