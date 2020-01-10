@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* load the default Redmine stylesheet */
 @import url("../../../stylesheets/application.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto,Roboto-Mono");
 .input_tiny {
   width: 50px;
 }
@@ -414,16 +415,22 @@ optgroup::-moz-focus-inner {
   background-color: #0288d1;
 }
 
-body {
-  font: normal 14px/1.5 "Open Sans", sans-serif;
+html {
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Roboto", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  font-weight: normal;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: inherit;
+  line-height: 1.5;
   color: #484848;
   background: #fff;
 }
 
 h1, h2, h3, h4 {
-  font-weight: 300;
+  font-weight: 500;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 a, a:link, a:visited {
@@ -592,10 +599,10 @@ code {
   font-weight: 300;
   border-top: 3px solid #202020;
   padding: 4px 15px 7px;
-  -webkit-transition: border-color 0.5s;
-  -moz-transition: border-color 0.5s;
-  -o-transition: border-color 0.5s;
-  transition: border-color 0.5s;
+  -webkit-transition: border-color 0.3s;
+  -moz-transition: border-color 0.3s;
+  -o-transition: border-color 0.3s;
+  transition: border-color 0.3s;
 }
 #main-menu li a.selected, #main-menu li a:hover {
   border-top: 3px solid #0288d1;
@@ -604,6 +611,13 @@ code {
 #main-menu li a.selected {
   font-weight: 400;
   background: #f7f7f7;
+}
+#main-menu li a.selected:hover {
+  background: #f7f7f7;
+  color: #0288d1;
+}
+#main-menu li a.new-object:hover {
+  background: #3a3a3a !important;
 }
 
 #main-menu li a.new-object {
@@ -785,32 +799,6 @@ input[type=submit] + a + a {
   line-height: 2;
 }
 
-/* Contextual Icon Buttons
-.contextual .icon {
-	padding: 10px 10px 10px 40px;
-	background-color: $color-primary;
-	background-position: 10px 50%;
-	color: #fff;
-}
-
-.contextual .icon:hover {
-	background-color: $gray-dark;
-	color: #fff;
-	transition: 0.5s ease;
-}*/
-/* Icons
-
-.icon-time-add {
-	background-image: url(../images/time-add.png);
-}
-
-.icon-copy {
-	background-image: url(../images/copy.png);
-}
-
-.icon-fav-off {
-	background-image: url(../images/fav-off.png);
-}*/
 table.query-columns td.buttons input[type=button] {
   padding: 0;
 }
@@ -819,19 +807,19 @@ table.query-columns td.buttons input[type=button] {
   color: #484848;
 }
 .issues tbody .id a {
-  font-size: 0.8rem;
+  font-family: "Roboto-Mono", monospace;
+  font-size: 0.9rem;
   border: 1px solid;
   border-radius: 3px;
   color: rgba(72, 72, 72, 0.75);
-  display: inline-block;
+  display: block;
+  line-height: 1.1rem;
+  padding: 2px 6px 0;
   position: relative;
   top: -1px;
 }
 .issues tbody .id a:hover {
   color: #0288d1;
-}
-.issues tbody .id a::before, .issues tbody .id a::after {
-  content: "  ";
 }
 .issues tbody td.assigned_to a {
   display: inline-block;
@@ -904,6 +892,13 @@ table.query-columns td.buttons input[type=button] {
   background-color: rgba(2, 136, 209, 0.1) !important;
 }
 
+.list .context-menu-selection:hover {
+  color: #0288d1 !important;
+}
+.list .context-menu-selection:hover a:not(.user) {
+  color: #0288d1 !important;
+}
+
 #options .buttons > input[type=button] {
   margin-bottom: 5px;
   width: 50px;
@@ -943,14 +938,14 @@ table.list .odd:not(:hover), table.list .even:not(:hover) {
 }
 table.list th {
   background-color: transparent;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ebe9e9;
   padding: 15px 0;
   font-size: 0.9rem;
 }
 table.list td {
   padding-top: 5px;
   padding-bottom: 5px;
-  border-bottom: 1px solid rgba(204, 204, 204, 0.7);
+  border-bottom: 1px solid rgba(235, 233, 233, 0.7);
 }
 table.list .checkbox input {
   position: relative;
@@ -1134,6 +1129,178 @@ p.plugin_redmine_silencer {
   display: inline-block;
   margin-left: 20px;
   margin-top: 10px;
+}
+
+.agile-board .issue-card {
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 0;
+  border-top: 7px solid #ebe9e9;
+  border-bottom: 5px solid #ebe9e9 !important;
+  border-radius: 3px;
+  background-color: #484848 !important;
+  box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  padding: 0;
+  transition: box-shadow 0.2s;
+}
+.agile-board .issue-card:hover {
+  box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.4);
+}
+.agile-board .fields {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.agile-board .fields .project {
+  background-color: #484848;
+  border: 0;
+  color: white;
+  flex-grow: 1;
+  font-size: 0.8rem;
+  margin: 0;
+  order: 2;
+  padding: 0 5px 0 0;
+  text-align: right;
+}
+.agile-board .fields .issue-id {
+  color: white;
+  flex-grow: 20;
+  font-size: 0.8rem;
+  order: 1;
+}
+.agile-board .fields .issue-id > strong:first-of-type {
+  display: inline-block;
+  font-weight: normal;
+  padding-left: 5px;
+}
+.agile-board .fields .issue-id .hours {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+.agile-board .fields .name {
+  background-color: #ebe9e9 !important;
+  display: block;
+  flex-basis: 100%;
+  order: 3;
+  padding: 5px 5px 0;
+}
+.agile-board .fields .name a {
+  color: #484848;
+  font-weight: normal;
+}
+.agile-board .fields .name a:hover {
+  color: #0288d1;
+}
+.agile-board .fields .attributes {
+  background-color: #ebe9e9 !important;
+  color: #888;
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  order: 4;
+  padding: 0 5px;
+}
+.agile-board .fields .attributes b::before {
+  content: "› ";
+}
+.agile-board .fields .info {
+  border: 0;
+  margin: 0;
+  padding: 0 5px;
+}
+.agile-board .fields .last_comment {
+  background-color: #ebe9e9;
+  display: block;
+  order: 50;
+  padding-top: 10px;
+}
+.agile-board .fields .thumbnail {
+  background-color: #ebe9e9;
+  background-position: 5px 0;
+  background-size: contain;
+  height: 60px;
+  margin: 0;
+  order: 70;
+  width: 100%;
+}
+.agile-board .fields .description {
+  background-color: #ebe9e9;
+  display: block;
+  order: 60;
+  width: 100%;
+}
+.agile-board .fields .assigned-user {
+  background-color: #ebe9e9 !important;
+  display: block;
+  flex-basis: 100%;
+  order: 5;
+  padding-top: 2px;
+}
+.agile-board .fields .assigned-user .user a {
+  background-color: #8CCAEB;
+  border-radius: 0.81rem;
+  box-sizing: border-box;
+  color: white;
+  display: inline-block;
+  font-size: 0.8rem;
+  min-width: 3.125rem;
+  padding: 0 10px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.agile-board .fields .assigned-user .user a:hover {
+  background-color: #484848;
+}
+.agile-board .fields .quick-comment {
+  background-color: #ebe9e9;
+  margin: 0;
+  order: 100;
+  padding: 5px 5px 0;
+}
+.agile-board .fields .quick-comment .wiki-edit {
+  margin-bottom: 5px;
+}
+.agile-board .fields .quick-comment a {
+  display: inline-block;
+  position: relative;
+  top: -3px;
+}
+.agile-board .fields .quick-comment a :hover {
+  color: #484848;
+}
+.agile-board tr.swimlane:hover {
+  background-color: rgba(2, 136, 209, 0.02) !important;
+}
+.agile-board .context-menu-selection:hover {
+  background-color: #484848 !important;
+}
+.agile-board .context-menu-selection .name a {
+  color: #0288d1 !important;
+}
+.agile-board .context-menu-selection .attributes {
+  color: #888 !important;
+}
+.agile-board .context-menu-selection .project {
+  color: white !important;
+}
+
+.ui-dialog-titlebar {
+  padding: 0.5rem;
+  background: #484848 !important;
+}
+
+.ui-dialog-titlebar-close {
+  background: white !important;
+  border: 0 !important;
+  color: #484848;
+  margin-right: 8px !important;
+}
+.ui-dialog-titlebar-close:hover {
+  border: 0;
+}
+.ui-dialog-titlebar-close .ui-icon-closethick {
+  filter: grayscale(100%);
 }
 
 .block-receiver {
