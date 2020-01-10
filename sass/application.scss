@@ -977,6 +977,26 @@ p.plugin_redmine_silencer {
 
 }
 
+// UI Dialog
+.ui-dialog-titlebar {
+  padding: 0.5rem;
+  background: $gray-text !important;
+}
+.ui-dialog-titlebar-close {
+  background: $white !important;
+  border: 0 !important;
+  color: $gray-text;
+  margin-right: 8px !important;
+
+  &:hover {
+    border: 0;
+  }
+
+  .ui-icon-closethick {
+    filter: grayscale(100%);
+  }
+}
+
 // Misc
 .block-receiver {
   border: 0 !important;
