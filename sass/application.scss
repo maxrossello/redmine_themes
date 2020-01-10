@@ -1,8 +1,6 @@
 /* load the default Redmine stylesheet */
 @import url('../../../stylesheets/application.css');
-
-// Open Sans
-// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Roboto,Roboto-Mono');
 
 // @import "compass";
 @import "../node_modules/compass-mixins-fixed/lib/compass";
@@ -11,16 +9,22 @@
 // @import "partials/tables"; // en/disable for color-highlighting of rows
 @import "partials/overwrite";
 
-body {
-  font: normal 14px/1.5 'Open Sans', sans-serif;
+html {
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Roboto", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  font-weight: normal;
+  font-family: $fontstack;
+  font-size: inherit;
+  line-height: 1.5;
   color: $gray-text;
   background: #fff;
 }
 
 h1, h2, h3, h4 {
-  font-weight: 300;
+  font-weight: 500;
+  font-family: $fontstack;
 }
 
 a, a:link, a:visited {
@@ -377,34 +381,6 @@ input[type="submit"] + a + a {
 	line-height: 2;
 }
 
-/* Contextual Icon Buttons
-.contextual .icon {
-	padding: 10px 10px 10px 40px;
-	background-color: $color-primary;
-	background-position: 10px 50%;
-	color: #fff;
-}
-
-.contextual .icon:hover {
-	background-color: $gray-dark;
-	color: #fff;
-	transition: 0.5s ease;
-}*/
-
-/* Icons
-
-.icon-time-add {
-	background-image: url(../images/time-add.png);
-}
-
-.icon-copy {
-	background-image: url(../images/copy.png);
-}
-
-.icon-fav-off {
-	background-image: url(../images/fav-off.png);
-}*/
-
 // Issue list
 table.query-columns td.buttons input[type=button] {
   padding: 0;
@@ -416,19 +392,19 @@ table.query-columns td.buttons input[type=button] {
   }
 
   .id a {
-    font-size: 0.8rem;
+    font-family: $fontstack-mono;
+    font-size: 0.9rem;
     border: 1px solid;
     border-radius: 3px;
     color: rgba($gray-text, 0.75);
-    display: inline-block;
+    display: block;
+    line-height: 1.1rem;
+    padding: 2px 6px 0;
     position: relative;
     top: -1px;
 
     &:hover {
       color: $color-primary;
-    }
-    &::before, &::after {
-      content: '\00a0\00a0';
     }
   }
 
@@ -527,6 +503,10 @@ table.query-columns td.buttons input[type=button] {
 
 .odd:hover, .even:hover, .list tr:hover {
   background-color: rgba($color-primary, 0.1) !important;
+}
+.list .context-menu-selection:hover {
+  color: $color-primary !important;
+  a:not(.user) { color: $color-primary !important; }
 }
 
 // Options
@@ -841,7 +821,7 @@ p.plugin_redmine_silencer {
       font-size: 0.8rem;
       order: 1;
 
-      strong {
+      & > strong:first-of-type {
         display: inline-block;
         font-weight: normal;
         padding-left: 5px;
@@ -924,7 +904,7 @@ p.plugin_redmine_silencer {
         display: inline-block;
         font-size: 0.8rem;
         min-width: 3.125rem;
-        padding: 0 5px;
+        padding: 0 10px;
         text-align: center;
         transition: all 0.3s;
 
