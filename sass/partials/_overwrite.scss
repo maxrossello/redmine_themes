@@ -8,14 +8,15 @@
 	background-color: $color-primary-light;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
+  box-shadow: inset -70px 0px 40px -80px rgba(0,0,0,0.2);
   transform: translateY(-40px);
   transition: all 0.5s;
-  margin-left: 3px;
-  top: 262px;
+  margin-left: -7px;
+  top: 312px;
 
   background-image: none !important;
-  width: 17px !important;
-	height: 40px !important;
+  width: 27px !important;
+	height: 60px !important;
 
   &:hover {
     background-color: $color-primary;
