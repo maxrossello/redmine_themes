@@ -1,5 +1,5 @@
 /* load the default Redmine stylesheet */
-@import url(../../../stylesheets/rtl.css);
+@import url(/stylesheets/rtl.css);
 .input_full_wrap {
   padding-right: 0px;
   padding-left: 8px;

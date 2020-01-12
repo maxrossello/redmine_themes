@@ -1,0 +1,43 @@
+== Redmine A1 theme
+
+Copyright (C) 2011-2017 Kirill Bezrukov
+http://www.redmineup.com/
+
+== 2017-08-25 v2.0.0
+
+* Redmine 3.4 fixes
+* New styles for checkbox and radio inputs
+* Multiple select2 styles
+* Margin fixes for inputs
+* Select2 styles for new CRM
+* Date field styles
+* Glyphs for moving arrows on the main menu
+* New object "+" button support
+* Tabs buttons styles
+* Gravatar fixes for Redmine 3.3
+* Responsive colors
+
+== 2014-09-24 v1.1.3
+
+* New styles for select
+* Fixes for products plugin
+
+== 2013-10-17 v1.1.2
+
+* Contacts 3.2.6 support (tags)
+* redmine_tags plugin support
+* Search field styles
+
+== 2013-04-30 v1.1.1
+
+* Redmine 2.3 support
+* Datetime picker styles
+* Autocomplete styles
+
+== 2013-01-01 v1.1.0
+
+* Redmine 2.2 support
+* CRM plugin 3.1 support
+* Invoices plugin 2.0.1 support
+* Helpdesk plugin 2.1.0 support
+* Retina display support (thumbnails, contacts avatars, logo)

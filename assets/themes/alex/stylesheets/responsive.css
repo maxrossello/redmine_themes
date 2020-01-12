@@ -1,4 +1,4 @@
-@import url(../../../stylesheets/responsive.css);
+@import url(/stylesheets/responsive.css);
 
 @media all and (max-width: 899px){
     #header{
