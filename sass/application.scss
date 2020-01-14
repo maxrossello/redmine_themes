@@ -7,7 +7,6 @@
 @import "partials/variables";
 @import "partials/formalize";
 // @import "partials/tables"; // en/disable for color-highlighting of rows
-@import "partials/overwrite";
 
 html {
   font-size: 16px;
@@ -777,6 +776,56 @@ table.cal {
     border-radius: 3px;
     box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.4);
   }
+}
+
+// hideSidebarButton
+#sidebarHandler {
+  margin-right: 19px !important;
+  margin-top: 31px !important;
+  right: 1px !important;
+}
+
+#hideSidebarButton {
+	background-color: $color-primary-light;
+  background-image: none !important;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+  box-shadow: inset -70px 0px 40px -80px rgba(0,0,0,0.2);
+  height: 60px !important;
+  margin-left: -5px;
+  overflow: hidden;
+  transform: translateY(-40px);
+  transition: all 0.5s;
+  top: 400px;
+  width: 25px !important;
+
+  &::before{
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    position: absolute;
+    right: -10px;
+    top: calc(50% - 8px);
+    transition: all 0.25s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+
+    &::before {
+      right: calc(50% - 4px);
+    }
+  }
+}
+#content #hideSidebarButton::before {
+  border-left: 7px solid $white;
+  border-right: 0;
+}
+#content.sidebar_hidden #hideSidebarButton::before {
+  border-left: 0;
+  border-right: 7px solid $white;
 }
 
 // Plugin: Redmine Silencer
