@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* load the default Redmine stylesheet */
 @import url("../../../stylesheets/application.css");
-@import url("https://fonts.googleapis.com/css?family=Roboto,Roboto-Mono");
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto-Mono");
 .input_tiny {
   width: 50px;
 }
@@ -391,29 +391,6 @@ optgroup::-moz-focus-inner {
 
 .ie6_input_disabled {
   background: #eeeeee;
-}
-
-#sidebarHandler {
-  margin-right: 19px !important;
-  margin-top: 31px !important;
-  right: 1px !important;
-}
-
-#hideSidebarButton {
-  background-color: rgba(2, 136, 209, 0.15);
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  box-shadow: inset -70px 0px 40px -80px rgba(0, 0, 0, 0.2);
-  transform: translateY(-40px);
-  transition: all 0.5s;
-  margin-left: -7px;
-  top: 312px;
-  background-image: none !important;
-  width: 27px !important;
-  height: 60px !important;
-}
-#hideSidebarButton:hover {
-  background-color: #0288d1;
 }
 
 html {
@@ -815,9 +792,9 @@ table.query-columns td.buttons input[type=button] {
   color: rgba(72, 72, 72, 0.75);
   display: block;
   line-height: 1.1rem;
-  padding: 2px 6px 0;
+  padding: 1px 6px;
   position: relative;
-  top: -1px;
+  top: 0px;
 }
 .issues tbody .id a:hover {
   color: #0288d1;
@@ -840,7 +817,7 @@ table.query-columns td.buttons input[type=button] {
   background-color: #484848;
 }
 .issues tbody td.priority {
-  padding-top: 2px;
+  padding-top: 4px;
 }
 .issues tbody td.priority::first-line {
   font-size: 0.8rem;
@@ -900,6 +877,14 @@ table.query-columns td.buttons input[type=button] {
   color: #0288d1 !important;
 }
 
+#my-page .list td.checkbox + td.id {
+  padding-left: 5px;
+}
+
+.issue-report td.name:first-child {
+  padding-left: 5px;
+}
+
 #options .buttons > input[type=button] {
   margin-bottom: 5px;
   width: 50px;
@@ -945,7 +930,7 @@ table.list th {
 }
 table.list td {
   padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
   border-bottom: 1px solid rgba(235, 233, 233, 0.7);
 }
 table.list .checkbox input {
@@ -1124,6 +1109,54 @@ table.cal td.today {
 table.cal div.tooltip:hover span.tip {
   border-radius: 3px;
   box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
+#sidebarHandler {
+  margin-right: 19px !important;
+  margin-top: 31px !important;
+  right: 1px !important;
+}
+
+#hideSidebarButton {
+  background-color: rgba(2, 136, 209, 0.15);
+  background-image: none !important;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: inset -70px 0px 40px -80px rgba(0, 0, 0, 0.2);
+  height: 60px !important;
+  margin-left: -5px;
+  overflow: hidden;
+  transform: translateY(-40px);
+  transition: all 0.5s;
+  top: 400px;
+  width: 25px !important;
+}
+#hideSidebarButton::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  position: absolute;
+  right: -10px;
+  top: calc(50% - 8px);
+  transition: all 0.25s;
+}
+#hideSidebarButton:hover {
+  background-color: #0288d1;
+}
+#hideSidebarButton:hover::before {
+  right: calc(50% - 4px);
+}
+
+#content #hideSidebarButton::before {
+  border-left: 7px solid white;
+  border-right: 0;
+}
+
+#content.sidebar_hidden #hideSidebarButton::before {
+  border-left: 0;
+  border-right: 7px solid white;
 }
 
 p.plugin_redmine_silencer {
