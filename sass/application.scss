@@ -406,9 +406,9 @@ table.query-columns td.buttons input[type=button] {
     color: rgba($gray-text, 0.75);
     display: block;
     line-height: 1.1rem;
-    padding: 2px 6px 0;
+    padding: 1px 6px;
     position: relative;
-    top: -1px;
+    top: 0px;
 
     &:hover {
       color: $color-primary;
@@ -435,7 +435,7 @@ table.query-columns td.buttons input[type=button] {
   }
 
   & td.priority {
-    padding-top: 2px;
+    padding-top: 4px;
 
     &::first-line {
       font-size: 0.8rem;
@@ -516,6 +516,14 @@ table.query-columns td.buttons input[type=button] {
   a:not(.user) { color: $color-primary !important; }
 }
 
+#my-page .list td.checkbox + td.id {
+  padding-left: 5px;
+}
+
+.issue-report td.name:first-child {
+  padding-left: 5px;
+}
+
 // Options
 #options .buttons > input[type='button'] {
   margin-bottom: 5px;
@@ -564,7 +572,7 @@ table.list {
   }
   td {
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 4px;
     border-bottom: 1px solid rgba($gray-light, 0.7);
   }
   .checkbox input {
