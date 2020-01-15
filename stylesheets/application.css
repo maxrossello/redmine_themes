@@ -1,7 +1,56 @@
 @charset "UTF-8";
 /* load the default Redmine stylesheet */
 @import url("../../../stylesheets/application.css");
-@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto-Mono");
+/* roboto-300 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100 400;
+  src: url("../fonts/roboto-v20-latin-300.eot");
+  /* IE9 Compat Modes */
+  src: local("Roboto Light"), local("Roboto-Light"), url("../fonts/roboto-v20-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-v20-latin-300.woff2") format("woff2"), url("../fonts/roboto-v20-latin-300.woff") format("woff"), url("../fonts/roboto-v20-latin-300.ttf") format("truetype"), url("../fonts/roboto-v20-latin-300.svg#Roboto") format("svg");
+  /* Legacy iOS */
+}
+/* roboto-300italic - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 100 400;
+  src: url("../fonts/roboto-v20-latin-300italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Roboto Light Italic"), local("Roboto-LightItalic"), url("../fonts/roboto-v20-latin-300italic.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-v20-latin-300italic.woff2") format("woff2"), url("../fonts/roboto-v20-latin-300italic.woff") format("woff"), url("../fonts/roboto-v20-latin-300italic.ttf") format("truetype"), url("../fonts/roboto-v20-latin-300italic.svg#Roboto") format("svg");
+  /* Legacy iOS */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500 900;
+  src: url("../fonts/roboto-v20-latin-500.eot");
+  /* IE9 Compat Modes */
+  src: local("Roboto Medium"), local("Roboto-Medium"), url("../fonts/roboto-v20-latin-500.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-v20-latin-500.woff2") format("woff2"), url("../fonts/roboto-v20-latin-500.woff") format("woff"), url("../fonts/roboto-v20-latin-500.ttf") format("truetype"), url("../fonts/roboto-v20-latin-500.svg#Roboto") format("svg");
+  /* Legacy iOS */
+}
+/* roboto-500italic - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 500 900;
+  src: url("../fonts/roboto-v20-latin-500italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Roboto Medium Italic"), local("Roboto-MediumItalic"), url("../fonts/roboto-v20-latin-500italic.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-v20-latin-500italic.woff2") format("woff2"), url("../fonts/roboto-v20-latin-500italic.woff") format("woff"), url("../fonts/roboto-v20-latin-500italic.ttf") format("truetype"), url("../fonts/roboto-v20-latin-500italic.svg#Roboto") format("svg");
+  /* Legacy iOS */
+}
+/* roboto-mono-regular - latin */
+@font-face {
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto-mono-v7-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Roboto Mono"), local("RobotoMono-Regular"), url("../fonts/roboto-mono-v7-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-mono-v7-latin-regular.woff2") format("woff2"), url("../fonts/roboto-mono-v7-latin-regular.woff") format("woff"), url("../fonts/roboto-mono-v7-latin-regular.ttf") format("truetype"), url("../fonts/roboto-mono-v7-latin-regular.svg#RobotoMono") format("svg");
+  /* Legacy iOS */
+}
 .input_tiny {
   width: 50px;
 }
@@ -398,7 +447,7 @@ html {
 }
 
 body {
-  font-weight: normal;
+  font-weight: 300;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: inherit;
   line-height: 1.5;
@@ -673,7 +722,7 @@ div.issue div.subject div div {
 
 .subject h3 {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 2;
 }
 
@@ -787,12 +836,13 @@ table.query-columns td.buttons input[type=button] {
 .issues tbody .id a {
   font-family: "Roboto-Mono", monospace;
   font-size: 0.9rem;
+  font-weight: 400;
   border: 1px solid;
   border-radius: 3px;
   color: rgba(72, 72, 72, 0.75);
   display: block;
   line-height: 1.1rem;
-  padding: 1px 6px;
+  padding: 2px 6px 0;
   position: relative;
   top: 0px;
 }
@@ -896,24 +946,24 @@ select[multiple=multiple] {
 
 .wiki h1 {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .wiki h2 {
   font-size: 1.6em;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .wiki h3 {
   border-bottom: none;
   font-size: 1.3em;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .wiki h4 {
   border-bottom: none;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 table.list {
@@ -957,15 +1007,15 @@ table.list tr.group a.toggle-all {
 }
 
 .update-close {
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  font-family: monospace;
   border-radius: 2px;
+  height: 20px;
+  width: 20px;
+  text-align: center;
   border: none !important;
-  padding: 3px 0 0 !important;
   font-size: 18px !important;
+  font-weight: 500 !important;
   line-height: 16px !important;
+  padding: 3px 0 0 !important;
 }
 
 #content > .contextual {
@@ -1163,6 +1213,12 @@ p.plugin_redmine_silencer {
   display: inline-block;
   margin-left: 20px;
   margin-top: 10px;
+}
+
+form.edit_issue input[type=checkbox] + label {
+  font-size: 0.9rem;
+  position: relative;
+  top: 1px;
 }
 
 .agile-board .issue-card {
