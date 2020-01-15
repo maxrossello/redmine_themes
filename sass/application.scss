@@ -1,9 +1,9 @@
 /* load the default Redmine stylesheet */
 @import url('../../../stylesheets/application.css');
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto-Mono');
 
 // @import "compass";
 @import "../node_modules/compass-mixins-fixed/lib/compass";
+@import "partials/fonts";
 @import "partials/variables";
 @import "partials/formalize";
 // @import "partials/tables"; // en/disable for color-highlighting of rows
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-weight: normal;
+  font-weight: $font-weight-normal;
   font-family: $fontstack;
   font-size: inherit;
   line-height: 1.5;
@@ -287,7 +287,7 @@ div.issue div.subject div div {
 
 .subject h3 {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
   line-height: 2;
 }
 
@@ -401,12 +401,13 @@ table.query-columns td.buttons input[type=button] {
   .id a {
     font-family: $fontstack-mono;
     font-size: 0.9rem;
+    font-weight: 400;
     border: 1px solid;
     border-radius: 3px;
     color: rgba($gray-text, 0.75);
     display: block;
     line-height: 1.1rem;
-    padding: 1px 6px;
+    padding: 2px 6px 0;
     position: relative;
     top: 0px;
 
@@ -537,24 +538,24 @@ select[multiple="multiple"] {
 
 .wiki h1 {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
 }
 
 .wiki h2 {
   font-size: 1.6em;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
 }
 
 .wiki h3 {
   border-bottom: none;
   font-size: 1.3em;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
 }
 
 .wiki h4 {
   border-bottom: none;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
 }
 
 // Table
@@ -603,16 +604,16 @@ table.list {
   }
 }
 .update-close {
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  font-family: monospace;
   border-radius: 2px;
+  height: 20px;
+  width: 20px;
+  text-align: center;
   
   border: none !important;
-  padding: 3px 0 0 !important;
   font-size: 18px !important;
+  font-weight: $font-weight-bold !important;
   line-height: 16px !important;
+  padding: 3px 0 0 !important;
 }
 
 // Contextual
@@ -841,6 +842,12 @@ p.plugin_redmine_silencer {
   display: inline-block;
   margin-left: 20px;
   margin-top: 10px;
+}
+
+form.edit_issue input[type='checkbox'] + label {
+  font-size: 0.9rem;
+  position: relative;
+  top: 1px;
 }
 
 // Plugin: Agile
