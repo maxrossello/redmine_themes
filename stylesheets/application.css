@@ -442,13 +442,156 @@ optgroup::-moz-focus-inner {
   background: #eeeeee;
 }
 
-.icon {
-  background-position: 5px 50%;
-  background-size: 0.9rem;
+.icon-edit, .icon-issue-edit {
+  background-image: url(../images/icons/icon_edit.svg);
 }
 
-.icon-edit {
-  background-image: url(../images/icons/icon_edit.svg);
+.icon-time-add {
+  background-image: url(../images/icons/icon_timer.svg);
+}
+
+.icon-fav {
+  background-image: url(../images/icons/icon_fav.svg);
+}
+
+.icon-fav-off {
+  background-image: url(../images/icons/icon_fav_off.svg);
+}
+
+.icon-copy {
+  background-image: url(../images/icons/icon_copy.svg);
+}
+
+.icon-del {
+  background-image: url(../images/icons/icon_trash.svg);
+}
+
+.icon-link-break {
+  background-image: url(../images/icons/icon_unlink.svg) !important;
+}
+
+.icon-comment, .icon-issue-note {
+  background-image: url(../images/icons/icon_comment.svg);
+}
+
+.icon-add {
+  background-image: url(../images/icons/icon_add.svg);
+}
+
+.icon-checked {
+  background-image: url(../images/icons/icon_check.svg) !important;
+}
+
+.icon-magnifier {
+  background-image: url(../images/icons/icon_search.svg);
+}
+
+.icon-download {
+  background-image: url(../images/icons/icon_download.svg);
+}
+
+.icon-attachment {
+  background-image: url(../images/icons/icon_attachment.svg);
+}
+
+.icon-save {
+  background-image: url(../images/icons/icon_save.svg);
+}
+
+.icon-reload {
+  background-image: url(../images/icons/icon_reload.svg);
+}
+
+.icon-stats {
+  background-image: url(../images/icons/icon_stats.svg);
+}
+
+.icon-import {
+  background-image: url(../images/icons/icon_import.svg) !important;
+}
+
+.icon-settings {
+  background-image: url(../images/icons/icon_settings.svg);
+}
+
+.icon-history {
+  background-image: url(../images/icons/icon_history.svg);
+}
+
+.icon-move {
+  background-image: url(../images/icons/icon_move.svg);
+}
+
+.icon-passwd {
+  background-image: url(../images/icons/icon_passwd.svg);
+}
+
+.icon-fullscreen {
+  background-image: url(../images/icons/icon_fullscreen.svg) !important;
+}
+
+.icon-user {
+  background-image: url(../images/icons/icon_user.svg);
+}
+
+.icon-bookmark {
+  background-image: url(../images/icons/icon_bookmark.svg);
+}
+
+.icon-bookmark-off {
+  background-image: url(../images/icons/icon_bookmark_off.svg);
+}
+
+.icon-issue {
+  background-image: url(../images/icons/icon_issue.svg);
+}
+
+.icon-sort-handle {
+  background-image: url(../images/icons/icon_sort_handle.svg);
+}
+
+.icon-zoom-in {
+  background-image: url(../images/icons/icon_zoom_in.svg);
+}
+
+.icon-zoom-out {
+  background-image: url(../images/icons/icon_zoom_out.svg);
+}
+
+.icon-package {
+  background-image: url(../images/icons/icon_package.svg);
+}
+
+.icon-branch {
+  background-image: url(../images/icons/icon_branch.svg);
+}
+
+.icon-contact, .icon-company-contact {
+  background-image: url(../images/icons/icon_contact.svg) !important;
+}
+
+.icon-helpdesk {
+  background-image: url(../images/icons/icon_helpdesk.svg) !important;
+}
+
+.icon-project, .icon-projects {
+  background-image: url(../images/icons/icon_project.svg);
+}
+
+.icon-users, .icon-group {
+  background-image: url(../images/icons/icon_users.svg);
+}
+
+.icon-lock, .icon-locked {
+  background-image: url(../images/icons/icon_lock.svg);
+}
+
+.icon-email-add, .icon-email-add {
+  background-image: url(../images/icons/icon_email.svg);
+}
+
+.icon-clock, .icon-start, .icon-stop, .icon-pause, .icon-time, .icon-time-entry {
+  background-image: url(../images/icons/icon_timer.svg) !important;
 }
 
 html {
@@ -688,12 +831,13 @@ code {
 }
 
 #content {
-  width: 75%;
+  background-color: #f7f7f7;
+  overflow-x: visible !important;
   padding: 15px 20px 10px;
+  width: 75%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background-color: #f7f7f7;
 }
 
 #sidebar {
@@ -723,6 +867,9 @@ div.issue, #content > .wiki {
 
 #content > .wiki {
   margin-bottom: 2rem;
+}
+#content .breadcrumb + .wiki {
+  margin-top: 1.2rem;
 }
 
 div.issue div.subject div div {
@@ -944,7 +1091,7 @@ table.query-columns td.buttons input[type=button] {
   padding-left: 5px;
 }
 
-#options .buttons > input[type=button] {
+#options .buttons > input[type=button], .query-columns .buttons > input[type=button] {
   margin-bottom: 5px;
   width: 50px;
 }
@@ -1040,7 +1187,7 @@ table.list tr.group a.toggle-all {
   border-radius: 3px;
   background-position: 5px 50%;
   transition: all 0.2s;
-  padding: 7px 10px 5px 25px !important;
+  padding: 7px 10px 5px 32px !important;
 }
 #content > .contextual a.icon:hover {
   background-color: #0288d1;
@@ -1053,7 +1200,7 @@ table.list tr.group a.toggle-all {
   top: 10px;
 }
 
-#history .tabs ul li a.selected, #content > .tabs ul li a.selected {
+.tabs ul li a.selected {
   background-color: #f7f7f7 !important;
   border-bottom-color: #f7f7f7 !important;
 }
@@ -1155,6 +1302,22 @@ div.journal.has-notes .wiki p:first-of-type, div.journal.has-notes .wiki blockqu
 #context-menu li.folder ul {
   left: calc(13rem - 2px) !important;
   box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.4);
+  overflow-y: scroll !important;
+}
+#context-menu ul > li > a {
+  padding-left: 32px !important;
+}
+#context-menu a.icon-checked {
+  background-size: 0.9rem !important;
+  background-position: 8px 50% !important;
+}
+#context-menu.checklist-menu .add-checklist-item {
+  background-position: 5px 50%;
+  background-repeat: no-repeat;
+  background-size: 0.9rem;
+}
+#context-menu a.submenu {
+  background-position-x: 98% !important;
 }
 
 .warning, .nodata {
@@ -1402,8 +1565,110 @@ form.edit_issue input[type=checkbox] + label {
   filter: grayscale(100%);
 }
 
+div#activity dl {
+  margin-left: 0 !important;
+}
+div#activity dt.icon {
+  background-position: 5px 5px !important;
+}
+div#activity dd {
+  padding-left: 36px;
+}
+div#activity dd.grouped {
+  margin-left: 120px;
+}
+div#activity dt > .time {
+  border: 1px solid #7b7b7b;
+  border-radius: 1px;
+  display: inline-block;
+  line-height: 1;
+  margin-right: 5px;
+  padding: 4px 4px 2px;
+}
+div#activity .author > a.user {
+  background-color: #8CCAEB;
+  border-radius: 0.81rem;
+  box-sizing: border-box;
+  color: white;
+  display: inline-block;
+  font-size: 0.8rem;
+  line-height: 1;
+  margin-top: 5px;
+  min-width: 3.125rem;
+  padding: 4px 10px 3px;
+  text-align: center;
+  transition: all 0.3s;
+}
+div#activity .author > a.user:hover {
+  background-color: #484848;
+}
+
+.icon {
+  background-position: 8px 50% !important;
+  background-size: 0.9rem;
+  padding-left: 28px;
+}
+
 .block-receiver {
   border: 0 !important;
+}
+
+#time-logger-menu > a.icon {
+  padding-left: 30px;
+}
+
+.checklist-item .icon-add {
+  background-position-x: 0px !important;
+}
+
+.attachments .icon-only {
+  margin-left: 5px;
+}
+
+.collapsible > .icon {
+  background-position: 4px !important;
+  padding-left: 25px;
+}
+
+.drdn-items > a.icon {
+  display: block !important;
+  margin-left: 0 !important;
+}
+
+.version .icon-shared {
+  background-image: url(../images/icons/icon_link.svg);
+}
+.version .name {
+  padding-left: 28px !important;
+}
+
+#tab-content-versions fieldset .icon-reload {
+  padding-left: 28px;
+}
+
+.quick-edit-card {
+  background-color: transparent !important;
+  border: 0 !important;
+}
+.quick-edit-card a {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.333rem;
+}
+.quick-edit-card a > img {
+  display: none;
+}
+.quick-edit-card .quick-edit {
+  background-image: url(../images/icons/icon_edit.svg);
+}
+.quick-edit-card .add-comment {
+  background-image: url(../images/icons/icon_comment.svg);
+}
+
+.projects .root > a.icon, .projects .child > a.icon {
+  background-position-x: 0 !important;
+  padding-left: 23px !important;
+  padding-right: 0.5rem !important;
 }
 
 /*# sourceMappingURL=application.css.map */
