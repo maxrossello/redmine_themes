@@ -751,7 +751,6 @@ div.journal {
 
 // Context Menu
 #context-menu {
-  transform: translateY(-160px);
   border-radius: 3px;
   box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.4);
 
@@ -768,6 +767,9 @@ div.journal {
     left: calc(13rem - 2px) !important;
     box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.4);
   }
+}
+#content > #context-menu {
+  transform: translateY(-160px);
 }
 
 // Warnings
