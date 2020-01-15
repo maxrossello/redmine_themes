@@ -876,7 +876,7 @@ table.query-columns td.buttons input[type=button] {
 .issues tbody td.priority::before, .issues tbody td.priority::after {
   content: "  ";
 }
-.issues tbody .priority-5 td.subject a::after, .issues tbody .priority-6 td.subject a::after, .issues tbody .priority-7 td.subject a::after, .issues tbody .priority-lowest td.subject a::after {
+.issues tbody .priority-5 td.subject::after, .issues tbody .priority-6 td.subject::after, .issues tbody .priority-7 td.subject::after, .issues tbody .priority-lowest td.subject::after {
   content: "";
   display: inline-block;
   width: 8px;
@@ -884,7 +884,7 @@ table.query-columns td.buttons input[type=button] {
   border-radius: 50%;
   background-color: #7045D1;
   position: relative;
-  left: 10px;
+  left: 7px;
   bottom: 1px;
 }
 .issues tbody .priority-default td.priority::first-line, .issues tbody .priority-default td.priority::before, .issues tbody .priority-default td.priority::after {
