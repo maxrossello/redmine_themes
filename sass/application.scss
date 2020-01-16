@@ -6,6 +6,7 @@
 @import "partials/fonts";
 @import "partials/variables";
 @import "partials/formalize";
+@import "partials/icons";
 // @import "partials/tables"; // en/disable for color-highlighting of rows
 
 html {
@@ -238,16 +239,17 @@ code {
 	}
 }
 
-
 // Content
 #main {
   @include pie-clearfix;
 }
 #content {
-  width: 75%;
-  padding: 15px 20px 10px;
-  @include box-sizing(border-box);
   background-color: $gray-background;
+  overflow-x: visible !important;
+  padding: 15px 20px 10px;
+  width: 75%;
+
+  @include box-sizing(border-box);
 }
 
 #sidebar {
@@ -277,8 +279,13 @@ div.issue, #content > .wiki {
   position: relative;
 }
 
-#content > .wiki {
-  margin-bottom: 2rem;
+#content {
+  & > .wiki {
+    margin-bottom: 2rem;
+  }
+  .breadcrumb + .wiki {
+    margin-top: 1.2rem;
+  }
 }
 
 div.issue div.subject div div {
@@ -526,9 +533,11 @@ table.query-columns td.buttons input[type=button] {
 }
 
 // Options
-#options .buttons > input[type='button'] {
-  margin-bottom: 5px;
-  width: 50px;
+#options, .query-columns {
+  .buttons > input[type='button'] {
+    margin-bottom: 5px;
+    width: 50px;
+  }
 }
 
 // Filters
@@ -631,7 +640,7 @@ table.list {
     background-position: 5px 50%;
     transition: all 0.2s;
     
-    padding: 7px 10px 5px 25px !important;
+    padding: 7px 10px 5px 32px !important;
 
     &:hover {
       background-color: $color-primary;
@@ -646,7 +655,7 @@ table.list {
 }
 
 // Tabs
-#history .tabs, #content > .tabs {
+.tabs {
   ul li a.selected {
     background-color: $gray-background !important;
     border-bottom-color: $gray-background !important;
@@ -766,6 +775,23 @@ div.journal {
   li.folder ul {
     left: calc(13rem - 2px) !important;
     box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.4);
+    overflow-y: scroll !important;
+  }
+
+  ul > li > a {
+    padding-left: 32px !important;
+  }
+  a.icon-checked {
+    background-size: 0.9rem !important;
+    background-position: 8px 50% !important;
+  }
+  &.checklist-menu .add-checklist-item {
+    background-position: 5px 50%;
+    background-repeat: no-repeat;
+    background-size: 0.9rem;
+  }
+  a.submenu {
+    background-position-x: 98% !important;
   }
 }
 #content > #context-menu {
@@ -1052,7 +1078,110 @@ form.edit_issue input[type='checkbox'] + label {
   }
 }
 
+// Activity
+div#activity {
+  dl { 
+    margin-left: 0 !important;
+  }
+  dt.icon {
+    background-position: 5px 5px !important;
+  }
+  dd {
+    padding-left: 36px;
+    &.grouped {
+      margin-left: 120px;
+    }
+  }
+  dt > .time {
+    border: 1px solid lighten($gray-text, 20%);
+    border-radius: 1px;
+    display: inline-block;
+    line-height: 1;
+    margin-right: 5px;
+    padding: 4px 4px 2px;
+  }
+  .author > a.user {
+    background-color: $color-primary-person;
+    border-radius: 0.81rem;
+    box-sizing: border-box;
+    color: $white;
+    display: inline-block;
+    font-size: 0.8rem;
+    line-height: 1;
+    margin-top: 5px;
+    min-width: 3.125rem;
+    padding: 4px 10px 3px;
+    text-align: center;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $gray-text;
+    }
+  }
+}
+
 // Misc
+.icon {
+  background-position: 8px 50% !important;
+  background-size: 0.9rem;
+  padding-left: 28px;
+}
 .block-receiver {
   border: 0 !important;
+}
+#time-logger-menu > a.icon {
+  padding-left: 30px;
+}
+.checklist-item .icon-add {
+  background-position-x: 0px !important;
+}
+.attachments {
+  .icon-only {
+    margin-left: 5px;
+  }
+}
+.collapsible > .icon {
+  background-position: 4px !important;
+  padding-left: 25px;
+}
+.drdn-items > a.icon {
+  display: block !important;
+  margin-left: 0 !important;
+}
+.version {
+  .icon-shared {
+    background-image: url(../images/icons/icon_link.svg);
+  }
+  .name {
+    padding-left: 28px !important;
+  }
+}
+#tab-content-versions fieldset .icon-reload {
+  padding-left: 28px;
+}
+.quick-edit-card {
+  background-color: transparent !important;
+  border: 0 !important;
+
+  a {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.333rem;
+  }
+  a > img {
+    display: none;
+  }
+  .quick-edit {
+    background-image: url(../images/icons/icon_edit.svg);
+  }
+  .add-comment {
+    background-image: url(../images/icons/icon_comment.svg);   
+  }
+}
+.projects .root, .projects .child {
+  & > a.icon {
+    background-position-x: 0 !important;
+    padding-left: 23px !important;
+    padding-right: 0.5rem !important;
+  }
 }
