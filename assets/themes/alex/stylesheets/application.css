@@ -653,7 +653,7 @@ background-color: #EEEEEE;
   padding: 6px;
   min-height: 1000px;
   width: auto;
-  margin-right: 350px;
+  margin-right: 10px; /* 350px; redmine_themes */
 }
 
 html, body {

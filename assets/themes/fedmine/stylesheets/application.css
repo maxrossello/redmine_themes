@@ -57,7 +57,7 @@ div#content { border-right: 0 none transparent; }
 #errorExplanation, .nodata, .warning { background-color: #fcf8e3; border: 1px solid #fbeed5; color: #c09853; padding-left: 30px; }
 
 div.filters h2 .scope_title a { color: #444; }
-div#content { margin-right: 300px; width: auto; }
+div#content { margin-right: 10px; /* 300px; redmine_themes*/ width: auto; }
 div#main.nosidebar div#content { margin-right: 0px; }
 
 #sidebar {width: 260px !important;

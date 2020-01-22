@@ -82,7 +82,7 @@ div.filters h2 .scope_title a {
 }
 
 div#content {
-	margin-right: 300px;
+	margin-right: 10px; /* 300px; redmine_themes */
 	width: auto;
 }
 
