@@ -33,3 +33,12 @@
     background-color: darken($gray-text, 10%) !important;
   }
 }
+
+@media screen and (max-width: 699px) {
+  div.issue {
+    .author, .next-prev-links {
+      width: 100%;
+      text-align: left;
+    }
+  }
+}
