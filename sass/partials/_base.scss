@@ -483,63 +483,62 @@ table.query-columns td.buttons input[type=button] {
 
   .priority-5, .priority-6, .priority-7, .priority-lowest {
       td.subject::after {
-      content: '';
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: $color-priority-5;
-      position: relative;
-      left: 7px;
-      bottom: 1px;
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        position: relative;
+        left: 7px;
+        bottom: 1px;
     }
   }
 
-  & .priority-default td.priority {
+  .priority-default td.priority {
     &::first-line, &::before, &::after {
       background-color: $color-priority-default;
     }
   }
 
-  & .priority-5 td.priority {
+  .priority-5 td.priority {
     &::first-line, &::before, &::after {
       background-color: $color-priority-5;
     }
   }
-  & .priority-5 td.subject a {
-    // color: $color-priority-5;
-    &::after { background-color: $color-priority-5; }
+  .priority-5 td.subject {
+    a { color: $color-priority-5; }
+    // &::after { background-color: $color-priority-5; }
   }
 
-  & .priority-6 td.priority {
+  .priority-6 td.priority {
     &::first-line, &::before, &::after {
       background-color: $color-priority-6;
     }
   }
-  & .priority-6 td.subject a {
-    // color: $color-priority-6;
-    &::after { background-color: $color-priority-6; }
+  .priority-6 td.subject {
+    a { color: $color-priority-6; }
+    // &::after { background-color: $color-priority-6; }
   }
 
-  & .priority-7 td.priority {
+  .priority-7 td.priority {
     &::first-line, &::before, &::after {
       background-color: $color-priority-7;
     }
   }
-  & .priority-7 td.subject a {
-    // color: $color-priority-7;
-    &::after { background-color: $color-priority-7; }
+  .priority-7 td.subject {
+    a { color: $color-priority-7; }
+    // &::after { background-color: $color-priority-7; }
   }
 
-  & .priority-lowest td.priority {
+  .priority-lowest td.priority {
     &::first-line, &::before, &::after {
       background-color: $color-priority-lowest;
       color: rgba($gray-text, 0.75);
     }
   }
-  & .priority-lowest td.subject a {
-    // color: darken($color-priority-lowest, 10%);
-    &::after { background-color: $color-priority-lowest; }
+  .priority-lowest td.subject {
+    a { color: darken($color-priority-lowest, 10%); }
+    // &::after { background-color: $color-priority-lowest; }
   }
 }
 
