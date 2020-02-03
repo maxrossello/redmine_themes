@@ -630,6 +630,11 @@ table.list {
   }
 }
 
+tr span.expander {
+  background-position: 2px 50% !important;
+  background-size: 0.5rem !important;
+}
+
 // Update modal
 #update {
   border-radius: 3px;
