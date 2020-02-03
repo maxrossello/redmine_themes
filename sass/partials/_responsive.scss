@@ -32,6 +32,10 @@
   .flyout-menu {
     background-color: darken($gray-text, 10%) !important;
   }
+
+  #sidebarHandler {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 699px) {
