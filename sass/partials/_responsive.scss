@@ -1,0 +1,35 @@
+@media screen and (max-width: 899px) {
+  #header {
+    background-color: $gray-text !important;
+  }
+
+  h3 {
+    line-height: 1.4;
+  }
+
+  p.buttons a.icon {
+    padding-left: 32px !important;
+    padding-top: 9px !important;
+  }
+
+  #content > .contextual a.icon {
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+  }
+
+  #project-jump .drdn-trigger {
+    overflow: visible;
+    padding-top: 8px;
+
+    &::before {
+      top: 11px;
+    }
+  }
+  #project-jump.expanded .drdn-trigger::before {
+    top: 10px;
+  }
+
+  .flyout-menu {
+    background-color: darken($gray-text, 10%) !important;
+  }
+}
