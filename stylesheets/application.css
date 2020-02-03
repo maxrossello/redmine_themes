@@ -612,6 +612,10 @@ h1, h2, h3, h4 {
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
+strong {
+  font-weight: 700;
+}
+
 a, a:link, a:visited {
   color: #0288d1;
   -webkit-transition: color 0.4s;
@@ -865,6 +869,37 @@ div.issue, #content > .wiki {
   position: relative;
 }
 
+div.issue {
+  display: flex;
+  flex-wrap: wrap;
+}
+div.issue > * {
+  order: 20;
+  width: 100%;
+}
+div.issue .subject {
+  order: 1;
+}
+div.issue .author {
+  order: 2;
+  width: 50%;
+}
+div.issue .next-prev-links {
+  padding-left: 0;
+  text-align: right;
+  width: 50%;
+}
+div.issue .next-prev-links a {
+  color: #888;
+}
+div.issue > .subject h3 {
+  line-height: 1.4;
+  padding-top: 0.5rem;
+}
+div.issue .attributes {
+  margin-top: 0.5rem;
+}
+
 #content > .wiki {
   margin-bottom: 2rem;
 }
@@ -1038,7 +1073,6 @@ table.query-columns td.buttons input[type=button] {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #7045D1;
   position: relative;
   left: 7px;
   bottom: 1px;
@@ -1049,27 +1083,27 @@ table.query-columns td.buttons input[type=button] {
 .issues tbody .priority-5 td.priority::first-line, .issues tbody .priority-5 td.priority::before, .issues tbody .priority-5 td.priority::after {
   background-color: #7045D1;
 }
-.issues tbody .priority-5 td.subject a::after {
-  background-color: #7045D1;
+.issues tbody .priority-5 td.subject a {
+  color: #7045D1;
 }
 .issues tbody .priority-6 td.priority::first-line, .issues tbody .priority-6 td.priority::before, .issues tbody .priority-6 td.priority::after {
   background-color: #E044A3;
 }
-.issues tbody .priority-6 td.subject a::after {
-  background-color: #E044A3;
+.issues tbody .priority-6 td.subject a {
+  color: #E044A3;
 }
 .issues tbody .priority-7 td.priority::first-line, .issues tbody .priority-7 td.priority::before, .issues tbody .priority-7 td.priority::after {
   background-color: #FF3455;
 }
-.issues tbody .priority-7 td.subject a::after {
-  background-color: #FF3455;
+.issues tbody .priority-7 td.subject a {
+  color: #FF3455;
 }
 .issues tbody .priority-lowest td.priority::first-line, .issues tbody .priority-lowest td.priority::before, .issues tbody .priority-lowest td.priority::after {
   background-color: #c7d0d8;
   color: rgba(72, 72, 72, 0.75);
 }
-.issues tbody .priority-lowest td.subject a::after {
-  background-color: #c7d0d8;
+.issues tbody .priority-lowest td.subject a {
+  color: #a9b7c3;
 }
 
 .odd:hover, .even:hover, .list tr:hover {
@@ -1155,6 +1189,11 @@ table.list tr.group a.toggle-all {
   top: 2px;
 }
 
+tr span.expander {
+  background-position: 2px 50% !important;
+  background-size: 0.5rem !important;
+}
+
 #update {
   border-radius: 3px;
 }
@@ -1192,12 +1231,6 @@ table.list tr.group a.toggle-all {
 #content > .contextual a.icon:hover {
   background-color: #0288d1;
   color: white;
-}
-
-.next-prev-links {
-  position: absolute;
-  right: 20px;
-  top: 10px;
 }
 
 .tabs ul li a.selected {
@@ -1672,6 +1705,52 @@ div#activity .author > a.user:hover {
   background-position-x: 0 !important;
   padding-left: 23px !important;
   padding-right: 0.5rem !important;
+}
+
+@media screen and (max-width: 899px) {
+  #header {
+    background-color: #484848 !important;
+  }
+
+  h3 {
+    line-height: 1.4;
+  }
+
+  p.buttons a.icon {
+    padding-left: 32px !important;
+    padding-top: 9px !important;
+  }
+
+  #content > .contextual a.icon {
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+  }
+
+  #project-jump .drdn-trigger {
+    overflow: visible;
+    padding-top: 8px;
+  }
+  #project-jump .drdn-trigger::before {
+    top: 11px;
+  }
+
+  #project-jump.expanded .drdn-trigger::before {
+    top: 10px;
+  }
+
+  .flyout-menu {
+    background-color: #2f2f2f !important;
+  }
+
+  #sidebarHandler {
+    display: none;
+  }
+}
+@media screen and (max-width: 699px) {
+  div.issue .author, div.issue .next-prev-links {
+    width: 100%;
+    text-align: left;
+  }
 }
 
 /*# sourceMappingURL=application.css.map */
