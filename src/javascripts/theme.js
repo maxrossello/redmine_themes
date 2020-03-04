@@ -55,7 +55,8 @@ $(function () {
     }
   }
 
-  function prependPaymentId() {
+  /* #114732 prefill payment id when editing or adding a new time entry */
+  function prefillPaymentId() {
     var ticket_payment_id = jQuery("#issue_custom_field_values_71").val();
     var $log_payment_id = jQuery("#time_entry_custom_field_values_36");
 
@@ -65,9 +66,9 @@ $(function () {
       });
     }
   }
-  prependPaymentId();
+  prefillPaymentId();
 
-  function prependPaymentIdOnTimeEntries() {
+  function prefillPaymentIdOnTimeEntriesPage() {
     var is_on_time_entries = window.location.href.indexOf('time_entries/new') !== -1;
     var api_key, site_url, issue_number;
     if (is_on_time_entries) {
@@ -75,6 +76,10 @@ $(function () {
       jQuery.get(site_url + "/my/api_key").done(function(res) {
         api_key = jQuery(res).find('pre').text();
         issue_number = $("#time_entry_issue_id").val();
+
+        if (!issue_number) {
+          return;
+        }
 
         jQuery.ajax(site_url + "/issues/" + issue_number + '.json', {
           headers: {
@@ -86,13 +91,12 @@ $(function () {
 
           type: 'GET'
         }).done(function(res){
-          console.log(res.issue.custom_fields[2].value)
+          $("#time_entry_custom_field_values_36").val(res.issue.custom_fields[2].value);
         });
       });
     }
   }
-
-  prependPaymentIdOnTimeEntries();
+  prefillPaymentIdOnTimeEntriesPage();
 
   editWikiQuickSearch();
 });
