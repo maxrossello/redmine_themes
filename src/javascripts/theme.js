@@ -56,19 +56,19 @@ $(function () {
   }
 
   /* #114732 prefill payment id when editing or adding a new time entry */
-  function prefillPaymentId() {
-    var ticket_payment_id = jQuery("#issue_custom_field_values_71").val();
-    var $log_payment_id = jQuery("#time_entry_custom_field_values_36");
-
-    if (ticket_payment_id) {
+  var $log_payment = jQuery("#time_entry_custom_field_values_36");
+  var $ticket_payment = jQuery("#issue_custom_field_values_71");
+  var ticket_payment_value = $ticket_payment.val();
+  var prefillPaymentId = function() {
+    if (ticket_payment_value) {
       $(".contextual").find('.icon-edit, .icon-comment').on('click', function(){
-        $log_payment_id.prop("value", ticket_payment_id);
+        $log_payment.prop("value", ticket_payment_value);
       });
     }
-  }
+  };
   prefillPaymentId();
 
-  function prefillPaymentIdOnTimeEntriesPage() {
+  var prefillPaymentIdOnTimeEntriesPage = function() {
     var is_on_time_entries = window.location.href.indexOf('time_entries/new') !== -1;
     var api_key, site_url, issue_number;
     if (is_on_time_entries) {
@@ -91,12 +91,44 @@ $(function () {
 
           type: 'GET'
         }).done(function(res){
-          $("#time_entry_custom_field_values_36").val(res.issue.custom_fields[2].value);
+          ticket_payment_value = res.issue.custom_fields[2].value;
+          var $wrong_payment_correct_value = $wrong_payment_correct_value || $("#wrong_payment_correct_value");
+          $wrong_payment_correct_value.text(ticket_payment_value);
+          $log_payment.val(ticket_payment_value);
         });
       });
     }
-  }
+  };
   prefillPaymentIdOnTimeEntriesPage();
+
+  var $log_payment_parent =  $log_payment.parent();
+  $log_payment_parent.before($(
+    '<div class="conflict hidden" id="wrong_payment">' +
+      '<strong>Different Payment Rerefence ID selected</strong>' +
+      '<div class="conflict-details conflict-journal">' +
+       'Be aware that you are using a different <em>Payment Reference ID</em> from what was defined in the ticket to use: ' +
+        '<em id="wrong_payment_correct_value"></em>' +
+      '</div>' +
+    '</div>'
+  ));
+  var $wrong_payment = $("#wrong_payment");
+  var $wrong_payment_correct_value = $("#wrong_payment_correct_value");
+  $wrong_payment_correct_value.text(ticket_payment_value);
+  $log_payment.change(function(){
+      console.log(this);
+      var value = $(this).val();
+      if (ticket_payment_value) {
+        if ( value && value !== ticket_payment_value) {
+          $wrong_payment.removeClass('hidden');
+        }
+        else {
+
+          $wrong_payment.toggleClass('hidden');
+        }
+      }
+  });
+
+
 
   editWikiQuickSearch();
 });
