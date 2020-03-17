@@ -82,13 +82,61 @@ $(function () {
   };
   prefillPaymentId();
 
+  var site_url = window.location.origin;
+  var current_url = window.location.href;
+
+  var USER_INFO_LOADED = (function() {
+    var dfd = $.Deferred();
+    jQuery.get(site_url + "/my/api_key").done(function(res) {
+      var $res = jQuery(res);
+      dfd.resolve({
+        id: window.parseInt($(".user").attr('href').match(/\d+/g)[0]),
+        api_key: $res.find('pre').text()
+      });
+    });
+    return dfd.promise();
+  }());
+
+  var is_on_agile_page = current_url.indexOf('/agile') !== -1;
+  if (is_on_agile_page && window.location.search.indexOf('mm') !== -1) {
+
+    USER_INFO_LOADED.then(function(res) {
+      var user_id = res.id;
+      var issues_by_type = {"Assigned issues": 0};
+      jQuery.ajax(site_url + "/issues.json", {
+        headers: {
+          'X-Redmine-API-Key': res.api_key.toString(),
+          'Content-Type': 'application/json'
+        },
+        data: {
+          assigned_to_id: user_id,
+          project_id: 'zope' // TODO
+        },
+        dataType: 'json',
+        type: 'GET'
+      }).done(function(res) {
+         // console.log(res);
+         var issues = res.issues;
+         issues.forEach(function(issue){
+           var issue_status;
+           if (issue.assigned_to.id !== user_id) {
+             return;
+           }
+           issue_status = issue.status.name;
+           issue_status in issues_by_type ? ++issues_by_type[issue_status] : issues_by_type[issue_status] = 1;
+         });
+         issues_by_type['Assigned issues'] = Object.values(issues_by_type).reduce(function(accumulator, currentValue) { return  accumulator + currentValue});
+          console.log(issues_by_type);
+      });
+    });
+  }
+
+
   var prefillPaymentIdOnTimeEntriesPage = function() {
-    var is_on_time_entries = window.location.href.indexOf('time_entries/new') !== -1;
-    var api_key, site_url, issue_number;
+    var is_on_time_entries = current_url.indexOf('time_entries/new') !== -1;
+    var issue_number;
     if (is_on_time_entries) {
-      site_url = window.location.origin;
-      jQuery.get(site_url + "/my/api_key").done(function(res) {
-        api_key = jQuery(res).find('pre').text();
+      USER_INFO_LOADED.then(function(res) {
         issue_number = $("#time_entry_issue_id").val();
 
         if (!issue_number) {
@@ -97,7 +145,7 @@ $(function () {
 
         jQuery.ajax(site_url + "/issues/" + issue_number + '.json', {
           headers: {
-            'X-Redmine-API-Key': api_key.toString(),
+            'X-Redmine-API-Key': res.api_key.toString(),
             'Content-Type': 'application/json'
           },
           processData: false,
@@ -125,7 +173,6 @@ $(function () {
   var $wrong_payment_correct_value = $("#wrong_payment_correct_value");
   $wrong_payment_correct_value.text(ticket_payment_value);
   $log_payment.change(function(){
-      console.log(this);
       var value = $(this).val();
       if (ticket_payment_value) {
         if ( value && value !== ticket_payment_value) {
