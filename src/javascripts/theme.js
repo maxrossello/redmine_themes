@@ -85,12 +85,12 @@ $(function () {
   var site_url = window.location.origin;
   var current_url = window.location.href;
 
-  var USER_INFO_LOADED = (function() {
+  var getUserToken = (function() {
     var dfd = $.Deferred();
     jQuery.get(site_url + "/my/api_key").done(function(res) {
       var $res = jQuery(res);
       var $user = $(".user");
-      dfd.resolve({
+      return dfd.resolve({
         id: window.parseInt($user.attr('href').match(/\d+/g)[0]),
         api_key: $res.find('pre').text()
       });
@@ -98,88 +98,117 @@ $(function () {
     return dfd.promise();
   }());
 
-  var is_on_issue_page = current_url.indexOf('/issues') !== -1;
-  if (is_on_issue_page && window.location.search.indexOf('mm') !== -1) {
+  var isAssignedUserDeveloper = function(user) {
+    var dfd = $.Deferred();
+    var assigned_user_is_developer;
+    var api_key = user.api_key;
 
-    USER_INFO_LOADED.then(function(res) {
-      // var user_id = res.id;
-      var issues_by_type = {"Assigned issues": 0};
-      var assigned_user_is_developer;
+    var user_id = $(".assigned-to").find('.user').attr('href');
+    if (!user_id) {
+      return dfd.reject();
+    }
+    user_id = window.parseInt(user_id.match(/\d+/g)[0]);
+    // var project_id = $("body").attr('class').match(/project-\w+/g)[0].split('-')[1];
+    var project_name = $(".current-project").text();
 
-      var user_id = $(".assigned-to").find('.user').attr('href');
-      if (!user_id) {
-        return;
+    jQuery.ajax(site_url + "/users/" + user_id + ".json", {
+      headers: {
+        'X-Redmine-API-Key': api_key,
+        'Content-Type': 'application/json'
+      },
+      data: {
+        include: 'memberships'
+      },
+      dataType: 'json',
+      type: 'GET'
+    }).done(function(res) {
+      if (!res.user) {
+        return dfd.reject();
       }
-      user_id = user_id.match(/\d+/g)[0];
-      // var project_id = $("body").attr('class').match(/project-\w+/g)[0].split('-')[1];
-      var project_name = $(".current-project").text();
-
-      jQuery.ajax(site_url + "/users/" + user_id + "/.json", {
-        headers: {
-          'X-Redmine-API-Key': res.api_key.toString(),
-          'Content-Type': 'application/json'
-        },
-        data: {
-          include: 'memberships'
-        },
-        dataType: 'json',
-        type: 'GET'
-      }).done(function(res) {
-
-        var memberships = res.memberships;
-        memberships.forEach(function(membership){
-          if (!membership.project.name === project_name) {
-            return;
-          }
-          var roles = membership.roles;
-          roles.forEach(function(role){
-            if (role.id === 4) {
-             assigned_user_is_developer = true;
-            }
-          });
-
-          if (assigned_user_is_developer) {
-            jQuery.ajax(site_url + "/issues.json", {
-              headers: {
-                'X-Redmine-API-Key': res.api_key.toString(),
-                'Content-Type': 'application/json'
-              },
-              data: {
-                assigned_to_id: user_id,
-                limit: 500,
-                status_id: '2|4|8|9',
-                project_id: 'nanyo'
-              },
-              dataType: 'json',
-              type: 'GET'
-            }).done(function(res) {
-              var issues = res.issues;
-              console.log(issues.length);
-              issues.forEach(function(issue){
-                var issue_status;
-                if (issue.assigned_to.id !== user_id) {
-                  return;
-                }
-                issue_status = issue.status.name;
-                issue_status in issues_by_type ? ++issues_by_type[issue_status] : issues_by_type[issue_status] = 1;
-              });
-              issues_by_type['Assigned issues'] = Object.values(issues_by_type).reduce(function(accumulator, currentValue) { return  accumulator + currentValue});
-              console.log(issues_by_type);
-            });
+      var memberships = res.user.memberships || [];
+      memberships.forEach(function(membership) {
+        if (membership.project.name !== project_name) {
+          return;
+        }
+        var roles = membership.roles || [];
+        roles.forEach(function(role) {
+          if (role.id === 4) {
+            assigned_user_is_developer = true;
           }
         });
       });
-
-
+      return dfd.resolve({is_developer: assigned_user_is_developer, user_id: user_id, api_key: api_key })
     });
-  }
 
+    return dfd.promise();
+  };
+
+  var getAssignedUserOverloadStatus = function(user) {
+    var user_id = user.user_id;
+    user.is_overloaded = false;
+    var dfd = $.Deferred();
+    if (!user.is_developer) {
+      return dfd.reject();
+    }
+
+    var issues_by_type = {"Assigned issues": 0};
+
+    jQuery.ajax(site_url + "/issues.json", {
+      headers: {
+        'X-Redmine-API-Key': user.api_key,
+        'Content-Type': 'application/json'
+      },
+      data: {
+        assigned_to_id: user.user_id,
+        limit: 500,
+        status_id: '2|4|8|9',
+        project_id: 'nanyo'
+      },
+      dataType: 'json',
+      type: 'GET'
+    }).done(function(res) {
+      var issues = res.issues;
+      console.log(issues.length);
+      issues.forEach(function(issue){
+        var issue_status;
+        if (issue.assigned_to.id !== user_id) {
+          return;
+        }
+        issue_status = issue.status.name;
+        issue_status in issues_by_type ? ++issues_by_type[issue_status] : issues_by_type[issue_status] = 1;
+      });
+      issues_by_type['Assigned issues'] = Object.values(issues_by_type).reduce(function(accumulator, currentValue) { return  accumulator + currentValue});
+      console.log(issues_by_type);
+      if (issues_by_type['Assigned issues'] >= 4) {
+        user.is_overloaded = true;
+        user.issues = issues_by_type;
+      }
+      return dfd.resolve(user);
+    });
+    return dfd.promise();
+  };
+
+  var addWIPLimitUI = function(user) {
+    console.log('updating now');
+  };
+
+  var is_on_issue_page = current_url.indexOf('/issues') !== -1;
+  if (is_on_issue_page && window.location.search.indexOf('wip') !== -1) {
+    getUserToken.then(isAssignedUserDeveloper)
+      .then(getAssignedUserOverloadStatus)
+      .then(function(user) {
+        if (user.is_overloaded) {
+          console.log('user is overloaded');
+          addWIPLimitUI(user);
+        }
+      });
+  }
 
   var prefillPaymentIdOnTimeEntriesPage = function() {
     var is_on_time_entries = current_url.indexOf('time_entries/new') !== -1;
     var issue_number;
     if (is_on_time_entries) {
-      USER_INFO_LOADED.then(function(res) {
+      getUserToken.then(function(res) {
         issue_number = $("#time_entry_issue_id").val();
 
         if (!issue_number) {
