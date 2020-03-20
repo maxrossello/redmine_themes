@@ -102,8 +102,9 @@ $(function () {
     var dfd = $.Deferred();
     var assigned_user_is_developer;
     var api_key = user.api_key;
-
-    var user_id = $(".assigned-to").find('.user').attr('href');
+    var $user_info = $(".assigned-to").find('.user');
+    var user_id = $user_info.attr('href');
+    var user_name = $user_info.text();
     if (!user_id) {
       return dfd.reject();
     }
@@ -137,7 +138,7 @@ $(function () {
           }
         });
       });
-      return dfd.resolve({is_developer: assigned_user_is_developer, user_id: user_id, api_key: api_key })
+      return dfd.resolve({is_developer: assigned_user_is_developer, user_id: user_id, user_name: user_name, api_key: api_key })
     });
 
     return dfd.promise();
@@ -189,7 +190,43 @@ $(function () {
   };
 
   var addWIPLimitUI = function(user) {
-    console.log('updating now');
+    var $parent = $(".assigned-to .value");
+    var $overload_icon = $("<span class='fa fa-2x fa-hand-paper overloaded-user-warning' />").appendTo($parent);
+    var $overload_construct = $("<div class='overloaded-user'>" +
+      "<div class='overloaded-user-head'><strong>WIP-limit reached</strong></div>" +
+      "<div class='overloaded-user-body'></div> " +
+      "<div class='overloaded-user-footer'>" +
+      "<p>Why we care about WIP-limits? <a href='#' target='_blank' class='overloaded-user-link'>Get it!</a></p>" +
+      "</div>" +
+      "</div>");
+    Object.entries(user.issues).forEach(function(issue) {
+      var issue_category = issue[0];
+      var link_to_assigned_issues;
+      var text = "<p class='overloaded-user-issue-category'>" + issue_category + ": " + issue[1] + "</p>";
+      if (issue_category.indexOf('Assigned issues') !== -1) {
+        link_to_assigned_issues = "<a target='_blank' class='overloaded-user-link assigned_issues_link' href='"
+          + site_url + "/issues?"
+          + "set_filter=1&sort=priority%3Adesc%2Cupdated_on%3Adesc"
+          + "&f[]=status_id&op[status_id]==&v[status_id][]=2&v[status_id][]=4&v[status_id][]=8"
+          + "&f[]=assigned_to_id&op[assigned_to_id]==&v[assigned_to_id][]="
+          + user.user_id
+          + "'>";
+        link_to_assigned_issues = link_to_assigned_issues + text + "</a>"
+      }
+      $overload_construct.find('.overloaded-user-body').append(link_to_assigned_issues || text);
+    });
+
+    $overload_construct.appendTo($parent)
+      .dialog({
+        title: user.user_name + " is overloaded",
+        width: 300,
+        autoOpen: false,
+        position: { my: "left top",  of: $overload_icon }
+      });
+
+    $overload_icon.on('mouseenter', function(ev) {
+      $overload_construct.dialog("open");
+    });
   };
 
   var is_on_issue_page = current_url.indexOf('/issues') !== -1;
@@ -198,7 +235,6 @@ $(function () {
       .then(getAssignedUserOverloadStatus)
       .then(function(user) {
         if (user.is_overloaded) {
-          console.log('user is overloaded');
           addWIPLimitUI(user);
         }
       });
