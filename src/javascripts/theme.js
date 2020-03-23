@@ -84,6 +84,7 @@ $(function () {
 
   var site_url = window.location.origin;
   var current_url = window.location.href;
+  var checked_users = {};
 
   var getUserToken = (function() {
     var dfd = $.Deferred();
@@ -98,19 +99,24 @@ $(function () {
     return dfd.promise();
   }());
 
-  var isAssignedUserDeveloper = function(user) {
+  var isAssignedUserDeveloper = function(token, user_obj) {
     var dfd = $.Deferred();
     var assigned_user_is_developer;
-    var api_key = user.api_key;
-    var $user_info = $(".assigned-to").find('.user');
+    var api_key = token.api_key;
+    var userObj = user_obj || {};
+    var $user_info = userObj.$el || $(".assigned-to").find('.user');
     var user_id = $user_info.attr('href');
     var user_name = $user_info.text();
     if (!user_id) {
       return dfd.reject();
     }
     user_id = window.parseInt(user_id.match(/\d+/g)[0]);
+    var user_info = checked_users[user_id];
+    if (user_info) {
+      return dfd.resolve(user_info);
+    }
     // var project_id = $("body").attr('class').match(/project-\w+/g)[0].split('-')[1];
-    var project_name = $(".current-project").text();
+    var project_name = userObj.project_name || $(".current-project").text();
 
     jQuery.ajax(site_url + "/users/" + user_id + ".json", {
       headers: {
@@ -138,7 +144,9 @@ $(function () {
           }
         });
       });
-      return dfd.resolve({is_developer: assigned_user_is_developer, user_id: user_id, user_name: user_name, api_key: api_key })
+      var user_info = {is_developer: assigned_user_is_developer, user_id: user_id, user_name: user_name, api_key: api_key };
+      checked_users[user_id] = user_info;
+      return dfd.resolve(user_info)
     });
 
     return dfd.promise();
@@ -189,9 +197,8 @@ $(function () {
     return dfd.promise();
   };
 
-  var addWIPLimitUI = function(user) {
-    var $parent = $(".assigned-to .value");
-    var $overload_icon = $("<span class='fa fa-2x fa-hand-paper overloaded-user-warning' />").appendTo($parent);
+  var addWIPLimitUI = function(user, $parent) {
+    var $parent = $parent || $(".assigned-to .value");
     var $overload_construct = $("<div class='overloaded-user'>" +
       "<div class='overloaded-user-head'><strong>WIP-limit reached</strong></div>" +
       "<div class='overloaded-user-body'></div> " +
@@ -216,16 +223,20 @@ $(function () {
       $overload_construct.find('.overloaded-user-body').append(link_to_assigned_issues || text);
     });
 
-    $overload_construct.appendTo($parent)
-      .dialog({
-        title: user.user_name + " is overloaded",
-        width: 300,
-        autoOpen: false,
-        position: { my: "left top",  of: $overload_icon }
-      });
+    $parent.each(function(idx){
+      var $overloaded_user = (this);
+      var $overload_icon = $("<span class='fa fa-2x fa-hand-paper overloaded-user-warning' />").appendTo($overloaded_user);
+      $overload_construct.clone().appendTo($parent)
+        .dialog({
+          title: user.user_name + " is overloaded",
+          width: 300,
+          autoOpen: false,
+          position: { my: "left top",  of: $overload_icon }
+        });
 
-    $overload_icon.on('mouseenter', function(ev) {
-      $overload_construct.dialog("open");
+      $overload_icon.on('mouseenter', function(ev) {
+        $overload_construct.dialog("open");
+      });
     });
   };
 
@@ -238,6 +249,45 @@ $(function () {
           addWIPLimitUI(user);
         }
       });
+  }
+
+  var is_on_agile_page = current_url.indexOf('/agile') !== -1;
+  if (is_on_agile_page && window.location.search.indexOf('wip') !== -1) {
+    var $current_issue_board = $(".issues-board").filter(":visible");
+    var ticket_categories_to_check = ["2","4","8","9"];
+    var project_name = $current_issue_board.find(".group.open").find('a').eq(0).text();
+
+    window.$issues_columns_to_check = $current_issue_board.find(".issue-status-col").filter(function(idx){
+      return ticket_categories_to_check.indexOf(this.dataset.id) !== -1;
+    });
+    var users_to_check = {};
+    $issues_columns_to_check.each(function(idx){
+      var $column = $(this);
+      var $column_usernames = $column.find('.assigned-user').find('.active');
+      $column_usernames.each(function(idx){
+        var $user = $(this);
+        var username = $user.text();
+        if (users_to_check[username]) {
+          return;
+        }
+        var user_obj = {project_name: project_name, $el: $user};
+        getUserToken.then(function(token){
+          return isAssignedUserDeveloper(token, user_obj);
+        })
+        .then(getAssignedUserOverloadStatus)
+        .then(function(user) {
+          var $users_to_update;
+            if (user.is_overloaded) {
+              $users_to_update = $issues_columns_to_check .find('.assigned-user').find('.active').filter(function(idx){
+                return this.innerText.indexOf(user.user_name) !== -1;
+              });
+              addWIPLimitUI(user, $users_to_update);
+            }
+          });
+        users_to_check[username] = true;
+      });
+
+    });
   }
 
   var prefillPaymentIdOnTimeEntriesPage = function() {
