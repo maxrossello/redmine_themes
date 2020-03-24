@@ -118,7 +118,6 @@ $(function () {
     if (user_info) {
       return dfd.resolve(user_info);
     }
-    // var project_id = $("body").attr('class').match(/project-\w+/g)[0].split('-')[1];
     var project_name = userObj.project_name || $(".current-project").text();
 
     jQuery.ajax(site_url + "/users/" + user_id + ".json", {
@@ -147,7 +146,12 @@ $(function () {
           }
         });
       });
-      var user_info = {is_developer: assigned_user_is_developer, user_id: user_id, user_name: user_name, api_key: api_key };
+      var user_info = {
+        is_developer: assigned_user_is_developer,
+        user_id: user_id,
+        user_name: user_name,
+        project_name: project_name,
+        api_key: api_key };
       checked_users[user_id] = user_info;
       return dfd.resolve(user_info)
     });
@@ -163,7 +167,7 @@ $(function () {
       return dfd.reject();
     }
 
-    var issues_by_type = {"Assigned issues": 0};
+    var issues_by_type = {"Total assigned issues": 0};
 
     jQuery.ajax(site_url + "/issues.json", {
       headers: {
@@ -173,8 +177,7 @@ $(function () {
       data: {
         assigned_to_id: user.user_id,
         limit: 500,
-        status_id: '2|4|8|9',
-        project_id: 'nanyo'
+        status_id: '2|4|8|9'
       },
       dataType: 'json',
       type: 'GET'
@@ -188,8 +191,8 @@ $(function () {
         issue_status = issue.status.name;
         issue_status in issues_by_type ? ++issues_by_type[issue_status] : issues_by_type[issue_status] = 1;
       });
-      issues_by_type['Assigned issues'] = Object.values(issues_by_type).reduce(function(accumulator, currentValue) { return  accumulator + currentValue});
-      if (issues_by_type['Assigned issues'] >= 4) {
+      issues_by_type['Total assigned issues'] = Object.values(issues_by_type).reduce(function(accumulator, currentValue) { return  accumulator + currentValue});
+      if (issues_by_type['Total assigned issues'] >= 4) {
         user.is_overloaded = true;
         user.issues = issues_by_type;
       }
@@ -201,7 +204,7 @@ $(function () {
   var addWIPLimitUI = function(user, $parent) {
     var $parent = $parent || $(".assigned-to .value");
     var $overload_construct = $("<div class='overloaded-user'>" +
-      "<div class='overloaded-user-head'><strong>WIP-limit reached</strong></div>" +
+      "<div class='overloaded-user-head'><strong>Current WIP-limit reached (4)</strong></div>" +
       "<div class='overloaded-user-body'></div> " +
       "<div class='overloaded-user-footer'>" +
       "<p>Why we care about WIP-limits? " +
@@ -213,14 +216,13 @@ $(function () {
       var issue_category = issue[0];
       var link_to_assigned_issues;
       var text = "<p class='overloaded-user-issue-category'>" + issue_category + ": " + issue[1] + "</p>";
-      if (issue_category.indexOf('Assigned issues') !== -1) {
+      if (issue_category.indexOf('Total assigned issues') !== -1) {
         link_to_assigned_issues = "<a target='_blank' class='overloaded-user-link assigned_issues_link' href='"
           + site_url + "/issues?"
           + "set_filter=1&sort=priority%3Adesc%2Cupdated_on%3Adesc"
           + "&f[]=status_id&op[status_id]==&v[status_id][]=2&v[status_id][]=4&v[status_id][]=8"
           + "&f[]=assigned_to_id&op[assigned_to_id]==&v[assigned_to_id][]="
           + user.user_id
-          + "&f[]=project_id&op[project_id]==&v[project_id][]=156&v[project_id][]=16&v[project_id][]=12&v[project_id][]=7&v[project_id][]=148&v[project_id][]=151&v[project_id][]=15&v[project_id][]=125&v[project_id][]=126&v[project_id][]=109&v[project_id][]=149"
           + "'>";
         link_to_assigned_issues = link_to_assigned_issues + text + "</a>"
       }
@@ -229,7 +231,7 @@ $(function () {
 
     $parent.each(function(idx){
       var $overloaded_user = (this);
-      var $overload_icon = $("<span class='fa fa-2x fa-hand-paper overloaded-user-warning' />").appendTo($overloaded_user);
+      var $overload_icon = $("<span class='fa fa-lg fa-hand-paper overloaded-user-warning' />").appendTo($overloaded_user);
       var $overloaded_user_construct = $overload_construct.clone();
       $overloaded_user_construct.appendTo($overloaded_user)
         .dialog({
