@@ -180,7 +180,6 @@ $(function () {
       type: 'GET'
     }).done(function(res) {
       var issues = res.issues;
-      console.log(issues.length);
       issues.forEach(function(issue){
         var issue_status;
         if (issue.assigned_to.id !== user_id) {
@@ -190,7 +189,6 @@ $(function () {
         issue_status in issues_by_type ? ++issues_by_type[issue_status] : issues_by_type[issue_status] = 1;
       });
       issues_by_type['Assigned issues'] = Object.values(issues_by_type).reduce(function(accumulator, currentValue) { return  accumulator + currentValue});
-      console.log(issues_by_type);
       if (issues_by_type['Assigned issues'] >= 4) {
         user.is_overloaded = true;
         user.issues = issues_by_type;
@@ -262,7 +260,9 @@ $(function () {
   if (is_on_agile_page && window.location.search.indexOf('wip') !== -1) {
     var $current_issue_board = $(".issues-board").filter(":visible");
     var ticket_categories_to_check = ["2","4","8","9"];
-    var project_name = $current_issue_board.find(".group.open").find('a').eq(0).text();
+    var $project_name_links = $current_issue_board.find(".group.open").find('a');
+    var project_name = $project_name_links.eq(0).text();
+    var multiple_projects = $project_name_links.length > 2;
 
     window.$issues_columns_to_check = $current_issue_board.find(".issue-status-col").filter(function(idx){
       return ticket_categories_to_check.indexOf(this.dataset.id) !== -1;
@@ -270,6 +270,9 @@ $(function () {
     var users_to_check = {};
     $issues_columns_to_check.each(function(idx){
       var $column = $(this);
+      if (multiple_projects) {
+        project_name = $column.parent().prev().find('a').eq(0).text();
+      }
       var $column_usernames = $column.find('.assigned-user').find('.active');
       $column_usernames.each(function(idx){
         var $user = $(this);
@@ -288,6 +291,7 @@ $(function () {
               $users_to_update = $issues_columns_to_check .find('.assigned-user').find('.active').filter(function(idx){
                 return this.innerText.indexOf(user.user_name) !== -1;
               });
+              console.log(user);
               addWIPLimitUI(user, $users_to_update);
             }
           });
