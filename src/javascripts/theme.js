@@ -226,7 +226,8 @@ $(function () {
     $parent.each(function(idx){
       var $overloaded_user = (this);
       var $overload_icon = $("<span class='fa fa-2x fa-hand-paper overloaded-user-warning' />").appendTo($overloaded_user);
-      $overload_construct.clone().appendTo($parent)
+      var $overloaded_user_construct = $overload_construct.clone();
+      $overloaded_user_construct.appendTo($overloaded_user)
         .dialog({
           title: user.user_name + " is overloaded",
           width: 300,
@@ -235,7 +236,7 @@ $(function () {
         });
 
       $overload_icon.on('mouseenter', function(ev) {
-        $overload_construct.dialog("open");
+        $overloaded_user_construct.dialog("open");
       });
     });
   };
