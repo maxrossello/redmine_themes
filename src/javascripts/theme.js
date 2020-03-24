@@ -203,7 +203,9 @@ $(function () {
       "<div class='overloaded-user-head'><strong>WIP-limit reached</strong></div>" +
       "<div class='overloaded-user-body'></div> " +
       "<div class='overloaded-user-footer'>" +
-      "<p>Why we care about WIP-limits? <a href='#' target='_blank' class='overloaded-user-link'>Get it!</a></p>" +
+      "<p>Why we care about WIP-limits? " +
+      "<a href='https://agilevelocity.com/lean-economics-101-the-power-of-wip-limits/' " +
+      "target='_blank' class='overloaded-user-link'>Get it!</a></p>" +
       "</div>" +
       "</div>");
     Object.entries(user.issues).forEach(function(issue) {
@@ -217,6 +219,7 @@ $(function () {
           + "&f[]=status_id&op[status_id]==&v[status_id][]=2&v[status_id][]=4&v[status_id][]=8"
           + "&f[]=assigned_to_id&op[assigned_to_id]==&v[assigned_to_id][]="
           + user.user_id
+          + "&f[]=project_id&op[project_id]==&v[project_id][]=156&v[project_id][]=16&v[project_id][]=12&v[project_id][]=7&v[project_id][]=148&v[project_id][]=151&v[project_id][]=15&v[project_id][]=125&v[project_id][]=126&v[project_id][]=109&v[project_id][]=149"
           + "'>";
         link_to_assigned_issues = link_to_assigned_issues + text + "</a>"
       }
