@@ -88,6 +88,9 @@ $(function () {
 
   var getUserToken = (function() {
     var dfd = $.Deferred();
+    if (!$("#loggedas").length) {
+      return dfd.reject();
+    }
     jQuery.get(site_url + "/my/api_key").done(function(res) {
       var $res = jQuery(res);
       var $user = $(".user");
