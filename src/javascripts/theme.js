@@ -7,6 +7,7 @@ $(function () {
     new PurpleMine.SidebarToggler();
     new PurpleMine.HistoryTabs();
     new PurpleMine.MenuCollapse();
+    // new PurpleMine.OverloadedDeveloperWarning();
   }
 
   /* EEA fixes */
@@ -92,12 +93,22 @@ $(function () {
     // remove localstorage entries that are not added in the same day as when
     // this function is called
     var today = new Date().toLocaleDateString("en-US");
-    var last_updated = local_storage.getItem('t_last_updated');
+    var last_updated = local_storage && local_storage.getItem('t_last_updated');
     if (last_updated && last_updated !== today) {
-      local_storage.clear();
+      (function() {
+        var arr = [];
+        for (var i = 0; i < local_storage.length; i++){
+          if (local_storage.key(i).substring(0,2) === 't_') {
+            arr.push(local_storage.key(i));
+          }
+        }
+        for (var i = 0; i < arr.length; i++) {
+          local_storage.removeItem(arr[i]);
+        }
+      }());
     }
     else {
-      local_storage.setItem('t_last_updated', today);
+      local_storage && local_storage.setItem('t_last_updated', today);
     }
   };
   check_for_localcache_freshness();
@@ -109,14 +120,14 @@ $(function () {
       return dfd.reject();
     }
     var user_id = window.parseInt($logged_in.find('.user').attr('href').match(/\d+/g)[0]);
-    var user_api_key = session_storage.getItem('t_logged_user_api_key_' + user_id);
+    var user_api_key = session_storage && session_storage.getItem('t_logged_user_api_key_' + user_id);
     if (user_api_key) {
       return dfd.resolve({api_key: user_api_key});
     }
     jQuery.get(site_url + "/my/api_key").done(function(res) {
       var $res = jQuery(res);
       var api_key = $res.find('pre').text();
-      session_storage.setItem('t_logged_user_api_key_' + user_id, api_key);
+      session_storage && session_storage.setItem('t_logged_user_api_key_' + user_id, api_key);
       return dfd.resolve({
         api_key: api_key
       });
@@ -142,7 +153,7 @@ $(function () {
     }
     var project_name = userObj.project_name || $(".current-project").text();
     var cache_value_name = 't_' + project_name + '_' + user_id;
-    var cached_user_is_developer = local_storage.getItem(cache_value_name);
+    var cached_user_is_developer = local_storage && local_storage.getItem(cache_value_name);
     if (cached_user_is_developer) {
       if (cached_user_is_developer === "true") {
         var user_info = {
@@ -192,7 +203,7 @@ $(function () {
         project_name: project_name,
         api_key: api_key };
       checked_users[user_id] = user_info;
-      local_storage.setItem(cache_value_name, assigned_user_is_developer);
+      local_storage && local_storage.setItem(cache_value_name, assigned_user_is_developer);
       if (!assigned_user_is_developer) {
         return dfd.reject()
       }
@@ -291,7 +302,8 @@ $(function () {
   };
 
   var is_on_issue_page = current_url.indexOf('/issues') !== -1;
-  if (is_on_issue_page && window.location.search.indexOf('wip') !== -1) {
+
+  var add_wip_limit_reached = function() {
     getUserToken.then(isAssignedUserDeveloper)
       .then(getAssignedUserOverloadStatus)
       .then(function(user) {
@@ -299,10 +311,13 @@ $(function () {
           addWIPLimitUI(user);
         }
       });
+  };
+  if (is_on_issue_page) {
+    add_wip_limit_reached();
   }
 
   var is_on_agile_page = current_url.indexOf('/agile') !== -1;
-  if (is_on_agile_page && window.location.search.indexOf('wip') !== -1) {
+  if (is_on_agile_page) {
     var $current_issue_board = $(".issues-board").filter(":visible");
     var ticket_categories_to_check = ["2","4","8","9"];
     var $project_name_links = $current_issue_board.find(".group.open").find('a');
@@ -397,6 +412,17 @@ $(function () {
         }
       }
   });
+
+  if (window.location.search.indexOf('wip') !== -1) {
+    var $current_assigned_user = $("#issue_assigned_to_id").val();
+    $("#issue_assigned_to_id").change(function(){
+      var value = $(this).val();
+      if (value !== $current_assigned_user) {
+        $(".overloaded-user-warning").remove();
+        add_wip_limit_reached();
+      }
+    });
+  }
 
   editWikiQuickSearch();
 });
