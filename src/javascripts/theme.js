@@ -85,18 +85,40 @@ $(function () {
   var site_url = window.location.origin;
   var current_url = window.location.href;
   var checked_users = {};
+  var session_storage = window.sessionStorage;
+  var local_storage = window.localStorage;
+
+  var check_for_localcache_freshness = function() {
+    // remove localstorage entries that are not added in the same day as when
+    // this function is called
+    var today = new Date().toLocaleDateString("en-US");
+    var last_updated = local_storage.getItem('t_last_updated');
+    if (last_updated && last_updated !== today) {
+      local_storage.clear();
+    }
+    else {
+      local_storage.setItem('t_last_updated', today);
+    }
+  };
+  check_for_localcache_freshness();
 
   var getUserToken = (function() {
     var dfd = $.Deferred();
-    if (!$("#loggedas").length) {
+    var $logged_in = $("#loggedas");
+    if (!$logged_in.length) {
       return dfd.reject();
+    }
+    var user_id = window.parseInt($logged_in.find('.user').attr('href').match(/\d+/g)[0]);
+    var user_api_key = session_storage.getItem('t_logged_user_api_key_' + user_id);
+    if (user_api_key) {
+      return dfd.resolve({api_key: user_api_key});
     }
     jQuery.get(site_url + "/my/api_key").done(function(res) {
       var $res = jQuery(res);
-      var $user = $(".user");
+      var api_key = $res.find('pre').text();
+      session_storage.setItem('t_logged_user_api_key_' + user_id, api_key);
       return dfd.resolve({
-        id: window.parseInt($user.attr('href').match(/\d+/g)[0]),
-        api_key: $res.find('pre').text()
+        api_key: api_key
       });
     });
     return dfd.promise();
@@ -119,6 +141,23 @@ $(function () {
       return dfd.resolve(user_info);
     }
     var project_name = userObj.project_name || $(".current-project").text();
+    var cache_value_name = 't_' + project_name + '_' + user_id;
+    var cached_user_is_developer = local_storage.getItem(cache_value_name);
+    if (cached_user_is_developer) {
+      if (cached_user_is_developer === "true") {
+        var user_info = {
+          is_developer: cached_user_is_developer,
+          user_id: user_id,
+          user_name: user_name,
+          project_name: project_name,
+          api_key: api_key };
+        checked_users[user_id] = user_info;
+        return dfd.resolve(user_info)
+      }
+      else {
+        return dfd.reject()
+      }
+    }
 
     jQuery.ajax(site_url + "/users/" + user_id + ".json", {
       headers: {
@@ -147,12 +186,16 @@ $(function () {
         });
       });
       var user_info = {
-        is_developer: assigned_user_is_developer,
+        is_developer: assigned_user_is_developer || false,
         user_id: user_id,
         user_name: user_name,
         project_name: project_name,
         api_key: api_key };
       checked_users[user_id] = user_info;
+      local_storage.setItem(cache_value_name, assigned_user_is_developer);
+      if (!assigned_user_is_developer) {
+        return dfd.reject()
+      }
       return dfd.resolve(user_info)
     });
 
@@ -175,7 +218,7 @@ $(function () {
         'Content-Type': 'application/json'
       },
       data: {
-        assigned_to_id: user.user_id,
+        assigned_to_id: user_id,
         limit: 500,
         status_id: '2|4|8|9'
       },
