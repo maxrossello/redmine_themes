@@ -9,8 +9,14 @@
 .overloaded-user-warning {
   margin-left: 0.2em;
   color: $brand-danger;
+  background: "../svg/stop-sign.svg" no-repeat center center;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: bottom;
 }
 .overloaded-user-issue-category {
   margin-bottom: 0;
 }
+
 

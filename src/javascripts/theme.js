@@ -274,7 +274,7 @@ $(function () {
 
     $parent.each(function(idx){
       var $overloaded_user = (this);
-      var $overload_icon = $("<span class='fa fa-lg fa-hand-paper overloaded-user-warning' />").appendTo($overloaded_user);
+      var $overload_icon = $("<span class='overloaded-user-warning' />").appendTo($overloaded_user);
       var $overloaded_user_construct = $overload_construct.clone();
       $overloaded_user_construct.appendTo($overloaded_user)
         .dialog({
