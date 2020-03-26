@@ -89,6 +89,9 @@ $(function () {
   var session_storage = window.sessionStorage;
   var local_storage = window.localStorage;
 
+  // #114858 remove focus of input on page load added by application.js defaultFocus()
+  $('#content input[type=text], #content textarea').first().blur();
+
   var check_for_localcache_freshness = function() {
     // remove localstorage entries that are not added in the same day as when
     // this function is called
