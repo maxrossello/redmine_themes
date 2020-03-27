@@ -417,12 +417,29 @@ $(function () {
   });
 
   if (window.location.search.indexOf('wip') !== -1) {
-    var $current_assigned_user = $("#issue_assigned_to_id").val();
-    $("#issue_assigned_to_id").change(function(){
-      var value = $(this).val();
+    var $issue_assigned_to = $("#issue_assigned_to_id");
+    var $current_assigned_user = $issue_assigned_to.val();
+    $issue_assigned_to.change(function(){
+      var selected_option = $(this).find(':selected')[0];
+      var value = selected_option.value;
       if (value !== $current_assigned_user) {
         $(".overloaded-user-warning").remove();
-        add_wip_limit_reached();
+        var $user = $("<a />", {
+          href: '/users/' + value,
+          text: selected_option.innerText
+        });
+        var user_obj = {project_name: project_name, $el: $user};
+        getUserToken.then(function(token){
+          return isAssignedUserDeveloper(token, user_obj);
+        })
+          .then(getAssignedUserOverloadStatus)
+          .then(function(user) {
+            var $user_parent = $issue_assigned_to.parent();
+            if (user.is_overloaded) {
+              addWIPLimitUI(user, $user_parent);
+            }
+          });
+
       }
     });
   }
