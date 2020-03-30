@@ -287,7 +287,7 @@ $(function () {
       $overload_construct.find('.overloaded-user-body').append(link_to_assigned_issues || text);
     });
 
-    $parent.each(function(idx){
+    $parent.each(function(){
       var $overloaded_user = (this);
       var $overload_icon = $("<span class='overloaded-user-warning' />").appendTo($overloaded_user);
       var $overloaded_user_construct = $overload_construct.clone();
@@ -299,7 +299,7 @@ $(function () {
           position: { my: "left top",  of: $overload_icon }
         });
 
-      $overload_icon.on('mouseenter', function(ev) {
+      $overload_icon.on('mouseenter', function() {
         $overloaded_user_construct.dialog("open");
       });
     });
@@ -354,17 +354,17 @@ $(function () {
     var project_name = $project_name_links.eq(0).text();
     var multiple_projects = $project_name_links.length > 2;
 
-    window.$issues_columns_to_check = $current_issue_board.find(".issue-status-col").filter(function(idx){
+    window.$issues_columns_to_check = $current_issue_board.find(".issue-status-col").filter(function(){
       return ticket_categories_to_check.indexOf(this.dataset.id) !== -1;
     });
     var users_to_check = {};
-    $issues_columns_to_check.each(function(idx){
+    $issues_columns_to_check.each(function(){
       var $column = $(this);
       if (multiple_projects) {
         project_name = $column.parent().prev().find('a').eq(0).text();
       }
       var $column_usernames = $column.find('.assigned-user').find('.active');
-      $column_usernames.each(function(idx){
+      $column_usernames.each(function(){
         var $user = $(this);
         var username = $user.text();
         if (users_to_check[username]) {
@@ -378,7 +378,7 @@ $(function () {
         .then(function(user) {
           var $users_to_update;
             if (user.is_overloaded) {
-              $users_to_update = $issues_columns_to_check .find('.assigned-user').find('.active').filter(function(idx){
+              $users_to_update = $issues_columns_to_check .find('.assigned-user').find('.active').filter(function(){
                 return this.innerText.indexOf(user.user_name) !== -1;
               });
               console.log(user);
