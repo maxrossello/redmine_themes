@@ -15,6 +15,9 @@
   display: inline-block;
   vertical-align: bottom;
 }
+#issue_assigned_to_id + .overloaded-user-warning {
+  vertical-align: middle;
+}
 .overloaded-user-issue-category {
   margin-bottom: 0;
 }

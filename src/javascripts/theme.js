@@ -304,19 +304,45 @@ $(function () {
     });
   };
 
-  var is_on_issue_page = current_url.indexOf('/issues') !== -1;
 
-  var add_wip_limit_reached = function() {
+
+  var $issue_assigned_to = $("#issue_assigned_to_id");
+  var $issue_assigned_to_parent = $issue_assigned_to.parent();
+
+  $issue_assigned_to.change(function(){
+    var selected_option = $(this).find(':selected')[0];
+    var value = selected_option.value;
+    $(".overloaded-user-warning").remove();
+    var $user = $("<a />", {
+      href: '/users/' + value,
+      text: selected_option.innerText
+    });
+    var user_obj = {project_name: project_name, $el: $user};
+    getUserToken.then(function(token){
+      return isAssignedUserDeveloper(token, user_obj);
+    })
+      .then(getAssignedUserOverloadStatus)
+      .then(function(user) {
+        if (user.is_overloaded) {
+          addWIPLimitUI(user, $issue_assigned_to_parent);
+        }
+      });
+  });
+
+  var add_wip_limit_reached_on_issue_page = function() {
     getUserToken.then(isAssignedUserDeveloper)
       .then(getAssignedUserOverloadStatus)
       .then(function(user) {
         if (user.is_overloaded) {
           addWIPLimitUI(user);
+          addWIPLimitUI(user, $issue_assigned_to_parent);
         }
       });
   };
+
+  var is_on_issue_page = current_url.indexOf('/issues') !== -1;
   if (is_on_issue_page) {
-    add_wip_limit_reached();
+    add_wip_limit_reached_on_issue_page();
   }
 
   var is_on_agile_page = current_url.indexOf('/agile') !== -1;
@@ -416,33 +442,6 @@ $(function () {
       }
   });
 
-  if (window.location.search.indexOf('wip') !== -1) {
-    var $issue_assigned_to = $("#issue_assigned_to_id");
-    var $current_assigned_user = $issue_assigned_to.val();
-    $issue_assigned_to.change(function(){
-      var selected_option = $(this).find(':selected')[0];
-      var value = selected_option.value;
-      if (value !== $current_assigned_user) {
-        $(".overloaded-user-warning").remove();
-        var $user = $("<a />", {
-          href: '/users/' + value,
-          text: selected_option.innerText
-        });
-        var user_obj = {project_name: project_name, $el: $user};
-        getUserToken.then(function(token){
-          return isAssignedUserDeveloper(token, user_obj);
-        })
-          .then(getAssignedUserOverloadStatus)
-          .then(function(user) {
-            var $user_parent = $issue_assigned_to.parent();
-            if (user.is_overloaded) {
-              addWIPLimitUI(user, $user_parent);
-            }
-          });
-
-      }
-    });
-  }
 
   editWikiQuickSearch();
 });
