@@ -85,6 +85,7 @@ $(function () {
 
   var site_url = window.location.origin;
   var current_url = window.location.href;
+  var current_project_name = $(".current-project").text();
   var checked_users = {};
   var session_storage = window.sessionStorage;
   var local_storage = window.localStorage;
@@ -317,7 +318,7 @@ $(function () {
       href: '/users/' + value,
       text: selected_option.innerText
     });
-    var user_obj = {project_name: project_name, $el: $user};
+    var user_obj = {project_name: current_project_name, $el: $user};
     getUserToken.then(function(token){
       return isAssignedUserDeveloper(token, user_obj);
     })
