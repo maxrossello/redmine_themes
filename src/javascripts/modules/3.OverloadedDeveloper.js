@@ -8,6 +8,7 @@ jQuery(function($) {
   var checked_users = {};
   var local_storage = theme_utils.local_storage;
   var getUserToken = theme_utils.getUserToken();
+  var WIP_MAX_LIMIT = 4;
 
   // #114858 remove focus of input on page load added by application.js defaultFocus()
   $('#content input[type=text], #content textarea').first().blur();
@@ -123,7 +124,7 @@ jQuery(function($) {
       return dfd.reject();
     }
 
-    var issues_by_type = {"Total assigned issues": 0};
+    var issues_by_type = {"Total ongoing issues": 0};
 
     jQuery.ajax(site_url + "/issues.json", {
       headers: {
@@ -147,8 +148,8 @@ jQuery(function($) {
         issue_status = issue.status.name;
         issue_status in issues_by_type ? ++issues_by_type[issue_status] : issues_by_type[issue_status] = 1;
       });
-      issues_by_type['Total assigned issues'] = Object.values(issues_by_type).reduce(function(accumulator, currentValue) { return  accumulator + currentValue});
-      if (issues_by_type['Total assigned issues'] >= 4) {
+      issues_by_type['Total ongoing issues'] = Object.values(issues_by_type).reduce(function(accumulator, currentValue) { return  accumulator + currentValue});
+      if (issues_by_type['Total ongoing issues'] >= WIP_MAX_LIMIT) {
         user.is_overloaded = true;
         user.issues = issues_by_type;
       }
@@ -160,7 +161,8 @@ jQuery(function($) {
   var addWIPLimitUI = function(user, $parent) {
     var $parent = $parent || $(".assigned-to .value");
     var $overload_construct = $("<div class='overloaded-user'>" +
-      "<div class='overloaded-user-head'><strong>Current WIP-limit reached (4)</strong></div>" +
+      "<div class='overloaded-user-head'><strong>WIP-limit of max "
+      + WIP_MAX_LIMIT + " is reached</strong></div>" +
       "<div class='overloaded-user-body'></div> " +
       "<div class='overloaded-user-footer'>" +
       "<p>Why we care about WIP-limits? " +
@@ -172,7 +174,7 @@ jQuery(function($) {
       var issue_category = issue[0];
       var link_to_assigned_issues;
       var text = "<p class='overloaded-user-issue-category'>" + issue_category + ": " + issue[1] + "</p>";
-      if (issue_category.indexOf('Total assigned issues') !== -1) {
+      if (issue_category.indexOf('Total ongoing issues') !== -1) {
         link_to_assigned_issues = "<a target='_blank' class='overloaded-user-link assigned_issues_link' href='"
           + site_url + "/issues?"
           + "set_filter=1&sort=priority%3Adesc%2Cupdated_on%3Adesc"
