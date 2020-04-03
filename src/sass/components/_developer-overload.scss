@@ -1,0 +1,25 @@
+// 114858 WIP overload developer styling
+.ui-widget-content .overloaded-user-link {
+  color: $link-color;
+}
+.overloaded-user-body {
+  text-align: center;
+  margin: 1em 0;
+}
+.overloaded-user-warning {
+  margin-left: 0.2em;
+  color: $brand-danger;
+  background: url("../svg/stop-hand.svg") no-repeat center center;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+#issue_assigned_to_id + .overloaded-user-warning {
+  vertical-align: middle;
+}
+.overloaded-user-issue-category {
+  margin-bottom: 0;
+}
+
+
