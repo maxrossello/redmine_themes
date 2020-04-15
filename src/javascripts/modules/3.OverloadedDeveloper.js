@@ -162,7 +162,7 @@ jQuery(function ($) {
         ).reduce(function (accumulator, currentValue) {
           return accumulator + currentValue;
         });
-        if (issues_by_type["Total ongoing issues"] >= WIP_MAX_LIMIT) {
+        if (issues_by_type["Total ongoing issues"] > WIP_MAX_LIMIT) {
           user.is_overloaded = true;
           user.issues = issues_by_type;
         }
