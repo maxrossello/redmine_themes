@@ -5,41 +5,15 @@ jQuery(function ($) {
   var theme_utils = window.PurpleMine;
   var site_url = theme_utils.site_url;
   var current_url = theme_utils.current_url;
-  var current_project_name = $(".current-project").text();
   var checked_users = {};
-  var local_storage = theme_utils.local_storage;
   var getUserToken = theme_utils.getUserToken();
   var WIP_MAX_LIMIT = 4;
 
   // #114858 remove focus of input on page load added by application.js defaultFocus()
   $("#content input[type=text], #content textarea").first().blur();
 
-  var check_for_localcache_freshness = function () {
-    // remove localstorage entries that are not added in the same day as when
-    // this function is called
-    var today = new Date().toLocaleDateString("en-US");
-    var last_updated = local_storage && local_storage.getItem("t_last_updated");
-    if (last_updated && last_updated !== today) {
-      (function () {
-        var arr = [];
-        for (var i = 0; i < local_storage.length; i++) {
-          if (local_storage.key(i).substring(0, 2) === "t_") {
-            arr.push(local_storage.key(i));
-          }
-        }
-        for (var j = 0; j < arr.length; j++) {
-          local_storage.removeItem(arr[j]);
-        }
-      })();
-    } else {
-      local_storage && local_storage.setItem("t_last_updated", today);
-    }
-  };
-  check_for_localcache_freshness();
-
-  var isAssignedUserDeveloper = function (token, user_obj) {
+  var getAssignedUser = function (token, user_obj) {
     var dfd = $.Deferred();
-    var assigned_user_is_developer = false;
     var api_key = token.api_key;
     var userObj = user_obj || {};
     var $user_info = userObj.$el || $(".assigned-to").find(".user");
@@ -53,81 +27,20 @@ jQuery(function ($) {
     if (user_info) {
       return dfd.resolve(user_info);
     }
-    var project_name = userObj.project_name || $(".current-project").text();
-    var cache_value_name = "t_" + project_name + "_" + user_id;
-    var cached_user_is_developer =
-      local_storage && local_storage.getItem(cache_value_name);
-    if (cached_user_is_developer) {
-      if (cached_user_is_developer === "true") {
-        user_info = {
-          is_developer: cached_user_is_developer,
-          user_id: user_id,
-          user_name: user_name,
-          project_name: project_name,
-          api_key: api_key,
-        };
-        checked_users[user_id] = user_info;
-        return dfd.resolve(user_info);
-      } else {
-        return dfd.reject();
-      }
-    }
+    user_info = {
+      user_id: user_id,
+      user_name: user_name,
+      api_key: api_key,
+    };
 
-    jQuery
-      .ajax(site_url + "/users/" + user_id + ".json", {
-        headers: {
-          "X-Redmine-API-Key": api_key,
-          "Content-Type": "application/json",
-        },
-        data: {
-          include: "memberships",
-        },
-        dataType: "json",
-        type: "GET",
-      })
-      .done(function (res) {
-        if (!res.user) {
-          return dfd.reject();
-        }
-        var memberships = res.user.memberships || [];
-        memberships.forEach(function (membership) {
-          if (membership.project.name !== project_name) {
-            return;
-          }
-          var roles = membership.roles || [];
-          roles.forEach(function (role) {
-            if (role.id === 4) {
-              assigned_user_is_developer = true;
-            }
-          });
-        });
-
-        var user_info = {
-          is_developer: assigned_user_is_developer,
-          user_id: user_id,
-          user_name: user_name,
-          project_name: project_name,
-          api_key: api_key,
-        };
-        checked_users[user_id] = user_info;
-        local_storage &&
-          local_storage.setItem(cache_value_name, assigned_user_is_developer);
-        if (!assigned_user_is_developer) {
-          return dfd.reject();
-        }
-        return dfd.resolve(user_info);
-      });
-
-    return dfd.promise();
+    checked_users[user_id] = user_info;
+    return dfd.resolve(user_info);
   };
 
   var getAssignedUserOverloadStatus = function (user) {
     var user_id = user.user_id;
     user.is_overloaded = false;
     var dfd = $.Deferred();
-    if (!user.is_developer) {
-      return dfd.reject();
-    }
 
     var issues_by_type = { "Total ongoing issues": 0 };
 
@@ -242,10 +155,10 @@ jQuery(function ($) {
         href: "/users/" + value,
         text: selected_option.innerText,
       });
-      var user_obj = { project_name: current_project_name, $el: $user };
+      var user_obj = { $el: $user };
       getUserToken
         .then(function (token) {
-          return isAssignedUserDeveloper(token, user_obj);
+          return getAssignedUser(token, user_obj);
         })
         .then(getAssignedUserOverloadStatus)
         .then(function (user) {
@@ -256,7 +169,7 @@ jQuery(function ($) {
     });
 
     getUserToken
-      .then(isAssignedUserDeveloper)
+      .then(getAssignedUser)
       .then(getAssignedUserOverloadStatus)
       .then(function (user) {
         if (user.is_overloaded) {
@@ -276,11 +189,6 @@ jQuery(function ($) {
     (function () {
       var $current_issue_board = $(".issues-board").filter(":visible");
       var ticket_categories_to_check = ["2", "4", "8", "9"];
-      var $project_name_links = $current_issue_board
-        .find(".group.open")
-        .find("a");
-      var project_name = $project_name_links.eq(0).text();
-      var multiple_projects = $project_name_links.length > 2;
 
       var $issues_columns_to_check = $current_issue_board
         .find(".issue-status-col")
@@ -290,9 +198,6 @@ jQuery(function ($) {
       var users_to_check = {};
       $issues_columns_to_check.each(function () {
         var $column = $(this);
-        if (multiple_projects) {
-          project_name = $column.parent().prev().find("a").eq(0).text();
-        }
         var $column_usernames = $column.find(".assigned-user").find(".active");
         $column_usernames.each(function () {
           var $user = $(this);
@@ -300,10 +205,10 @@ jQuery(function ($) {
           if (users_to_check[username]) {
             return;
           }
-          var user_obj = { project_name: project_name, $el: $user };
+          var user_obj = { $el: $user };
           getUserToken
             .then(function (token) {
-              return isAssignedUserDeveloper(token, user_obj);
+              return getAssignedUser(token, user_obj);
             })
             .then(getAssignedUserOverloadStatus)
             .then(function (user) {
