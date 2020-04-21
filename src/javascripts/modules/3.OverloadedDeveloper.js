@@ -12,6 +12,15 @@ jQuery(function ($) {
   // #114858 remove focus of input on page load added by application.js defaultFocus()
   $("#content input[type=text], #content textarea").first().blur();
 
+  // close dialogs when clicking outside dialogs
+  $(document).on("click", function (e) {
+    if ($(".ui-dialog").length) {
+      if (!$(e.target).parents().filter(".ui-dialog").length) {
+        $(".ui-dialog-content").dialog("close");
+      }
+    }
+  });
+
   var getAssignedUser = function (token, user_obj) {
     var dfd = $.Deferred();
     var api_key = token.api_key;
