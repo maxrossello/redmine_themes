@@ -39,7 +39,7 @@ jQuery(function ($) {
     user_info = {
       user_id: user_id,
       user_name: user_name,
-      api_key: api_key,
+      api_key: api_key
     };
 
     checked_users[user_id] = user_info;
@@ -57,15 +57,15 @@ jQuery(function ($) {
       .ajax(site_url + "/issues.json", {
         headers: {
           "X-Redmine-API-Key": user.api_key,
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         data: {
           assigned_to_id: user_id,
           limit: 500,
-          status_id: "2|4|8|9",
+          status_id: "2|4|8|9"
         },
         dataType: "json",
-        type: "GET",
+        type: "GET"
       })
       .done(function (res) {
         var issues = res.issues;
@@ -124,7 +124,7 @@ jQuery(function ($) {
           "/issues?" +
           "set_filter=1&sort=priority%3Adesc%2Cupdated_on%3Adesc" +
           "&f[]=status_id&op[status_id]==&v[status_id][]=2&v[status_id][]=4&v[status_id][]=8" +
-          "&f[]=assigned_to_id&op[assigned_to_id]==&v[assigned_to_id][]=" +
+          "&v[status_id][]=9&f[]=assigned_to_id&op[assigned_to_id]==&v[assigned_to_id][]=" +
           user.user_id +
           "'>";
         link_to_assigned_issues = link_to_assigned_issues + text + "</a>";
@@ -144,7 +144,7 @@ jQuery(function ($) {
         title: user.user_name + " is overloaded",
         width: 300,
         autoOpen: false,
-        position: { my: "left top", of: $overload_icon },
+        position: { my: "left top", of: $overload_icon }
       });
 
       $overload_icon.on("mouseenter", function () {
@@ -162,7 +162,7 @@ jQuery(function ($) {
       $(".overloaded-user-warning").remove();
       var $user = $("<a />", {
         href: "/users/" + value,
-        text: selected_option.innerText,
+        text: selected_option.innerText
       });
       var user_obj = { $el: $user };
       getUserToken
