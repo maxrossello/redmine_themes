@@ -62,7 +62,8 @@ jQuery(function ($) {
         data: {
           assigned_to_id: user_id,
           limit: 500,
-          status_id: "2|4|8|9"
+          status_id: "2|4|8|9",
+          tracker_id: "1|2|4|6"
         },
         dataType: "json",
         type: "GET"
@@ -122,7 +123,8 @@ jQuery(function ($) {
           "<a target='_blank' class='overloaded-user-link assigned_issues_link' href='" +
           site_url +
           "/issues?" +
-          "set_filter=1&sort=priority%3Adesc%2Cupdated_on%3Adesc" +
+          "set_filter=1&sort=status,priority%3Adesc%2Cupdated_on%3Adesc" +
+          "&f[]=tracker_id&op[tracker_id]==&v[tracker_id][]=2&v[tracker_id][]=1&v[tracker_id][]=4&v[tracker_id][]=6" +
           "&f[]=status_id&op[status_id]==&v[status_id][]=2&v[status_id][]=4&v[status_id][]=8" +
           "&v[status_id][]=9&f[]=assigned_to_id&op[assigned_to_id]==&v[assigned_to_id][]=" +
           user.user_id +
