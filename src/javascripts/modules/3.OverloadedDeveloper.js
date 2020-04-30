@@ -14,9 +14,10 @@ jQuery(function ($) {
 
   // close dialogs when clicking outside dialogs
   $(document).on("click", function (e) {
-    if ($(".ui-dialog").length) {
-      if (!$(e.target).parents().filter(".ui-dialog").length) {
-        $(".ui-dialog-content").dialog("close");
+    var $wip_dialog = $(".wip-alert");
+    if ($wip_dialog.length) {
+      if (!$(e.target).parents().filter(".wip-alert").length) {
+        $wip_dialog.find(".ui-dialog-content").dialog("close");
       }
     }
   });
@@ -145,6 +146,7 @@ jQuery(function ($) {
       $overloaded_user_construct.appendTo($overloaded_user).dialog({
         title: user.user_name + " is overloaded",
         width: 300,
+        dialogClass: "wip-alert",
         autoOpen: false,
         position: { my: "left top", of: $overload_icon }
       });
