@@ -26,6 +26,16 @@ form {
     }
   }
 
+  .block {
+    display: block;
+    width: auto;
+    margin-left: 0;
+    padding-left: $check-input-gutter;
+    float: none;
+    text-align: left;
+    cursor: pointer;
+  }
+
   .box label {
     line-height: $line-height-base;
 
