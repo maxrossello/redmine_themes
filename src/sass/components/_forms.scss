@@ -20,6 +20,16 @@ form {
     line-height: $input-height-base;
     vertical-align: top;
 
+    &.block {
+      display: block;
+      width: auto;
+      margin-left: 0;
+      padding-left: $check-input-gutter;
+      float: none;
+      text-align: left;
+      cursor: pointer;
+    }
+
     > input[type="checkbox"],
     > input[type="radio"] {
       margin-top: $check-input-margin-btn-v;
