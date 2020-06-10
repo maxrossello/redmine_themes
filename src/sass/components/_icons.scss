@@ -832,6 +832,22 @@ div.wiki {
     }
   }
 
+  .xls {
+    @extend %other-format;
+
+    &::before {
+      content: $fa-var-file-excel-o;
+    }
+  }
+
+  .xlse {
+    @extend %other-format;
+
+    &::before {
+      content: $fa-book;
+    }
+  }
+
   .png {
     @extend %other-format;
 
