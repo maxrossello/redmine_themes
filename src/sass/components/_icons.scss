@@ -844,7 +844,7 @@ div.wiki {
     @extend %other-format;
 
     &::before {
-      content: $fa-book;
+      content: $fa-var-book;
     }
   }
 
