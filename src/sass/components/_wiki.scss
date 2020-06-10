@@ -116,6 +116,8 @@ div.wiki {
   }
 
   blockquote {
+    margin-bottom: 1em;
+
     > :first-child {
       margin-top: 0;
     }
@@ -157,7 +159,8 @@ div.wiki {
   }
 
   li > p {
-    margin-top: ($line-height-computed / 2);
+    margin-top: .25em;
+    margin-bottom: 0;
   }
 
   table {
@@ -169,7 +172,10 @@ div.wiki {
     word-break: keep-all;
   }
 
-  tr:nth-child(2n) {
+  // Textile
+  tbody:first-child tr:nth-child(2n),
+  // Markdown
+  thead + tbody tr:nth-child(2n-1) {
     background-color: $table-bg-accent;
   }
 
@@ -203,10 +209,9 @@ div.wiki {
   pre {
     width: auto;
     margin-bottom: 1.15em;
-    padding: 4px 8px;
+    padding: 12px 15px;
     overflow-x: auto;
     overflow-y: hidden;
-    border: 1px solid rgba($gray-500, .45);
     border-radius: $border-radius-base;
     background-color: rgba($gray-500, .15);
     font-size: $font-size-small;
@@ -225,30 +230,27 @@ div.wiki {
   }
 
   .toc {
+    display: table;
+    max-width: 45%;
     margin-bottom: $line-height-computed;
     margin-left: 0;
-    padding: 0;
+    padding: $padding-small-vertical $padding-small-horizontal;
     list-style-type: none;
+    border: 1px solid $toc-border;
+    border-radius: $border-radius-base;
+    background-color: $toc-bg;
+    box-shadow: $toc-shadow;
+    color: $toc-text;
+    font-size: $font-size-small;
 
-    &.right,
-    &.left {
-      max-width: 45%;
-      padding: 8px;
-      border: 1px solid $highlight-border;
-      border-radius: $border-radius-base;
-      background-color: $highlight-bg;
-      box-shadow: $panel-shadow;
-      font-size: $font-size-small;
+    a {
+      color: $toc-link;
+      font-weight: $font-weight-normal;
+      text-decoration: none;
 
-      a {
-        color: $highlight-text;
-        font-weight: $font-weight-normal;
-        text-decoration: none;
-
-        &:hover {
-          color: darken($highlight-text, 10%);
-          text-decoration: underline;
-        }
+      &:hover {
+        color: $toc-link-hover;
+        text-decoration: underline;
       }
     }
 
@@ -316,11 +318,8 @@ h5,
 h6 {
   .wiki-anchor {
     display: none;
-    position: relative;
-    top: -(1em - $font-size-small);
     margin-left: 5px;
     color: $headings-anchor-color !important; // stylelint-disable-line declaration-no-important
-    font-size: $font-size-small;
     text-decoration: none !important; // stylelint-disable-line declaration-no-important
   }
 

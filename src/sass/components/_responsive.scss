@@ -1,7 +1,29 @@
+.hidden,
 .mobile-show {
   display: none;
 }
 
+.inline-flex {
+  display: inline-flex;
+
+  body.controller-issues h2 & {
+    padding-right: 0;
+  }
+}
+
+// stylelint-disable selector-max-compound-selectors
+body {
+  @media screen and (max-width: $redmine-responsive-max) {
+    .flyout-menu + div {
+      #header {
+        height: $responsive-header-height;
+        background-color: $header-bg;
+
+        .jump-box-arrow {
+          &::before {
+            line-height: $responsive-header-height;
+          }
+        }
 
 
 @media screen and (max-width: $redmine-responsive-max) {
@@ -69,10 +91,19 @@
     }
   }
 
-  .mobile-toggle-button {
-    width: $responsive-header-height;
-    height: $responsive-header-height;
-    line-height: $responsive-header-height;
+    #content {
+      overflow: auto;
+    }
+
+    #ajax-indicator {
+      left: 50%;
+      width: 200px;
+    }
+
+    .mobile-toggle-button {
+      width: $responsive-header-height;
+      height: $responsive-header-height;
+      line-height: $responsive-header-height;
 
     &:focus {
       text-decoration: none;
@@ -104,11 +135,56 @@
       }
     }
 
-    a {
-      &,
-      &:hover,
-      &:focus {
-        color: $flyout-menu-link;
+      &__sidebar {
+        p {
+          padding-left: $padding-large-horizontal;
+        }
+      }
+
+      ul {
+        li:nth-child(n) {
+          a:not(.icon-only) {
+            height: auto;
+            padding: $padding-large-vertical $padding-large-horizontal;
+            line-height: $line-height-base;
+          }
+        }
+
+        &.queries {
+          li {
+            display: flex;
+
+            a {
+              flex: 1 1 auto;
+            }
+
+            .icon-only {
+              flex: 0;
+              padding-right: 0;
+              padding-left: 40px;
+              text-align: center;
+              text-overflow: initial;
+
+              &::before {
+                width: 40px;
+                margin-left: -40px;
+              }
+            }
+          }
+        }
+      }
+
+      a {
+        &,
+        &:hover,
+        &:focus {
+          color: $flyout-menu-link;
+
+          &::before,
+          span {
+            color: inherit !important; // stylelint-disable-line declaration-no-important
+          }
+        }
 
         &::before,
         span {
@@ -116,9 +192,48 @@
         }
       }
 
-      &.selected {
-        background-color: $flyout-menu-link-active-bg;
-        color: $flyout-menu-link-active;
+      h3,
+      h4 {
+        height: auto;
+        margin: 0;
+        padding: $padding-base-vertical $padding-base-horizontal;
+        border-top: 1px solid $flyout-menu-header-border;
+        border-bottom: 1px solid $flyout-menu-header-border;
+        background-color: $flyout-menu-header-bg;
+        color: $flyout-menu-header-text;
+        line-height: $line-height-base;
+
+        + p {
+          margin-top: $padding-large-vertical;
+        }
+      }
+
+      h4 {
+        padding: 0 $padding-base-horizontal;
+      }
+
+      form {
+        padding-left: 0;
+
+        > ul {
+          margin-left: 0;
+
+          li:nth-child(n) {
+            padding-left: $padding-large-horizontal;
+            line-height: inherit;
+
+            label {
+              a {
+                display: block;
+                padding: $padding-base-vertical $padding-base-horizontal;
+              }
+            }
+          }
+
+          + p {
+            margin-top: $padding-large-vertical;
+          }
+        }
       }
     }
 
@@ -132,7 +247,7 @@
 
       #admin-menu {
         a {
-          background-position: 8px center;
+          background-position: 8px center !important; // stylelint-disable-line declaration-no-important
 
           &.additionals {
             padding-left: 32px !important; // stylelint-disable-line declaration-no-important
@@ -168,7 +283,7 @@
             }
 
             .delete {
-              flex: 0 0 24px;
+              margin-right: $padding-large-vertical;
               margin-left: auto;
               float: none;
               text-align: center;
@@ -328,7 +443,7 @@
       }
     }
 
-    #issue-changesets {
+    div#issue-changesets {
       div.changeset {
         padding: 0;
       }
@@ -336,6 +451,10 @@
 
     #admin-index > #admin-menu li {
       padding: 0;
+
+      a {
+        background-position: 8px center !important; // stylelint-disable-line declaration-no-important
+      }
     }
   }
 

@@ -36,6 +36,8 @@ form {
     cursor: pointer;
   }
 
+  span.field label,
+  span.field ~ label,
   .box label {
     line-height: $line-height-base;
 
@@ -131,7 +133,7 @@ input[type="search"] {
 
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 4px 1px 0 0;
+  margin: 4px 3px 0 5px;
   margin-top: 1px \9; // IE8-9
   line-height: normal;
   vertical-align: top;
@@ -274,6 +276,7 @@ em.info {
   color: $gray-700;
   font-size: $font-size-small;
   font-style: normal;
+  line-height: $line-height-base;
 }
 
 
@@ -317,6 +320,11 @@ em.info {
       display: block;
       padding-top: $input-padding-vertical + 1px;
       line-height: $line-height-base;
+
+      > input[type="checkbox"],
+      > input[type="radio"] {
+        margin-left: 0;
+      }
     }
   }
 
@@ -360,6 +368,12 @@ em.info {
       float: none;
       text-align: left;
       cursor: pointer;
+
+      > input[type="checkbox"],
+      > input[type="radio"] {
+        margin-left: -$check-input-gutter;
+        float: left;
+      }
     }
 
     &.inline {
@@ -373,11 +387,13 @@ em.info {
     > input[type="checkbox"],
     > input[type="radio"] {
       margin-top: $check-input-margin-vertical;
+      margin-left: 0;
     }
 
     ~ input[type="checkbox"],
     ~ input[type="radio"] {
       margin-top: $check-input-margin-btn-v;
+      margin-left: 0;
     }
   }
 }
@@ -391,13 +407,24 @@ label.inline {
   &:last-child {
     margin-right: 0;
   }
-}
 
-label.inline,
-label.block {
   > input {
     margin-left: -$check-input-gutter;
     float: left;
+  }
+
+  input + & {
+    padding-left: 0;
+  }
+}
+
+label.block {
+  display: block;
+  width: auto;
+
+  > input {
+    margin-right: 3px;
+    margin-left: 3px;
   }
 }
 
@@ -407,7 +434,6 @@ label.block {
 
 label[for="issue_description"] + a {
   display: inline-block;
-  margin-top: $input-padding-vertical + 1px;
 
   img {
     vertical-align: middle;
@@ -611,6 +637,10 @@ label[for="closed"] {
   label {
     @include check-list;
   }
+
+  .gravatar {
+    margin-right: $padding-small-vertical;
+  }
 }
 
 #watchers_inputs {
@@ -726,7 +756,9 @@ fieldset#filters {
     select,
     label,
     .icon,
-    .icon-only {
+    .icon-only,
+    > span > a {
+      line-height: inherit;
       vertical-align: middle;
     }
   }
