@@ -82,6 +82,18 @@ body {
       overflow: auto;
     }
 
+    #content > .contextual .drdn,
+    #content > .contextual > a,
+    p.buttons a {
+      font-weight: bold;
+      display: inline-block;
+      margin: 5px 2px 5px 0;
+      padding: 9px;
+      border: 1px solid #ddd;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+    }
+
     #ajax-indicator {
       left: 50%;
       width: 200px;
@@ -290,14 +302,14 @@ body {
   }
 
   .splitcontentleft {
-    margin-bottom: $line-height-computed;
-    padding-right: 0;
-    float: none;
+    // margin-bottom: $line-height-computed;
+    padding-right: 10px;
+    float: left;
   }
 
   .splitcontentright {
-    padding-left: 0;
-    float: none;
+    padding-left: 10px;
+    float: right;
   }
 
   .attributes .splitcontentleft {
@@ -312,9 +324,6 @@ body {
       max-width: 95%;
     }
 
-    label {
-      float: none;
-    }
   }
 
   .pagination {
@@ -332,7 +341,7 @@ body {
   p.buttons {
     margin-bottom: $line-height-computed - $padding-small-horizontal;
     padding: 0;
-    float: none;
+    float: right;
     text-align: left;
 
     a {
@@ -382,13 +391,9 @@ body {
   #content > .contextual .drdn,
   #content > .contextual > a,
   p.buttons a {
-    font-weight: bold;
     display: inline-block;
-    margin: 5px 2px 5px 0;
-    padding: 9px;
-    border: 1px solid #ddd;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+    margin: 0 2px 5px 0;
+    float: none;
   }
   // For Redmine 4.0+
   #content > .contextual .drdn {

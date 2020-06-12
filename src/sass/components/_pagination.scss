@@ -23,7 +23,7 @@
     padding: $pagination-padding-vertical $pagination-padding-horizontal;
     border: 1px solid $pagination-border;
     border-radius: $border-radius-base;
-    background-color: red;
+    background-color: $pagination-bg;
     color: $pagination-color;
     text-decoration: none;
     white-space: nowrap;
