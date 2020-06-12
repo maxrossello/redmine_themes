@@ -85,13 +85,7 @@ body {
     #content > .contextual .drdn,
     #content > .contextual > a,
     p.buttons a {
-      font-weight: $font-weight-bold;
-      display: inline-block;
-      margin: 5px 2px 5px 0;
-      padding: 9px;
-      border: 1px solid $eea-gray;
-      -webkit-border-radius: 3px;
-      border-radius: $border-radius-base;
+      font-weight: $font-weight-bold !important;
     }
 
     #ajax-indicator {
@@ -322,7 +316,6 @@ body {
     label {
       float: none;
     }
-
   }
 
   .pagination {
@@ -382,8 +375,8 @@ body {
     }
   }
 
-  p.buttons{
-        margin-bottom: $line-height-computed - $padding-small-horizontal;
+  p.buttons {
+    margin-bottom: $line-height-computed - $padding-small-horizontal;
   }
 
   #content > .contextual > span {
