@@ -276,6 +276,12 @@ body {
         }
       }
     }
+
+    .tabular {
+      label {
+        float: none;
+      }
+    }
   }
 
   #query_form_content {
@@ -311,10 +317,6 @@ body {
     input.date {
       width: auto;
       max-width: 95%;
-    }
-
-    label {
-      float: none;
     }
   }
 
