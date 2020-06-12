@@ -10,8 +10,8 @@
     padding-right: 0;
   }
 }
-
 // stylelint-disable selector-max-compound-selectors
+
 body {
   @media screen and (max-width: $redmine-responsive-max) {
     .flyout-menu + div {
@@ -25,33 +25,33 @@ body {
           }
         }
 
-      #quick-search {
-        select {
-          top: 0;
-          height: $responsive-header-height;
-          box-shadow: none;
+        #quick-search {
+          select {
+            top: 0;
+            height: $responsive-header-height;
+            box-shadow: none;
+          }
         }
+      }
+
+      #main {
+        padding-top: $responsive-header-height;
       }
     }
 
-    #main {
-      padding-top: $responsive-header-height;
-    }
-  }
+    #header {
+      background-color: $eea-top-menu-bg !important;
 
-  #header {
-    background-color: $eea-top-menu-bg !important;
+      #project-jump {
+        padding: 0 $responsive-header-height 0 0;
 
-    #project-jump {
-      padding: 0 $responsive-header-height 0 0;
+        &.expanded {
+          .drdn-trigger {
+            background-color: transparent !important;
+          }
+        }
 
-      &.expanded {
         .drdn-trigger {
-          background-color: transparent !important;
-        }
-      }
-
-      .drdn-trigger {
           @include text-overflow;
           display: block;
           height: $responsive-header-height;
@@ -62,21 +62,21 @@ body {
           font-weight: $font-weight-normal;
           line-height: $responsive-header-height;
 
-        &::before {
-          display: none;
+          &::before {
+            display: none;
+          }
+
+          &::after {
+            display: none;
+          }
         }
 
-        &::after {
-          display: none;
+        .drdn-content {
+          top: $responsive-header-height;
+          font-size: $font-size-base;
         }
-      }
-
-      .drdn-content {
-        top: $responsive-header-height;
-	font-size: $font-size-base;
       }
     }
-  }
 
     #content {
       overflow: auto;
@@ -92,35 +92,35 @@ body {
       height: $responsive-header-height;
       line-height: $responsive-header-height;
 
-    &:focus {
-      text-decoration: none;
-    }
-  }
-
-  .flyout-menu {
-    background-color: $flyout-menu-bg;
-    color: $flyout-menu-text;
-
-    .search-magnifier {
-      left: 18px;
-    }
-
-    &__search {
-      height: $responsive-header-height;
-      padding: ($padding-side / 2);
-      line-height: normal;
-
-      input[type="text"] {
-        height: $responsive-header-height - $padding-side;
-        line-height: $responsive-header-height - $padding-side;
+      &:focus {
+        text-decoration: none;
       }
     }
 
-    &__avatar {
-      img.gravatar {
-        top: 0;
+    .flyout-menu {
+      background-color: $flyout-menu-bg;
+      color: $flyout-menu-text;
+
+      .search-magnifier {
+        left: 18px;
       }
-    }
+
+      &__search {
+        height: $responsive-header-height;
+        padding: ($padding-side / 2);
+        line-height: normal;
+
+        input[type="text"] {
+          height: $responsive-header-height - $padding-side;
+          line-height: $responsive-header-height - $padding-side;
+        }
+      }
+
+      &__avatar {
+        img.gravatar {
+          top: 0;
+        }
+      }
 
       &__sidebar {
         p {
@@ -163,8 +163,8 @@ body {
 
       a {
         &,
-        &:hover,
-        &:focus {
+        &:focus,
+        &:hover {
           color: $flyout-menu-link;
 
           &::before,
@@ -223,63 +223,59 @@ body {
         }
       }
     }
+    // h3 {
+    //   border-top: 1px solid $flyout-menu-header-border;
+    //   border-bottom: 1px solid $flyout-menu-header-border;
+    //   background-color: $flyout-menu-header-bg;
+    //   color: $flyout-menu-header-text;
+    // }
+    #admin-menu {
+      a {
+        background-position: 8px center !important; // stylelint-disable-line declaration-no-important
 
-    h3 {
-      border-top: 1px solid $flyout-menu-header-border;
-      border-bottom: 1px solid $flyout-menu-header-border;
-      background-color: $flyout-menu-header-bg;
-      color: $flyout-menu-header-text;
-    }
+        &.additionals {
+          padding-left: 32px !important; // stylelint-disable-line declaration-no-important
 
-
-      #admin-menu {
-        a {
-          background-position: 8px center !important; // stylelint-disable-line declaration-no-important
-
-          &.additionals {
-            padding-left: 32px !important; // stylelint-disable-line declaration-no-important
-
-            &::before {
-              margin-right: $padding-small-vertical;
-              font-size: $fa-font-size-base;
-            }
-          }
-        }
-      }
-
-
-      #watchers {
-        .contextual {
-          padding-top: $line-height-computed / 2;
-          padding-bottom: $line-height-computed / 2;
-        }
-
-        .watchers {
-          li {
-            margin: ($line-height-computed / 2) 0 0;
-            padding: 0;
-
-            img.gravatar {
-              top: 0;
-            }
-
-            a {
-              height: auto;
-              border-top: 0;
-              line-height: initial;
-            }
-
-            .delete {
-              margin-right: $padding-large-vertical;
-              margin-left: auto;
-              float: none;
-              text-align: center;
-              text-overflow: initial;
-            }
+          &::before {
+            margin-right: $padding-small-vertical;
+            font-size: $fa-font-size-base;
           }
         }
       }
     }
+
+    #watchers {
+      .contextual {
+        padding-top: $line-height-computed / 2;
+        padding-bottom: $line-height-computed / 2;
+      }
+
+      .watchers {
+        li {
+          margin: ($line-height-computed / 2) 0 0;
+          padding: 0;
+
+          img.gravatar {
+            top: 0;
+          }
+
+          a {
+            height: auto;
+            border-top: 0;
+            line-height: initial;
+          }
+
+          .delete {
+            margin-right: $padding-large-vertical;
+            margin-left: auto;
+            float: none;
+            text-align: center;
+            text-overflow: initial;
+          }
+        }
+      }
+    }
+  }
 
   #query_form_content {
     fieldset {
@@ -327,13 +323,13 @@ body {
     }
   }
 
-  p.buttons,
-  .other-formats > span,
-  #wiki_add_attachment > p,
   #content > .contextual,
   #content > .contextual > span,
   #query_form > .contextual,
-  #query_form_with_buttons > .contextual {
+  #query_form_with_buttons > .contextual,
+  #wiki_add_attachment > p,
+  .other-formats > span,
+  p.buttons {
     margin-bottom: $line-height-computed - $padding-small-horizontal;
     padding: 0;
     float: none;
@@ -347,8 +343,8 @@ body {
       color: $pagination-color;
       font-weight: $font-weight-normal;
 
-      &:hover,
-      &:focus {
+      &:focus,
+      &:hover {
         border-color: $pagination-hover-border;
         background-color: $pagination-hover-bg;
         color: $pagination-hover-color;
@@ -363,12 +359,11 @@ body {
 
     a,
     input,
-    select,
-    label {
+    label,
+    select {
       margin-top: 0;
       margin-bottom: 5px;
     }
-
 
     label {
       display: inline-block;
@@ -380,70 +375,70 @@ body {
     }
   }
 
+  #content > .contextual > span {
+    margin-bottom: 0;
+  }
 
-    #content > .contextual > span {
-      margin-bottom: 0;
+  #content > .contextual .drdn,
+  #content > .contextual > a,
+  p.buttons a {
+    font-weight: bold;
+    display: inline-block;
+    margin: 5px 2px 5px 0;
+    padding: 9px;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  }
+  // For Redmine 4.0+
+  #content > .contextual .drdn {
+    padding: 0;
+    border: 0;
+
+    .drdn-trigger {
+      padding: $btn-padding-vertical $btn-padding-horizontal;
     }
 
-    #content > .contextual > a,
-    #content > .contextual .drdn,
-    p.buttons a {
-      display: inline-block;
-      margin: 0 2px 5px 0;
-      float: none;
-    }
+    .drdn-items {
+      a {
+        margin: 3px 0 0;
+        padding-top: $btn-padding-vertical;
+        padding-bottom: $btn-padding-vertical;
 
-    // For Redmine 4.0+
-    #content > .contextual .drdn {
-      padding: 0;
-      border: 0;
-
-      .drdn-trigger {
-        padding: $btn-padding-vertical $btn-padding-horizontal;
-      }
-
-      .drdn-items {
-        a {
-          margin: 3px 0 0;
-          padding-top: $btn-padding-vertical;
-          padding-bottom: $btn-padding-vertical;
-
-          &:first-child {
-            margin-top: 0;
-          }
+        &:first-child {
+          margin-top: 0;
         }
       }
     }
-
-    // For Redmine 3.4+
-    #my-page {
-      #list-left {
-        width: 100%;
-        padding-right: 0;
-        float: none;
-      }
-
-      #list-right {
-        width: 100%;
-        padding-left: 0;
-        float: none;
-      }
+  }
+  // For Redmine 3.4+
+  #my-page {
+    #list-left {
+      width: 100%;
+      padding-right: 0;
+      float: none;
     }
 
-    div#issue-changesets {
-      div.changeset {
-        padding: 0;
-      }
+    #list-right {
+      width: 100%;
+      padding-left: 0;
+      float: none;
     }
+  }
 
-    #admin-index > #admin-menu li {
+  div#issue-changesets {
+    div.changeset {
       padding: 0;
-
-      a {
-        background-position: 8px center !important; // stylelint-disable-line declaration-no-important
-      }
     }
+  }
 
+  #admin-index > #admin-menu li {
+    padding: 0;
+
+    a {
+      background-position: 8px center !important; // stylelint-disable-line declaration-no-important
+    }
+  }
   // Tweaks for smartphones, touchscreens
   @media (hover: none) and (pointer: coarse) {
     .mobile-toggle-button::after {
