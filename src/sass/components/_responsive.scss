@@ -85,13 +85,13 @@ body {
     #content > .contextual .drdn,
     #content > .contextual > a,
     p.buttons a {
-      font-weight: bold;
+      font-weight: $font-weight-bold;
       display: inline-block;
       margin: 5px 2px 5px 0;
       padding: 9px;
-      border: 1px solid #ddd;
+      border: 1px solid $eea-gray;
       -webkit-border-radius: 3px;
-      border-radius: 3px;
+      border-radius: $border-radius-base;
     }
 
     #ajax-indicator {
@@ -235,12 +235,7 @@ body {
         }
       }
     }
-    // h3 {
-    //   border-top: 1px solid $flyout-menu-header-border;
-    //   border-bottom: 1px solid $flyout-menu-header-border;
-    //   background-color: $flyout-menu-header-bg;
-    //   color: $flyout-menu-header-text;
-    // }
+
     #admin-menu {
       a {
         background-position: 8px center !important; // stylelint-disable-line declaration-no-important
@@ -324,7 +319,7 @@ body {
       max-width: 95%;
     }
 
-    label{
+    label {
       float: none;
     }
 
@@ -341,8 +336,7 @@ body {
   #query_form > .contextual,
   #query_form_with_buttons > .contextual,
   #wiki_add_attachment > p,
-  .other-formats > span,
-  p.buttons {
+  .other-formats > span {
     margin-bottom: $line-height-computed - $padding-small-horizontal;
     padding: 0;
     float: right;
@@ -386,6 +380,10 @@ body {
         margin-top: $check-input-margin-btn-v;
       }
     }
+  }
+
+  p.buttons{
+        margin-bottom: $line-height-computed - $padding-small-horizontal;
   }
 
   #content > .contextual > span {
