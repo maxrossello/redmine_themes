@@ -23,7 +23,7 @@ Redmine::Plugin.register :redmine_themes do
   name 'Redmine Themes plugin'
   author 'Massimo Rossello'
   description 'Brings a selection of Redmine themes'
-  version '4.1.0'
+  version '4.1.0.1'
   url 'https://github.com/maxrossello/redmine_themes.git'
   author_url 'https://github.com/maxrossello'
   requires_redmine :version_or_higher => '4.1.0'
