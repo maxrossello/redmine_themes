@@ -120,7 +120,9 @@
     }
 
     .next-prev-links {
+      /* due to #117950 */
       display: none;
+
       margin: 0 0 $line-height-computed;
       float: none;
       color: $gray-600;
