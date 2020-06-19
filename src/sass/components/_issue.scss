@@ -15,12 +15,11 @@
 
   &.details {
     margin-bottom: $line-height-computed;
-    word-wrap: break-word;
-
-    padding: 15px 15px;
+    padding: 15px;
     border: 1px solid #dadce7;
     border-radius: 3px;
     background-color: #fafbfc;
+    word-wrap: break-word;
 
     @if $use-gravatars {
       // For Redmine 3.4+
@@ -121,6 +120,7 @@
     }
 
     .next-prev-links {
+      display: none;
       margin: 0 0 $line-height-computed;
       float: none;
       color: $gray-600;
