@@ -15,12 +15,11 @@
 
   &.details {
     margin-bottom: $line-height-computed;
-    word-wrap: break-word;
-
-    padding: 15px 15px;
+    padding: 15px;
     border: 1px solid #dadce7;
     border-radius: 3px;
     background-color: #fafbfc;
+    word-wrap: break-word;
 
     @if $use-gravatars {
       // For Redmine 3.4+
@@ -93,7 +92,8 @@
       margin-bottom: $line-height-computed;
     }
 
-    > hr {
+    > hr,
+    .attribute > hr {
       @if $clean-issues {
         margin: $issue-padding 0;
       } @else {
@@ -120,6 +120,9 @@
     }
 
     .next-prev-links {
+      /* due to #117950 */
+      display: none;
+
       margin: 0 0 $line-height-computed;
       float: none;
       color: $gray-600;
@@ -131,7 +134,42 @@
     }
   }
 
-  .attributes {
+  @if $color-status {
+    .attributes td.status,
+    .attributes .attribute.status .value {
+      display: inline-block;
+      width: auto;
+      min-width: 1em;
+      margin-top: $issue-attribute-padding-v;
+      padding: 1px $table-cell-padding;
+      border-radius: $border-radius-base;
+      background-color: $status-default-bg;
+      color: $status-default-color;
+      font-size: $font-size-small;
+      font-weight: $font-weight-bold;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @each $status, $status-colors in $status-colors-map {
+      &.#{$status} {
+        .attributes td.status,
+        .attributes .attribute.status .value {
+          background-color: map-get($status-colors, background);
+          color: map-get($status-colors, color);
+        }
+      }
+    }
+  }
+
+  @if $priority-icon {
+    .attributes td.priority,
+    .attribute.priority .value {
+      @include priority-icon-base;
+    }
+  }
+
+  table.attributes {
     width: 100%;
 
     th,
@@ -154,67 +192,66 @@
 
     @media screen and (min-width: $screen-md-min) {
       > tbody > tr {
-        > th,
-        > td {
-          width: 25%;
-        }
-      }
-    }
-
-    @media screen and (min-width: $screen-lg-min) {
-      width: auto;
-
-      > tbody > tr {
         > th {
-          width: 14em;
+          width: $label-width;
         }
 
         > td {
+          min-width: $label-width;
+        }
+      }
+    }
+  }
+
+  div.attributes {
+    @if $css-grid-layout {
+      display: grid;
+      grid-gap: 0 $padding-side;
+      grid-template-columns: auto;
+
+      @media screen and (min-width: $screen-lg-min) {
+        grid-template-columns: repeat(2, minmax(auto, max-content));
+
+        .attribute .value {
+          min-width: $label-width;
+        }
+      }
+
+      .splitcontent {
+        display: contents;
+
+        &::after {
+          content: none;
+        }
+      }
+
+      .splitcontentleft {
+        width: auto;
+        padding-right: 0;
+        padding-left: 0;
+        float: none;
+      }
+    } @else {
+      @media screen and (min-width: $screen-lg-min) {
+        .splitcontentleft {
           width: auto;
-          min-width: 16em;
+        }
+
+        .attribute .value {
+          min-width: $label-width;
         }
       }
     }
   }
 
-  @if $color-status {
-    .attributes td.status,
-    .attribute.status .value {
-      display: inline-block;
-      width: auto;
-      min-width: 1em;
-      margin-top: $issue-attribute-padding-v;
-      padding: 1px $table-cell-padding;
-      border-radius: $border-radius-base;
-      background-color: $status-default-bg;
-      color: $status-default-color;
-      font-size: $font-size-small;
-      font-weight: $font-weight-bold;
-      text-align: center;
-      text-transform: uppercase;
-    }
+  .splitcontent {
+    .attribute {
+      padding-left: $label-width;
 
-    @each $status, $status-colors in $status-colors-map {
-      &.#{$status} {
-        .attributes td.status,
-        .attribute.status .value {
-          background-color: map-get($status-colors, background);
-          color: map-get($status-colors, color);
-        }
+      .label {
+        width: $label-width;
+        margin-left: -$label-width;
       }
-    }
-  }
-
-  @if $priority-icon {
-    .attributes td.priority,
-    .attribute.priority .value {
-      @include priority-icon-base;
-    }
-  }
-
-  .splitcontentleft {
-    @media screen and (min-width: $screen-lg-min) {
-      width: auto;
     }
   }
 
@@ -227,21 +264,20 @@
     }
 
     .label {
-      width: 25%;
+      box-sizing: border-box;
       float: left;
       color: $gray-700;
-
-      @media screen and (min-width: $screen-lg-min) {
-        width: 14em;
-      }
     }
 
     .value {
       color: $gray-950;
 
-      @media screen and (min-width: $screen-lg-min) {
-        width: auto;
-        min-width: 14em + 16em;
+      &:empty::after {
+        content: "-";
+      }
+
+      *:last-child {
+        margin-bottom: 0;
       }
     }
   }
@@ -261,13 +297,18 @@
     padding: $issue-padding;
     border-top: 1px solid $issue-border;
   }
+
+  // Restore margin below buttons in reverse chronological mode
+  + div[style] + .contextual {
+    margin-bottom: $line-height-computed;
+  }
 }
 
 div.fileover {
   background-color: $highlight-bg;
 }
 
-div.attachments {
+div.attachments:not(.box) {
   padding: $line-height-computed 0;
   border-top: 1px solid $issue-border;
 
@@ -328,6 +369,7 @@ div.thumbnails {
     top: 0;
     margin: 3px;
     border-radius: $border-radius-base - 1;
+    vertical-align: middle;
   }
 }
 
@@ -359,7 +401,24 @@ div.thumbnails {
     td.buttons {
       width: 3em;
       vertical-align: middle;
+
+      a:not(:first-child) {
+        margin-left: 2px;
+      }
     }
+  }
+}
+
+#trackers_description {
+  display: none;
+
+  dt {
+    margin: 0 0 ($line-height-computed / 4);
+  }
+
+  dd {
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
@@ -375,9 +434,13 @@ div.thumbnails {
   }
 }
 
-#history {
-  overflow: auto;
+#update > form {
+  margin-bottom: $line-height-computed;
+  padding-bottom: $line-height-computed;
+  border-bottom: 1px solid $issue-border;
+}
 
+#history {
   > .tabs {
     margin-bottom: $line-height-computed + 2px * 2;
   }
@@ -409,64 +472,87 @@ div.thumbnails {
 
 .journal {
   position: relative;
-  margin-bottom: $line-height-computed + 2px * 2;
+  margin-bottom: $line-height-computed;
+  border: 1px solid $bubble-border;
+  border-radius: $panel-border-radius;
 
   @if $use-gravatars {
     margin-left: $bubble-gravatar-size + $bubble-gravatar-space;
   }
 
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    top: -($line-height-computed + 2px);
-    left: 22px;
-    width: 4px;
-    height: $line-height-computed;
-    background-color: darken($body-bg, 5%);
-  }
+  &.changeset {
+    h4 + p {
+      margin-bottom: 0;
+      padding-bottom: $bubble-padding-vertical;
+      background-color: $bubble-bg;
+      font-size: $font-size-list;
 
-  .tabs + &::before {
-    display: none;
+      > a:first-child {
+        font-family: $font-family-monospace;
+        font-weight: $font-weight-bold;
+      }
+    }
   }
 
   > div {
-    border: 1px solid $issue-border;
-    border-radius: $panel-border-radius;
-
     &:target {
-      border-color: darken($issue-border, 25%);
+      $border: $bubble-target-border;
+      $shadow: rgba($bubble-target-border, $bubble-target-shadow-alpha);
+      position: relative;
+      margin-top: -($responsive-header-height + 4px);
+      padding-top: ($responsive-header-height + 4px);
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: ($responsive-header-height + 4px);
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: $panel-border-radius - 1px;
+        box-shadow: 0 0 0 1px $border, 0 0 0 4px $shadow;
+        pointer-events: none;
+      }
 
       @if $use-gravatars {
-        h4::before {
-          border-right-color: darken($issue-border, 25%);
+        > h4::before {
+          border-right-color: $border;
+          filter: drop-shadow(-4px 0 0 $shadow);
+        }
+      }
+
+      @media screen and (min-width: $redmine-responsive-min) {
+        margin-top: -$line-height-computed;
+        padding-top: $line-height-computed;
+
+        &::before {
+          top: $line-height-computed;
         }
       }
     }
   }
 
   // For Redmine 4.0+
-  > div > .contextual {
+  > div > .contextual,
+  > .contextual {
     position: relative;
     z-index: 1;
     margin: 0;
     padding: $bubble-padding-vertical $bubble-padding-horizontal;
     font-size: $font-size-list;
 
-    > .journal-actions {
-      padding-right: $issue-attribute-padding-h;
+    a {
+      opacity: $icon-opacity;
 
-      > a {
-        opacity: $icon-opacity;
-
-        &:hover {
-          opacity: $icon-hover-opacity;
-        }
+      &:hover {
+        opacity: $icon-hover-opacity;
       }
     }
 
     > a.journal-link {
+      padding-left: $issue-attribute-padding-h;
+      opacity: 1;
       color: $gray-700;
 
       &::before {
@@ -475,13 +561,15 @@ div.thumbnails {
     }
   }
 
-  > div > h4 {
+  > div > h4,
+  > h4 {
     margin: 0;
     padding: $bubble-padding-vertical $bubble-padding-horizontal;
     border-radius: $panel-border-radius $panel-border-radius 0 0;
-    background-color: $issue-bg;
+    background-color: $bubble-bg;
     color: $gray-700;
     font-size: $font-size-list;
+    font-weight: $font-weight-normal;
 
     a {
       color: $gray-900;
@@ -497,7 +585,8 @@ div.thumbnails {
   }
 
   @if $use-gravatars {
-    > div > h4 {
+    > div > h4,
+    > h4 {
       position: relative;
 
       &::before,
@@ -519,12 +608,12 @@ div.thumbnails {
         margin-top: 1px;
         margin-left: 2px;
         border-width: 6px;
-        border-right-color: $issue-bg;
+        border-right-color: $bubble-bg;
       }
 
       &::before {
         border-width: 7px;
-        border-right-color: $issue-border;
+        border-right-color: $bubble-border;
       }
 
       > .gravatar {
@@ -536,34 +625,26 @@ div.thumbnails {
     }
   }
 
+  > p {
+    padding-right: $bubble-padding-horizontal;
+    padding-left: $bubble-padding-horizontal;
+
+    &:empty {
+      margin-bottom: 0;
+    }
+  }
+
+  form,
+  .wiki,
+  .details {
+    border-top: 1px solid $bubble-border;
+  }
+
   .details {
     margin: 0;
     padding: $bubble-padding-vertical 0;
-    padding-left: $bubble-padding-horizontal * 2.5;
-    list-style: none;
-    border-top: 1px solid mix($body-bg, $issue-border, 50%);
+    padding-left: $bubble-padding-horizontal + 20px;
     font-size: $font-size-list;
-
-    li {
-      position: relative;
-      margin-bottom: $bubble-padding-vertical / 2;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 5px;
-        left: -($bubble-padding-horizontal + 6px / 2);
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background-color: $gray-600;
-      }
-    }
 
     img {
       margin: 0 0 -3px 4px;
@@ -579,15 +660,13 @@ div.thumbnails {
     }
   }
 
-  .wiki,
-  form {
+  .wiki {
     padding: $issue-padding;
-    border-top: 1px solid $issue-border;
   }
 
   form {
-    padding-top: 5px;
-    background-color: $gray-100;
+    padding: $bubble-padding-vertical $bubble-padding-horizontal $bubble-padding-horizontal;
+    background-color: $bubble-bg;
 
     > p {
       margin-bottom: $issue-padding;
@@ -595,6 +674,12 @@ div.thumbnails {
       &:last-child {
         margin-bottom: 0;
       }
+    }
+
+    > label {
+      display: inline-block;
+      margin-bottom: $line-height-computed / 2;
+      line-height: $line-height-base;
     }
 
     > .wiki {
@@ -631,12 +716,10 @@ div.thumbnails {
 }
 
 .private-notes {
-  > div {
-    border-left-color: $brand-warning;
+  border-left-color: $brand-warning;
 
-    h4::before {
-      border-right-color: $brand-warning;
-    }
+  > div > h4::before {
+    border-right-color: $brand-warning;
   }
 }
 
@@ -664,22 +747,29 @@ span.private {
 
   @media screen and (min-width: $screen-md-min) {
     width: 45%;
-    margin-left: $padding-side;
     float: right;
+
+    + #history {
+      margin-right: 45%;
+      padding-right: $padding-side;
+    }
   }
 
   @media screen and (min-width: $screen-lg-min) {
     width: 33%;
-    min-width: 28em;
+
+    + #history {
+      margin-right: 33%;
+    }
   }
 
   div.changeset {
     margin-top: $line-height-computed / 2 + 2px * 2;
     padding: 0;
     overflow: hidden;
-    border: 1px solid $issue-border;
+    border: 1px solid $bubble-border;
     border-radius: $panel-border-radius;
-    background-color: $issue-bg;
+    background-color: $bubble-bg;
     font-size: $font-size-list;
 
     &:first-of-type {
@@ -692,7 +782,7 @@ span.private {
       padding: $padding-base-vertical $padding-base-horizontal;
       color: $gray-700;
 
-      > a {
+      > a:first-child {
         font-family: $font-family-monospace;
         font-weight: $font-weight-bold;
       }
@@ -712,7 +802,7 @@ span.private {
 
     > .wiki {
       padding: $padding-base-vertical $padding-base-horizontal;
-      border-top: 1px solid mix($body-bg, $issue-border, 50%);
+      border-top: 1px solid $bubble-border;
       background-color: $body-bg;
     }
   }

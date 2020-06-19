@@ -2,10 +2,10 @@ name: Run linters
 
 on:
   push:
-    paths:
-      - src/*
-      - svg/*
-      - package*.json
+    branches:
+      - 'master'
+      - 'v*.*'
+  pull_request:
 
 jobs:
   lint:
@@ -13,21 +13,24 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
 
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
-          version: 10.x
+          node-version: "10.x"
 
       - name: Install npm dependencies
         run: npm ci
 
-      - name: Lint JavaScript
-        run: npm run lint:js
-
-      - name: Lint Sass
-        run: npm run lint:sass
+      - name: Run linters
+        uses: samuelmeuli/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          eslint: true
+          eslint_dir: "src/javascripts"
+          stylelint: true
+          stylelint_dir: "src/sass"
 
       - name: Check build
         run: npm run build

@@ -1,48 +1,57 @@
+.hidden,
 .mobile-show {
   display: none;
 }
 
+.inline-flex {
+  display: inline-flex;
 
-
-@media screen and (max-width: $redmine-responsive-max) {
-  .flyout-menu + div {
-    #header {
-      height: $responsive-header-height;
-      background-color: $eea-top-menu-bg;
-
-      .jump-box-arrow {
-        &::before {
-          line-height: $responsive-header-height;
-        }
-      }
-
-      #quick-search {
-        select {
-          top: 0;
-          height: $responsive-header-height;
-          box-shadow: none;
-        }
-      }
-    }
-
-    #main {
-      padding-top: $responsive-header-height;
-    }
+  body.controller-issues h2 & {
+    padding-right: 0;
   }
+}
+// stylelint-disable selector-max-compound-selectors
 
-  #header {
-    background-color: $eea-top-menu-bg !important;
+body {
+  @media screen and (max-width: $redmine-responsive-max) {
+    .flyout-menu + div {
+      #header {
+        height: $responsive-header-height;
+        background-color: $header-bg;
 
-    #project-jump {
-      padding: 0 $responsive-header-height 0 0;
+        .jump-box-arrow {
+          &::before {
+            line-height: $responsive-header-height;
+          }
+        }
 
-      &.expanded {
-        .drdn-trigger {
-          background-color: transparent !important;
+        #quick-search {
+          select {
+            top: 0;
+            height: $responsive-header-height;
+            box-shadow: none;
+          }
         }
       }
 
-      .drdn-trigger {
+      #main {
+        padding-top: $responsive-header-height;
+      }
+    }
+
+    #header {
+      background-color: $eea-top-menu-bg !important;
+
+      #project-jump {
+        padding: 0 $responsive-header-height 0 0;
+
+        &.expanded {
+          .drdn-trigger {
+            background-color: transparent !important;
+          }
+        }
+
+        .drdn-trigger {
           @include text-overflow;
           display: block;
           height: $responsive-header-height;
@@ -53,62 +62,122 @@
           font-weight: $font-weight-normal;
           line-height: $responsive-header-height;
 
-        &::before {
-          display: none;
+          &::before {
+            display: none;
+          }
+
+          &::after {
+            display: none;
+          }
         }
 
-        &::after {
-          display: none;
+        .drdn-content {
+          top: $responsive-header-height;
+          font-size: $font-size-base;
         }
       }
-
-      .drdn-content {
-        top: $responsive-header-height;
-	font-size: $font-size-base;
-      }
-    }
-  }
-
-  .mobile-toggle-button {
-    width: $responsive-header-height;
-    height: $responsive-header-height;
-    line-height: $responsive-header-height;
-
-    &:focus {
-      text-decoration: none;
-    }
-  }
-
-  .flyout-menu {
-    background-color: $flyout-menu-bg;
-    color: $flyout-menu-text;
-
-    .search-magnifier {
-      left: 18px;
     }
 
-    &__search {
+    #content {
+      overflow: auto;
+    }
+
+    #content > .contextual .drdn,
+    #content > .contextual > a,
+    p.buttons a {
+      font-weight: $font-weight-bold !important;
+    }
+
+    #ajax-indicator {
+      left: 50%;
+      width: 200px;
+    }
+
+    .mobile-toggle-button {
+      width: $responsive-header-height;
       height: $responsive-header-height;
-      padding: ($padding-side / 2);
-      line-height: normal;
+      line-height: $responsive-header-height;
 
-      input[type="text"] {
-        height: $responsive-header-height - $padding-side;
-        line-height: $responsive-header-height - $padding-side;
-      }
-    }
-
-    &__avatar {
-      img.gravatar {
-        top: 0;
-      }
-    }
-
-    a {
-      &,
-      &:hover,
       &:focus {
-        color: $flyout-menu-link;
+        text-decoration: none;
+      }
+    }
+
+    .flyout-menu {
+      background-color: $flyout-menu-bg;
+      color: $flyout-menu-text;
+
+      .search-magnifier {
+        left: 18px;
+      }
+
+      &__search {
+        height: $responsive-header-height;
+        padding: ($padding-side / 2);
+        line-height: normal;
+
+        input[type="text"] {
+          height: $responsive-header-height - $padding-side;
+          line-height: $responsive-header-height - $padding-side;
+        }
+      }
+
+      &__avatar {
+        img.gravatar {
+          top: 0;
+        }
+      }
+
+      &__sidebar {
+        p {
+          padding-left: $padding-large-horizontal;
+        }
+      }
+
+      ul {
+        li:nth-child(n) {
+          a:not(.icon-only) {
+            height: auto;
+            padding: $padding-large-vertical $padding-large-horizontal;
+            line-height: $line-height-base;
+          }
+        }
+
+        &.queries {
+          li {
+            display: flex;
+
+            a {
+              flex: 1 1 auto;
+            }
+
+            .icon-only {
+              flex: 0;
+              padding-right: 0;
+              padding-left: 40px;
+              text-align: center;
+              text-overflow: initial;
+
+              &::before {
+                width: 40px;
+                margin-left: -40px;
+              }
+            }
+          }
+        }
+      }
+
+      a {
+        &,
+        &:focus,
+        &:hover {
+          color: $flyout-menu-link;
+
+          &::before,
+          span {
+            color: inherit !important; // stylelint-disable-line declaration-no-important
+          }
+        }
 
         &::before,
         span {
@@ -116,68 +185,104 @@
         }
       }
 
-      &.selected {
-        background-color: $flyout-menu-link-active-bg;
-        color: $flyout-menu-link-active;
+      h3,
+      h4 {
+        height: auto;
+        margin: 0;
+        padding: $padding-base-vertical $padding-base-horizontal;
+        border-top: 1px solid $flyout-menu-header-border;
+        border-bottom: 1px solid $flyout-menu-header-border;
+        background-color: $flyout-menu-header-bg;
+        color: $flyout-menu-header-text;
+        line-height: $line-height-base;
+
+        + p {
+          margin-top: $padding-large-vertical;
+        }
       }
-    }
 
-    h3 {
-      border-top: 1px solid $flyout-menu-header-border;
-      border-bottom: 1px solid $flyout-menu-header-border;
-      background-color: $flyout-menu-header-bg;
-      color: $flyout-menu-header-text;
-    }
+      h4 {
+        padding: 0 $padding-base-horizontal;
+      }
 
+      form {
+        padding-left: 0;
 
-      #admin-menu {
-        a {
-          background-position: 8px center;
+        > ul {
+          margin-left: 0;
 
-          &.additionals {
-            padding-left: 32px !important; // stylelint-disable-line declaration-no-important
+          li:nth-child(n) {
+            padding-left: $padding-large-horizontal;
+            line-height: inherit;
 
-            &::before {
-              margin-right: $padding-small-vertical;
-              font-size: $fa-font-size-base;
+            label {
+              a {
+                display: block;
+                padding: $padding-base-vertical $padding-base-horizontal;
+              }
             }
           }
-        }
-      }
 
-
-      #watchers {
-        .contextual {
-          padding-top: $line-height-computed / 2;
-          padding-bottom: $line-height-computed / 2;
-        }
-
-        .watchers {
-          li {
-            margin: ($line-height-computed / 2) 0 0;
-            padding: 0;
-
-            img.gravatar {
-              top: 0;
-            }
-
-            a {
-              height: auto;
-              border-top: 0;
-              line-height: initial;
-            }
-
-            .delete {
-              flex: 0 0 24px;
-              margin-left: auto;
-              float: none;
-              text-align: center;
-              text-overflow: initial;
-            }
+          + p {
+            margin-top: $padding-large-vertical;
           }
         }
       }
     }
+
+    #admin-menu {
+      a {
+        background-position: 8px center !important; // stylelint-disable-line declaration-no-important
+
+        &.additionals {
+          padding-left: 32px !important; // stylelint-disable-line declaration-no-important
+
+          &::before {
+            margin-right: $padding-small-vertical;
+            font-size: $fa-font-size-base;
+          }
+        }
+      }
+    }
+
+    #watchers {
+      .contextual {
+        padding-top: $line-height-computed / 2;
+        padding-bottom: $line-height-computed / 2;
+      }
+
+      .watchers {
+        li {
+          margin: ($line-height-computed / 2) 0 0;
+          padding: 0;
+
+          img.gravatar {
+            top: 0;
+          }
+
+          a {
+            height: auto;
+            border-top: 0;
+            line-height: initial;
+          }
+
+          .delete {
+            margin-right: $padding-large-vertical;
+            margin-left: auto;
+            float: none;
+            text-align: center;
+            text-overflow: initial;
+          }
+        }
+      }
+    }
+
+    .tabular {
+      label {
+        float: none;
+      }
+    }
+  }
 
   #query_form_content {
     fieldset {
@@ -192,14 +297,14 @@
   }
 
   .splitcontentleft {
-    margin-bottom: $line-height-computed;
-    padding-right: 0;
-    float: none;
+    // margin-bottom: $line-height-computed;
+    padding-right: 10px;
+    float: left;
   }
 
   .splitcontentright {
-    padding-left: 0;
-    float: none;
+    padding-left: 10px;
+    float: right;
   }
 
   .attributes .splitcontentleft {
@@ -213,10 +318,6 @@
       width: auto;
       max-width: 95%;
     }
-
-    label {
-      float: none;
-    }
   }
 
   .pagination {
@@ -225,16 +326,15 @@
     }
   }
 
-  p.buttons,
-  .other-formats > span,
-  #wiki_add_attachment > p,
   #content > .contextual,
   #content > .contextual > span,
   #query_form > .contextual,
-  #query_form_with_buttons > .contextual {
+  #query_form_with_buttons > .contextual,
+  #wiki_add_attachment > p,
+  .other-formats > span {
     margin-bottom: $line-height-computed - $padding-small-horizontal;
     padding: 0;
-    float: none;
+    float: right;
     text-align: left;
 
     a {
@@ -245,8 +345,8 @@
       color: $pagination-color;
       font-weight: $font-weight-normal;
 
-      &:hover,
-      &:focus {
+      &:focus,
+      &:hover {
         border-color: $pagination-hover-border;
         background-color: $pagination-hover-bg;
         color: $pagination-hover-color;
@@ -261,12 +361,11 @@
 
     a,
     input,
-    select,
-    label {
+    label,
+    select {
       margin-top: 0;
       margin-bottom: 5px;
     }
-
 
     label {
       display: inline-block;
@@ -278,67 +377,70 @@
     }
   }
 
+  p.buttons {
+    margin-bottom: $line-height-computed - $padding-small-horizontal;
+  }
 
-    #content > .contextual > span {
-      margin-bottom: 0;
+  #content > .contextual > span {
+    margin-bottom: 0;
+  }
+
+  #content > .contextual .drdn,
+  #content > .contextual > a,
+  p.buttons a {
+    display: inline-block;
+    margin: 0 2px 5px 0;
+    float: none;
+  }
+  // For Redmine 4.0+
+  #content > .contextual .drdn {
+    padding: 0;
+    border: 0;
+
+    .drdn-trigger {
+      padding: $btn-padding-vertical $btn-padding-horizontal;
     }
 
-    #content > .contextual > a,
-    #content > .contextual .drdn,
-    p.buttons a {
-      display: inline-block;
-      margin: 0 2px 5px 0;
-      float: none;
-    }
+    .drdn-items {
+      a {
+        margin: 3px 0 0;
+        padding-top: $btn-padding-vertical;
+        padding-bottom: $btn-padding-vertical;
 
-    // For Redmine 4.0+
-    #content > .contextual .drdn {
-      padding: 0;
-      border: 0;
-
-      .drdn-trigger {
-        padding: $btn-padding-vertical $btn-padding-horizontal;
-      }
-
-      .drdn-items {
-        a {
-          margin: 3px 0 0;
-          padding-top: $btn-padding-vertical;
-          padding-bottom: $btn-padding-vertical;
-
-          &:first-child {
-            margin-top: 0;
-          }
+        &:first-child {
+          margin-top: 0;
         }
       }
     }
-
-    // For Redmine 3.4+
-    #my-page {
-      #list-left {
-        width: 100%;
-        padding-right: 0;
-        float: none;
-      }
-
-      #list-right {
-        width: 100%;
-        padding-left: 0;
-        float: none;
-      }
+  }
+  // For Redmine 3.4+
+  #my-page {
+    #list-left {
+      width: 100%;
+      padding-right: 0;
+      float: none;
     }
 
-    #issue-changesets {
-      div.changeset {
-        padding: 0;
-      }
+    #list-right {
+      width: 100%;
+      padding-left: 0;
+      float: none;
     }
+  }
 
-    #admin-index > #admin-menu li {
+  div#issue-changesets {
+    div.changeset {
       padding: 0;
     }
   }
 
+  #admin-index > #admin-menu li {
+    padding: 0;
+
+    a {
+      background-position: 8px center !important; // stylelint-disable-line declaration-no-important
+    }
+  }
   // Tweaks for smartphones, touchscreens
   @media (hover: none) and (pointer: coarse) {
     .mobile-toggle-button::after {
@@ -358,6 +460,4 @@
       }
     }
   }
-
-
-
+}
