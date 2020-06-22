@@ -22,11 +22,11 @@ body, #wrapper { background-color:#3c3c3c; font-family: helvetica, "microsoft sa
 body, #wrapper { background-color: white; color: #333; }
 
 a, a:link { color: #0066c0; outline:none;}
-a:hover { text-decoration: underline; color: #1464ab;}
+a:hover { text-decoration: underline; color: #019875;}
  
 #sidebar label, #sidebar a{ color: #0066c0  !important;}
 
-#sidebar a:hover, #sidebar a:active{ color: #1464ab !important; background:none !important; }
+#sidebar a:hover, #sidebar a:active{ color: #019875 !important; background:none !important; }
 #sidebar h3 { color: #003b6f !important;}
 #header {
 	width: 100%;
@@ -34,17 +34,23 @@ a:hover { text-decoration: underline; color: #1464ab;}
 	margin: 0 0 24px;
 	top: 1px;
 	left: 0;
-	background: #F1F1F1;
+	background: #019875;
 	border-bottom: 1px solid #CCC;
 	box-shadow: 0 -1px 0 white inset;
 	-moz-box-shadow: 0 -1px 0 #fff inset;
 	-webkit-box-shadow: 0 -1px 0 white inset;
 	z-index: 10;
-	/*height: 60px;*/
 	height: auto;
 	overflow: hidden;
+    color: #FFF;
 }
-#header a { color: #888; }
+#header a { color: #FFF; }
+#header > h1 {
+   background: url('/images/cubo.png') left center no-repeat;
+   padding: 18px 0px 18px 99px;
+   margin: 10px;
+   color: #FFF;
+}
 #header #quick-search { margin: 0 24px; }
 #top-menu { margin: 0; }
 #top-menu { background-color: #2e2e2e; font-size: .9em; position: relative; margin-left: -.3em; padding: 0; height: 21px }
@@ -52,7 +58,8 @@ a:hover { text-decoration: underline; color: #1464ab;}
 #top-menu li, #top-menu #loggedas { color: #ddd; line-height: 21px; margin-right: 0px;}
 #top-menu li a { color: #aaa; font-weight: normal; padding:4px 5px; }
 #top-menu li a:hover { color: #fff; text-decoration: none; }
-
+/* Hide link for help in redmine.org */
+#top-menu>ul>li:last-child{display: none;}
 #main { background: white; margin: 0 24px 0px 24px; }
 #content { 
 	width: 74.5%;
@@ -79,6 +86,7 @@ ul.projects div.root a.project { font-family: 'Helvetica Neue', Helvetica, Arial
 #footer a:hover { background:#666666 none repeat scroll 0 0; color:#FFFFFF !important;}
 #footer a:link, #footer a:visited { color:#666666; }
 
+#footer .bgl{ display: none; }
 p.subtitle { font-style:normal; }
 
 /* Headers */
@@ -171,22 +179,22 @@ h1, h2, h3 { color: #333; }
 #main-menu {
 	margin: -8px 1.5em -2px;
 	float: left;
-	width: 870px;
+	width: 100%;
 }
 
-#main-menu li a { font-weight: normal; padding: 6px 8px 8px; color: #888; }
-#main-menu li a:hover { 
-	color: #333;
-	background: transparent; 
+#main-menu li a { font-weight: normal; padding: 6px 8px 8px; color: #FFF;}
+#main-menu li a:hover {
+    background: transparent;
+	border: 1px solid #FFF; 
+    border-bottom-width: 0px;
 	text-decoration: none; 
 }
 #main-menu li a.selected, #main-menu li a.selected:hover { 
 	background-color:#fff; 
-	color: #111; 
+	color: #019875; 
 	-moz-border-radius-topleft: .3em; -webkit-border-top-left-radius: .3em;
 	-moz-border-radius-topright: .3em; -webkit-border-top-right-radius: .3em;
 }
-
 /* Settings menu */
 
 #content .tabs ul li a {
@@ -339,7 +347,10 @@ input[type="text"], textarea, select {
 	-moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px;
 	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
 }
-
+.nodata{
+    padding: 1em;
+    background-color: transparent;
+}
 .box { 
 	background-color: #fcfcfc;
 	border-top: 1px #eee solid;
@@ -371,6 +382,13 @@ form .attributes select {
 	width: 39%;
 }
 
+.button-small,input[type="submit"]{
+    background: #019875;
+    color: #FFF;
+    padding: 5px 10px;
+    border: 0px;
+    cursor: pointer;    
+}
 
 .jstElements { margin-right: 3.5em;}
 .tabular label { font-weight: normal;}
@@ -388,3 +406,119 @@ div#activity dd, #search-results dd { font-size:1em; }
 span.description { margin: .5em 0;}
 
 hr { background:#eee none repeat scroll 0% 0%; }
+
+/* Customization for backlog plugin */
+#content #toolbar{
+    background: #F1F1F1 !important;
+    filter: none !important;
+}
+#content #backlogs_container .header{
+    background: #FFF !important;
+    filter: none !important;
+}
+#content #backlogs_container .backlog{
+    background: #F1F1F1 !important;
+    filter: none !important;
+}
+#content #backlogs_container a,
+#content #toolbar .links a{
+    color: #FFF !important;
+    background: #019875 !important;
+    border: 1px solid #019875 !important;
+    padding: 5px 10px;
+}
+#content #product_backlog_container .header .close_sprint{
+    padding: 0px;
+    text-align: center;
+}
+#content #backlogs_container .stories .story{
+    color: #FFF !important;
+    border-bottom: #FFF 1px solid;
+}
+#content #backlogs_container .stories .story .id .t *{
+    background: #FFF !important;
+    filter: none !important;
+    border: 0px;
+    padding: 0px;
+    text-align: center;
+}
+#content #backlogs_container .stories .story .id .t a:hover{
+    text-decoration: underline;
+}
+#content #backlogs_container .editing .edit-actions a{
+    background:#019875;
+    color: #FFF;
+    border: 0px;
+    padding: 5px 10px;
+}
+#content #backlogs_container .stories .tracker1{
+    background:#019875 !important;
+    filter: none !important;
+}
+#content #backlogs_container .stories .tracker1 .id .t *{
+    color:#019875 !important;
+}
+#content #backlogs_container .stories .tracker2{
+    background: #4caf50 !important;
+    filter: none !important;
+}
+#content #backlogs_container .stories .tracker2 .id .t *{
+    color:#4caf50 !important;
+}
+#content #backlogs_container .stories .tracker3{
+    background: #43a047 !important;
+    filter: none !important;
+}
+#content #backlogs_container .stories .tracker3 .id .t *{
+    color:#43a047 !important;
+}
+#content #backlogs_container .stories .tracker4{
+    background:#388e3c !important;
+    filter: none !important;
+}
+#content #backlogs_container .stories .tracker4 .id .t *{
+    color:#388e3c !important;
+}
+#content #backlogs_container .stories .tracker5{
+    background:#2e7d32 !important;
+    filter: none !important;
+}
+#content #backlogs_container .stories .tracker5 .id .t *{
+    color:#2e7d32 !important;
+}
+#content #backlogs_container .stories .tracker6{
+    background:#1b5e20 !important;
+    filter: none !important;
+}
+#content #backlogs_container .stories .tracker6 .id .t *{
+    color:#1b5e20 !important;
+}
+#content #backlogs_container .stories .tracker7{
+    background:#33691e !important;
+    filter: none !important;
+}
+#content #backlogs_container .stories .tracker7 .id .t *{
+    color:#33691e !important;
+}
+
+#content #taskboard .label_sprint_impediments{
+    background: #E53939 !important;
+    filter: none !important;
+    color: #FFF !important;
+}
+#content #taskboard #tasks .story{
+    background: #4caf50 !important;
+    filter: none !important;
+    color: #FFF !important;
+}
+#content #taskboard #tasks .story.closed{
+    background: #DDD !important;
+    filter: none !important;
+    color: #888 !important;
+}
+.theme-Nyss-gitlab-redmine-theme .rb_editor_dialog.ui-dialog.ui-widget-content{
+    background: #F1F1F1 !important;
+    filter: none !important;
+    top: 5%;
+    left: 36%;
+}
