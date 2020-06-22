@@ -1,7 +1,11 @@
 == Redmine A1 theme
 
-Copyright (C) 2011-2017 Kirill Bezrukov
+Copyright (C) 2011-2020 Kirill Bezrukov
 http://www.redmineup.com/
+
+== 2020-02-13 v3.0.0
+
+* Redmine 4.1 support
 
 == 2017-08-25 v2.0.0
 
