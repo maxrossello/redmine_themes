@@ -17,7 +17,7 @@ Or by using git:
 
 ```
 cd redmine/public/theme
-git clone git://github.com/makotokw/redmine-theme-gitmike.git gitmike
+git clone https://github.com/makotokw/redmine-theme-gitmike.git gitmike
 ```
 
 ### Change theme
@@ -31,11 +31,11 @@ git clone git://github.com/makotokw/redmine-theme-gitmike.git gitmike
 
 ```
 cd redmine/public/theme
-git clone git://github.com/makotokw/redmine-theme-gitmike.git gitmike
+git clone https://github.com/makotokw/redmine-theme-gitmike.git gitmike
 cd gitmike
 gem install compass
-npm install -g gulp
-npm install
+npm install -g gulp-cli
+yarn
 gulp debug
 ```
 
@@ -45,6 +45,8 @@ GNU General Public License (GPL) Version 2
 
 ## Change Log
 
+* master: Fixed issue #42
+* **1.2.0** (2019/10/01): Support Redmine 4.0
 * **1.1.1** (2017/12/30): Fixed issue #36 for Redmine 3.4 and fixed #38 for Easy Gantt plugin
 * **1.1.0** (2016/10/27): Fixed some issues #31 #32 (from @addow) and improved wiki to be close to GitHub
 * **1.0.9** (2016/07/10): Fixed some issues #27 #28 for Redmine 3.3

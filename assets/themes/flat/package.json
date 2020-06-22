@@ -1,0 +1,22 @@
+{
+  "name": "lab-redmine-theme-flat",
+  "version": "2.1.0",
+  "description": "labor b redmine theme",
+  "scripts": {
+    "compile": "sass sass/application.scss stylesheets/application.css",
+    "watch": "sass --watch sass/application.scss stylesheets/application.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/labSupport/redmine-theme-flat.git"
+  },
+  "author": "labor b",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/labSupport/redmine-theme-flat/issues"
+  },
+  "homepage": "https://github.com/labSupport/redmine-theme-flat#readme",
+  "dependencies": {
+    "compass-mixins-fixed": "^1.0.1"
+  }
+}
