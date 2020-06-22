@@ -1,4 +1,4 @@
-@import url(/stylesheets/application.css);
+@import url(../../../stylesheets/application.css);
 
 /* Issues grid priority column color by priorities */
 tr.priority-highest td.priority { color: #F00; }
