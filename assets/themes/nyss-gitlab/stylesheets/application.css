@@ -42,7 +42,7 @@ a:hover { text-decoration: underline; color: #1464ab;}
 	z-index: 10;
 	/*height: 60px;*/
 	height: auto;
-	overflow: hidden;
+	/* overflow: hidden; redmine_themes */
 }
 #header a { color: #888; }
 #header #quick-search { margin: 0 24px; }
