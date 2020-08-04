@@ -41,7 +41,7 @@ a:hover { text-decoration: underline; color: #019875;}
 	-webkit-box-shadow: 0 -1px 0 white inset;
 	z-index: 10;
 	height: auto;
-	overflow: hidden;
+	/* overflow: hidden; redmine_themes */
     color: #FFF;
 }
 #header a { color: #FFF; }
