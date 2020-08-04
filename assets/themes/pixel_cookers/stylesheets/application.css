@@ -317,7 +317,7 @@ a.issue.closed:visited {
   height: calc(100% - 46px);
   left: 0px;
   padding-left: 9px;
-  /* padding-right: 0; redmine_themes */
+  padding-right: 0;
   margin-top: 46px;
   position: fixed;
   top: 0;
@@ -336,8 +336,7 @@ a.issue.closed:visited {
 #header #quick-search {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 30px;
-  /* redmine_themes margin: 15px 15px 20px 0; */
-  margin: 15px 0px 20px 0;
+  margin: 15px 15px 20px 0;
   padding: 0;
   text-align: right;
 }
@@ -414,7 +413,6 @@ a.issue.closed:visited {
   margin: 0;
   padding-bottom: 2px;
   text-align: left;
-  display: block; /* redmine_themes */
 }
 #main-menu ul li a {
   -webkit-user-select: none;
@@ -452,18 +450,6 @@ a.issue.closed:visited {
   color: #333333;
   font-weight: bold;
   text-shadow: none;
-}
-#main-menu.tabs { /* redmine_themes */
-    margin-left: 15px;
-}
-#main-menu .tabs-buttons { /* redmine_themes */
-    display: none !important;
-}
-#main-menu .menu-children { /* redmine_themes */
-    margin-left: 0px;
-}
-#main-menu li a.new-object { /* redmine_themes */
-    width: min-content;
 }
 #footer {
   border-top: 1px solid #CCCCCC;
@@ -1479,9 +1465,6 @@ dt.time-entry {
 }
 #main-menu ul li a.settings:before {
   content: "\f0ad";
-}
-#main-menu ul li a.time-entries:before { /* redmine_themes */
-  content: "\f017";
 }
 /*---------- Colors ----------*/
 /* Links */
