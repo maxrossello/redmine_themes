@@ -1,0 +1,33 @@
+[remote "purplemine2"]
+	url = git@github.com:mrliptontea/PurpleMine2.git
+	fetch = +refs/heads/*:refs/remotes/purplemine2/*
+[remote "taskman"]
+	url = git@github.com:eea/taskman.redmine.theme.git
+	fetch = +refs/heads/*:refs/remotes/taskman/*
+[remote "alex"]
+	url = https://bitbucket.org/dkuk/redmine_alex_skin.git
+	fetch = +refs/heads/*:refs/remotes/alex/*
+[remote "flat"]
+	url = git@github.com:labSupport/redmine-theme-flat.git
+	fetch = +refs/heads/*:refs/remotes/flat/*
+[remote "flatly_light"]
+	url = git@github.com:Nitrino/flatly_light_redmine.git
+	fetch = +refs/heads/*:refs/remotes/flatly_light/*
+[remote "gitmike"]
+	url = git@github.com:makotokw/redmine-theme-gitmike.git
+	fetch = +refs/heads/*:refs/remotes/gitmike/*
+[remote "nyss-gitlab"]
+	url = git@github.com:nysenate/nyss-gitlab-redmine-theme.git
+	fetch = +refs/heads/*:refs/remotes/nyss-gitlab/*
+[remote "custom-gitlab"]
+	url = git@github.com:unicornio8/nyss-gitlab-redmine-theme.git
+	fetch = +refs/heads/*:refs/remotes/custom-gitlab/*
+[remote "pepper"]
+	url = git@github.com:koppen/redmine-pepper-theme.git
+	fetch = +refs/heads/*:refs/remotes/pepper/*
+[remote "pixel-cookers"]
+	url = git://github.com/pixel-cookers/redmine-theme.git
+	fetch = +refs/heads/*:refs/remotes/pixel-cookers/*
+[remote "progressive"]
+	url = git@github.com:stgeneral/redmine-progressive-theme.git
+	fetch = +refs/heads/*:refs/remotes/progressive/*
