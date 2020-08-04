@@ -16,11 +16,9 @@ Finally restart your server.
 
 - [Alex skin](https://bitbucket.org/dkuk/redmine_alex_skin.git)
 - [Custom gitlab](git@github.com:unicornio8/nyss-gitlab-redmine-theme.git)
-- [Fedmine](git@github.com:pattack/fedmine.git)
 - [Flat](git@github.com:labSupport/redmine-theme-flat.git)
 - [Flatly light](git@github.com:Nitrino/flatly_light_redmine.git)
 - [Gitmike](git@github.com:makotokw/redmine-theme-gitmike.git)
-- [Issue readability](git@github.com:jongha/redmine_issue_readability_theme.git)
 - [NYSS gitlab](git@github.com:nysenate/nyss-gitlab-redmine-theme.git)
 - [Pepper](git@github.com:koppen/redmine-pepper-theme.git)
 - [Pixel cookers](git://github.com/pixel-cookers/redmine-theme.git)
