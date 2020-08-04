@@ -330,15 +330,15 @@ select[size="1"] {
 
 @media (-webkit-min-device-pixel-ratio: 0) {
   select[size],
-  select[multiple],
-  select[multiple][size] {
+select[multiple],
+select[multiple][size] {
     background-image: none;
     padding-right: 3px;
   }
 
   select,
-  select[size="0"],
-  select[size="1"] {
+select[size="0"],
+select[size="1"] {
     background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
     background-repeat: no-repeat;
     background-position: right center;
@@ -359,8 +359,8 @@ select[size="1"] {
   }
 
   ::-webkit-validation-bubble-arrow,
-  ::-webkit-validation-bubble-top-outer-arrow,
-  ::-webkit-validation-bubble-top-inner-arrow {
+::-webkit-validation-bubble-top-outer-arrow,
+::-webkit-validation-bubble-top-inner-arrow {
     -webkit-box-shadow: none;
     box-shadow: none;
     background: #666666;
