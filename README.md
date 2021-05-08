@@ -2,6 +2,8 @@
 
 Brings a selection of Redmine themes.
 
+The plugin version corresponds to minimum version of Redmine required. Look at dedicated branch for each Redmine version.
+
 ## Installation 
 
 Install this plugin and the required dependency plugin https://github.com/maxrossello/redmine_pluggable_themes into the Redmine plugins folder.
